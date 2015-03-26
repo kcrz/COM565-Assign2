@@ -12,9 +12,27 @@ namespace BioengineeringResearch
 {
     public partial class MainForm : Form
     {
+        public bool isLogin = false;
+
         public MainForm()
         {
             InitializeComponent();
+            this.Activated += new EventHandler(this.MainForm_Activated);
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            // login and logout buttons
+            if (!isLogin)
+            {
+                btn_login.Enabled = true;
+                btn_logout.Enabled = false;
+            }
+            else
+            {
+                btn_login.Enabled = false;
+                btn_logout.Enabled = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -129,6 +147,22 @@ namespace BioengineeringResearch
         {
             Form CardReader = new CardReader();
             CardReader.Show();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (!isLogin)
+            {
+                Form LogForm = new LogForm();
+                LogForm.Show();
+                
+                isLogin = true;
+            }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            isLogin = false;
         }
     }
 }

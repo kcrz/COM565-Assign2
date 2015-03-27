@@ -149,20 +149,31 @@ namespace BioengineeringResearch
             CardReader.Show();
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            if (isLogin)
+            {
+                isLogin = false;
+                btn_login.Enabled = true;
+                btn_logout.Enabled = false;
+            }
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
         {
             if (!isLogin)
             {
                 Form LogForm = new LogForm();
                 LogForm.Show();
-                
-                isLogin = true;
+
+                //isLogin = true;
             }
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
+        private void btn_Sim_Click(object sender, EventArgs e)
         {
-            isLogin = false;
+            Form simForm = new SimulationForm();
+            simForm.Show();
         }
     }
 }

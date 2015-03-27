@@ -58,7 +58,7 @@
             this.button23 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button26 = new System.Windows.Forms.Button();
+            this.btn_Sim = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -144,7 +144,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(34, 22);
             this.button15.TabIndex = 17;
-            this.button15.Text = "C2";
+            this.button15.Text = "C7";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -166,7 +166,7 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(34, 22);
             this.button13.TabIndex = 15;
-            this.button13.Text = "C1";
+            this.button13.Text = "C8";
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -188,7 +188,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(34, 22);
             this.button11.TabIndex = 13;
-            this.button11.Text = "B1";
+            this.button11.Text = "B2";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -210,7 +210,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(25, 35);
             this.button9.TabIndex = 11;
-            this.button9.Text = "A7";
+            this.button9.Text = "A8";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -221,7 +221,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(25, 35);
             this.button6.TabIndex = 10;
-            this.button6.Text = "A4";
+            this.button6.Text = "A5";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -232,7 +232,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(25, 35);
             this.button5.TabIndex = 9;
-            this.button5.Text = "A5";
+            this.button5.Text = "A6";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -243,7 +243,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(25, 35);
             this.button4.TabIndex = 8;
-            this.button4.Text = "A6";
+            this.button4.Text = "A7";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -254,7 +254,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(34, 22);
             this.button8.TabIndex = 7;
-            this.button8.Text = "A2";
+            this.button8.Text = "A3";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -265,7 +265,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(34, 22);
             this.button7.TabIndex = 6;
-            this.button7.Text = "A1";
+            this.button7.Text = "A9";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -276,7 +276,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(25, 35);
             this.button3.TabIndex = 2;
-            this.button3.Text = "A3";
+            this.button3.Text = "A4";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -330,7 +330,7 @@
             this.btn_login.TabIndex = 0;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += new System.EventHandler(this.button20_Click);
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // panel3
             // 
@@ -383,20 +383,21 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.button26);
+            this.panel4.Controls.Add(this.btn_Sim);
             this.panel4.Location = new System.Drawing.Point(628, 473);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(150, 85);
             this.panel4.TabIndex = 3;
             // 
-            // button26
+            // btn_Sim
             // 
-            this.button26.Location = new System.Drawing.Point(26, 19);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(98, 45);
-            this.button26.TabIndex = 4;
-            this.button26.Text = "Simulation";
-            this.button26.UseVisualStyleBackColor = true;
+            this.btn_Sim.Location = new System.Drawing.Point(26, 19);
+            this.btn_Sim.Name = "btn_Sim";
+            this.btn_Sim.Size = new System.Drawing.Size(98, 45);
+            this.btn_Sim.TabIndex = 4;
+            this.btn_Sim.Text = "Simulation";
+            this.btn_Sim.UseVisualStyleBackColor = true;
+            this.btn_Sim.Click += new System.EventHandler(this.btn_Sim_Click);
             // 
             // MainForm
             // 
@@ -450,7 +451,7 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button btn_Sim;
 
     }
 }

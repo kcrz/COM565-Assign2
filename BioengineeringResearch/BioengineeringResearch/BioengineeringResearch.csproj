@@ -59,16 +59,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardReader.cs">
+    <Compile Include="CardReader\CardReader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CardReader.Designer.cs">
+    <Compile Include="CardReader\CardReader.Designer.cs">
       <DependentUpon>CardReader.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogForm.cs">
+    <Compile Include="Log\LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogForm.Designer.cs">
+    <Compile Include="Log\LogForm.Designer.cs">
       <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -84,10 +84,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SecuritySystemDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CardReader.resx">
+    <Compile Include="Simulation\SimulationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simulation\SimulationForm.Designer.cs">
+      <DependentUpon>SimulationForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CardReader\CardReader.resx">
       <DependentUpon>CardReader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogForm.resx">
+    <EmbeddedResource Include="Log\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -102,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Simulation\SimulationForm.resx">
+      <DependentUpon>SimulationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -151,6 +160,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Functions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

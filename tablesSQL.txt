@@ -1,0 +1,52 @@
+Employee
+-EmployeeId {PK}
+-FirstName
+-LastName
+-PIN
+-AccessLevel
+-AuthorizedUntilDate
+-Position
+-Phone
+-Email
+
+CREATE TABLE [dbo].[Employee]
+(
+	[EmployeeId] INT NOT NULL PRIMARY KEY,
+	[FirstName] VARCHAR(50) NOT NULL,
+	[LastName] VARCHAR(50) NOT NULL,
+	[PIN] INT NOT NULL,
+	[AccessLevel] INT NOT NULL,
+	[AuthorizedUntilDate] DateTime NOT NULL,
+	[Position] VARCHAR(50) NOT NULL,
+	[Phone] VARCHAR(50) NOT NULL,
+	[Email] VARCHAR(50) NOT NULL
+
+)
+
+
+DoorTerminal
+-DoorId {PK}
+-MinimumLevelReq
+
+CREATE TABLE [dbo].[DoorTerminal]
+(
+	[DoorId] INT NOT NULL PRIMARY KEY,
+	[MinimumLevelReq] INT NOT NULL
+)
+
+History
+-HistoryId
+-DoorId {FK}
+-EmployeeId {FK}
+-DateTimeStamp
+
+CREATE TABLE [dbo].[AccessHistory]
+(
+	[HistoryId] INT NOT NULL PRIMARY KEY,
+	[DoorId] INT NOT NULL,
+	[EmployeeId] INT NOT NULL,
+	[DateTimeStamp] DATETIME NOT NULL
+
+	CONSTRAINT [FK_DoorId] FOREIGN KEY ([DoorId]) REFERENCES [dbo].[DoorTerminal] ([DoorId]),
+	CONSTRAINT [FK_EmployeeId] FOREIGN KEY ([EmployeeId]) REFERENCES [dbo].[Employee] ([EmployeeId])
+)

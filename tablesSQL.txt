@@ -11,15 +11,18 @@ Employee
 
 CREATE TABLE [dbo].[Employee]
 (
-	[EmployeeId] INT NOT NULL PRIMARY KEY,
-	[FirstName] VARCHAR(50) NOT NULL,
-	[LastName] VARCHAR(50) NOT NULL,
+	[InternalEmpId] INT NOT NULL IDENTITY(1,1),
+	[EmployeeId] AS 'EM' + RIGHT('000' + CAST( [InternalEmpId] AS VARCHAR(10)),3) PERSISTED NOT NULL,
+	[FirstName] NVARCHAR(50) NOT NULL,
+	[LastName] NVARCHAR(50) NOT NULL,
 	[PIN] INT NOT NULL,
 	[AccessLevel] INT NOT NULL,
 	[AuthorizedUntilDate] DateTime NOT NULL,
-	[Position] VARCHAR(50) NOT NULL,
-	[Phone] VARCHAR(50) NOT NULL,
-	[Email] VARCHAR(50) NOT NULL
+	[Position] NVARCHAR(50) NOT NULL,
+	[Phone] NVARCHAR(50) NOT NULL,
+	[Email] NVARCHAR(50) NOT NULL,
+	
+	CONSTRAINT PK_Employee PRIMARY KEY CLUSTERED(EmployeeId)
 
 )
 
@@ -30,8 +33,40 @@ DoorTerminal
 
 CREATE TABLE [dbo].[DoorTerminal]
 (
-	[DoorId] INT NOT NULL PRIMARY KEY,
-	[MinimumLevelReq] INT NOT NULL
+	[InternalDoorId] INT NOT NULL IDENTITY(1,1),
+	[DoorId] AS 'DR' + RIGHT('000' + CAST( [InternalDoorId] AS VARCHAR(10)),3) PERSISTED NOT NULL,
+	[MinimumLevelReq] INT NOT NULL,
+	[DoorName] NVARCHAR(50) NOT NULL,
+	
+	CONSTRAINT PK_Door PRIMARY KEY CLUSTERED(DoorId)
+)
+
+Visitor
+-VisitorId
+-FirstName
+-LastName
+-PIN
+-AccessLevel
+-AuthorizedUntilDate
+-Company
+-Phone
+-Email
+
+CREATE TABLE [dbo].[Visitor]
+(
+	[InternalVisitorId] INT NOT NULL IDENTITY(1,1),
+	[VisitorId] AS 'VT' + RIGHT('000' + CAST( [InternalVisitorId] AS VARCHAR(10)),3) PERSISTED NOT NULL,
+	[FirstName] NVARCHAR(50) NOT NULL,
+	[LastName] NVARCHAR(50) NOT NULL,
+	[PIN] INT NOT NULL,
+	[AccessLevel] INT NOT NULL,
+	[AuthorizedUntilDate] DateTime NOT NULL,
+	[Company] NVARCHAR(50) NOT NULL,
+	[Phone] NVARCHAR(50) NOT NULL,
+	[Email] NVARCHAR(50) NOT NULL,
+	
+	CONSTRAINT PK_Visitor PRIMARY KEY CLUSTERED(VisitorId)
+
 )
 
 History
@@ -40,13 +75,25 @@ History
 -EmployeeId {FK}
 -DateTimeStamp
 
-CREATE TABLE [dbo].[AccessHistory]
-(
-	[HistoryId] INT NOT NULL PRIMARY KEY,
-	[DoorId] INT NOT NULL,
-	[EmployeeId] INT NOT NULL,
-	[DateTimeStamp] DATETIME NOT NULL
-
-	CONSTRAINT [FK_DoorId] FOREIGN KEY ([DoorId]) REFERENCES [dbo].[DoorTerminal] ([DoorId]),
-	CONSTRAINT [FK_EmployeeId] FOREIGN KEY ([EmployeeId]) REFERENCES [dbo].[Employee] ([EmployeeId])
+CREATE TABLE [dbo].[AccessHistory] (
+    [InternalHistoryId]     INT      IDENTITY (1, 1) NOT NULL,
+	[HistoryId] AS 'HS' + RIGHT('000' + CAST( [InternalHistoryId] AS VARCHAR(10)),3) PERSISTED NOT NULL,
+    [DoorId]        NVARCHAR(50)      NOT NULL,
+    [EmployeeId]    NVARCHAR(50)      NULL,
+    [VisitorId]     NVARCHAR(50)      NULL,
+    [DateTimeStamp] DATETIME NOT NULL,
+    CONSTRAINT PK_AccessHistoruy PRIMARY KEY CLUSTERED(HistoryId),
+    CONSTRAINT [FK_DoorId] FOREIGN KEY ([DoorId]) REFERENCES [dbo].[DoorTerminal] ([DoorId]),
+    CONSTRAINT [FK_VisitorId] FOREIGN KEY ([VisitorId]) REFERENCES [dbo].[Visitor] ([VisitorId]),
+    CONSTRAINT [FK_EmployeeId] FOREIGN KEY ([EmployeeId]) REFERENCES [dbo].[Employee] ([EmployeeId])
 )
+
+
+
+INSERT into [dbo].[Employee] (FirstName,LastName,PIN, AccessLevel, AuthorizedUntilDate, Position, Phone, Email) values ('Kenneth','Cruz','1234','4','31-MAR-2015', 'Admin', '028-12345678','admin@email.bioeng.com')
+
+INSERT into [dbo].[Visitor] (FirstName,LastName,PIN, AccessLevel, AuthorizedUntilDate, Company, Phone, Email) values ('Kaiyang','Zhou','1234','4','10-APR-2015', 'Visitor', '028-87654321','visitor@email.visitor.com')
+
+INSERT into [dbo].[DoorTerminal] (MinimumLevelReq) values ('1')
+
+INSERT into [dbo].[AccessHistory] (DoorId, EmployeeId, DateTimeStamp) values ('1','1','2015-03-31 11:19:50')

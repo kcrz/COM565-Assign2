@@ -53,10 +53,10 @@
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_login = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.btn_remove = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_Sim = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -335,50 +335,50 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button25);
-            this.panel3.Controls.Add(this.button24);
-            this.panel3.Controls.Add(this.button23);
-            this.panel3.Controls.Add(this.button22);
+            this.panel3.Controls.Add(this.btn_search);
+            this.panel3.Controls.Add(this.btn_update);
+            this.panel3.Controls.Add(this.btn_remove);
+            this.panel3.Controls.Add(this.btn_add);
             this.panel3.Location = new System.Drawing.Point(157, 473);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(465, 85);
             this.panel3.TabIndex = 2;
             // 
-            // button25
+            // btn_search
             // 
-            this.button25.Location = new System.Drawing.Point(341, 19);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(98, 45);
-            this.button25.TabIndex = 3;
-            this.button25.Text = "Search";
-            this.button25.UseVisualStyleBackColor = true;
+            this.btn_search.Location = new System.Drawing.Point(341, 19);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(98, 45);
+            this.btn_search.TabIndex = 3;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // btn_update
             // 
-            this.button24.Location = new System.Drawing.Point(230, 19);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(98, 45);
-            this.button24.TabIndex = 2;
-            this.button24.Text = "Update";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btn_update.Location = new System.Drawing.Point(230, 19);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(98, 45);
+            this.btn_update.TabIndex = 2;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // btn_remove
             // 
-            this.button23.Location = new System.Drawing.Point(126, 19);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(98, 45);
-            this.button23.TabIndex = 1;
-            this.button23.Text = "Remove";
-            this.button23.UseVisualStyleBackColor = true;
+            this.btn_remove.Location = new System.Drawing.Point(126, 19);
+            this.btn_remove.Name = "btn_remove";
+            this.btn_remove.Size = new System.Drawing.Size(98, 45);
+            this.btn_remove.TabIndex = 1;
+            this.btn_remove.Text = "Remove";
+            this.btn_remove.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // btn_add
             // 
-            this.button22.Location = new System.Drawing.Point(22, 19);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(98, 45);
-            this.button22.TabIndex = 0;
-            this.button22.Text = "Add";
-            this.button22.UseVisualStyleBackColor = true;
+            this.btn_add.Location = new System.Drawing.Point(22, 19);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(98, 45);
+            this.btn_add.TabIndex = 0;
+            this.btn_add.Text = "Add";
+            this.btn_add.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -412,6 +412,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bioengineering Research Ltd.";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -446,10 +447,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_login;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_Sim;
 

@@ -18,6 +18,7 @@ namespace BioengineeringResearch
         {
             InitializeComponent();
             this.Activated += new EventHandler(this.MainForm_Activated);
+            this.Load += new EventHandler(this.MainForm_Load);
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
@@ -174,6 +175,24 @@ namespace BioengineeringResearch
         {
             Form simForm = new SimulationForm();
             simForm.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (!isLogin)
+            {
+                btn_add.Enabled = false;
+                btn_remove.Enabled = false;
+                btn_update.Enabled = false;
+                btn_search.Enabled = false;
+            }
+            else 
+            {
+                btn_add.Enabled = true;
+                btn_remove.Enabled = true;
+                btn_update.Enabled = true;
+                btn_search.Enabled = true;
+            }
         }
     }
 }

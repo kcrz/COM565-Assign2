@@ -59,6 +59,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,18 @@
     </Compile>
     <Compile Include="CardReader\CardReader.Designer.cs">
       <DependentUpon>CardReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\AddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functions\AddForm.Designer.cs">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\ModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functions\ModifyForm.Designer.cs">
+      <DependentUpon>ModifyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Log\LogForm.cs">
       <SubType>Form</SubType>
@@ -105,6 +118,12 @@
     </Compile>
     <EmbeddedResource Include="CardReader\CardReader.resx">
       <DependentUpon>CardReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Functions\AddForm.resx">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Functions\ModifyForm.resx">
+      <DependentUpon>ModifyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Log\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
@@ -155,9 +174,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Functions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

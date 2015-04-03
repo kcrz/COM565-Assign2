@@ -9,46 +9,170 @@ namespace BioengineeringResearch.DataOperations
 {
     class DataOps
     {
-
-        public static void searchDb(String id)
+        /// <summary>
+        /// Returns Employee details using the id parameter
+        /// Returns null if id is not found
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Employee searchEmployeeDb(String id)
         {
-            
             using (var db = new BioEngResearchSecurityContext())
             {
-                //check what table to search
-                //Employee
                 if (id.ToUpper().StartsWith("EM"))
                 {
                     var query = from em in db.Employees where em.EmployeeId == id select em;
+                    Employee[] employee = query.ToArray();
+                    if (employee != null || employee.Length != 0)
+                    {
+                        return employee[0];
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
-                //Visitor
-                else if (id.ToUpper().StartsWith("VT"))
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns Visitor Details using the id parameter.
+        /// Returns null if Id is not found in the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Visitor searchVisitorDb(String id)
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                if (id.ToUpper().StartsWith("VT"))
                 {
                     var query = from vt in db.Visitors where vt.VisitorId == id select vt;
+                    Visitor[] visitor = query.ToArray();
+                    if (visitor != null || visitor.Length != 0)
+                    {
+                        return visitor[0];
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
-                //Door
-                else if (id.ToUpper().StartsWith("DR"))
+                else
                 {
-                    var query = from dr in db.DoorTerminals where dr.DoorId == id select dr;
-                }
-                else 
-                {
-                    //default invalid id
+                    return null;
                 }
             }
         }
 
-        public static void addEmployee()
+        /// <summary>
+        /// Checks Login credentials. Returns true if credentials are valid, otherwise false
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="pin"></param>
+        /// <returns></returns>
+        public static bool checkLogin(String id, String pin)
+        {
+            int pinInt;
+            bool pinCheck = int.TryParse(pin, out pinInt);
+
+            if (pinCheck)
+            {
+                using (var db = new BioEngResearchSecurityContext())
+                {
+                    if (id.ToUpper().StartsWith("EM"))
+                    {
+                        var query = from em in db.Employees where em.EmployeeId == id && em.PIN == pinInt select em;
+                        Employee[] empl = query.ToArray();
+                        if (empl == null || empl.Length == 0)
+                        {
+                            //credentials not found
+                            return false;
+                        }
+                        else
+                        {
+                            //credentials found
+                            return true;
+                        }
+                    }
+                    //Visitor
+                    else if (id.ToUpper().StartsWith("VT"))
+                    {
+                        var query = from vt in db.Visitors where vt.VisitorId == id && vt.PIN == pinInt select vt;
+                        Visitor[] visitor = query.ToArray();
+                        if (visitor == null || visitor.Length == 0)
+                        {
+                            //credentials not found
+                            return false;
+                        }
+                        else
+                        {
+                            //credentials found
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                //non numeric pin
+                return false;
+            }
+
+
+        }
+
+        /// <summary>
+        /// Adds Employee entity to the database
+        /// returns true if successful otherwise false
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns></returns>
+        public static bool addEmployee(Employee employee)
         {
             using (var db = new BioEngResearchSecurityContext())
             {
+                try
+                {
+                    db.Employees.Add(employee);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
             }
         }
 
-        public static void addVisitor()
+        /// <summary>
+        /// Adds Visitor entity to the databse
+        /// returns true if successful otherwise false
+        /// </summary>
+        /// <param name="visitor"></param>
+        /// <returns></returns>
+        public static bool addVisitor(Visitor visitor)
         {
             using (var db = new BioEngResearchSecurityContext())
             {
+                try
+                {
+                    db.Visitors.Add(visitor);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
             }
         }
 
@@ -63,6 +187,7 @@ namespace BioengineeringResearch.DataOperations
         {
             using (var db = new BioEngResearchSecurityContext())
             {
+
             }
         }
     }

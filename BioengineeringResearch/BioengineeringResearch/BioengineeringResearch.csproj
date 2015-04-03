@@ -70,34 +70,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardReader\CardReader.cs">
+    <Compile Include="DataOperations\DataOps.cs" />
+    <Compile Include="Forms\CardReader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CardReader\CardReader.Designer.cs">
+    <Compile Include="Forms\CardReader.Designer.cs">
       <DependentUpon>CardReader.cs</DependentUpon>
     </Compile>
-    <Compile Include="Functions\AddForm.cs">
+    <Compile Include="Forms\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Functions\AddForm.Designer.cs">
+    <Compile Include="Forms\AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Functions\ModifyForm.cs">
+    <Compile Include="Forms\ModifyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Functions\ModifyForm.Designer.cs">
+    <Compile Include="Forms\ModifyForm.Designer.cs">
       <DependentUpon>ModifyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Log\LogForm.cs">
+    <Compile Include="Forms\LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Log\LogForm.Designer.cs">
+    <Compile Include="Forms\LogForm.Designer.cs">
       <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
@@ -112,25 +113,25 @@
     <Compile Include="Models\Visitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Simulation\SimulationForm.cs">
+    <Compile Include="Forms\SimulationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Simulation\SimulationForm.Designer.cs">
+    <Compile Include="Forms\SimulationForm.Designer.cs">
       <DependentUpon>SimulationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CardReader\CardReader.resx">
+    <EmbeddedResource Include="Forms\CardReader.resx">
       <DependentUpon>CardReader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Functions\AddForm.resx">
+    <EmbeddedResource Include="Forms\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Functions\ModifyForm.resx">
+    <EmbeddedResource Include="Forms\ModifyForm.resx">
       <DependentUpon>ModifyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Log\LogForm.resx">
+    <EmbeddedResource Include="Forms\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -142,7 +143,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Simulation\SimulationForm.resx">
+    <EmbeddedResource Include="Forms\SimulationForm.resx">
       <DependentUpon>SimulationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -176,7 +177,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Simulation\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

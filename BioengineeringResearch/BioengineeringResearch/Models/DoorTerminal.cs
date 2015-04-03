@@ -10,8 +10,10 @@ namespace BioengineeringResearch.Models
             this.AccessHistories = new List<AccessHistory>();
         }
 
-        public int DoorId { get; set; }
+        public int InternalDoorId { get; set; }
+        public string DoorId { get; set; }
         public int MinimumLevelReq { get; set; }
+        public string DoorName { get; set; }
         public virtual ICollection<AccessHistory> AccessHistories { get; set; }
     }
 }

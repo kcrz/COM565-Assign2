@@ -19,12 +19,14 @@ namespace BioengineeringResearch.Models
         public DbSet<AccessHistory> AccessHistories { get; set; }
         public DbSet<DoorTerminal> DoorTerminals { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Visitor> Visitors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AccessHistoryMap());
             modelBuilder.Configurations.Add(new DoorTerminalMap());
             modelBuilder.Configurations.Add(new EmployeeMap());
+            modelBuilder.Configurations.Add(new VisitorMap());
         }
     }
 }

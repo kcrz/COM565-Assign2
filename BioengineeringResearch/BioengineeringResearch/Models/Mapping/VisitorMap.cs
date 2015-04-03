@@ -3,18 +3,18 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace BioengineeringResearch.Models.Mapping
 {
-    public class EmployeeMap : EntityTypeConfiguration<Employee>
+    public class VisitorMap : EntityTypeConfiguration<Visitor>
     {
-        public EmployeeMap()
+        public VisitorMap()
         {
             // Primary Key
-            this.HasKey(t => t.EmployeeId);
+            this.HasKey(t => t.VisitorId);
 
             // Properties
-            this.Property(t => t.InternalEmpId)
+            this.Property(t => t.InternalVisitorId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            this.Property(t => t.EmployeeId)
+            this.Property(t => t.VisitorId)
                 .IsRequired()
                 .HasMaxLength(14);
 
@@ -26,7 +26,7 @@ namespace BioengineeringResearch.Models.Mapping
                 .IsRequired()
                 .HasMaxLength(50);
 
-            this.Property(t => t.Position)
+            this.Property(t => t.Company)
                 .IsRequired()
                 .HasMaxLength(50);
 
@@ -39,15 +39,15 @@ namespace BioengineeringResearch.Models.Mapping
                 .HasMaxLength(50);
 
             // Table & Column Mappings
-            this.ToTable("Employee");
-            this.Property(t => t.InternalEmpId).HasColumnName("InternalEmpId");
-            this.Property(t => t.EmployeeId).HasColumnName("EmployeeId");
+            this.ToTable("Visitor");
+            this.Property(t => t.InternalVisitorId).HasColumnName("InternalVisitorId");
+            this.Property(t => t.VisitorId).HasColumnName("VisitorId");
             this.Property(t => t.FirstName).HasColumnName("FirstName");
             this.Property(t => t.LastName).HasColumnName("LastName");
             this.Property(t => t.PIN).HasColumnName("PIN");
             this.Property(t => t.AccessLevel).HasColumnName("AccessLevel");
             this.Property(t => t.AuthorizedUntilDate).HasColumnName("AuthorizedUntilDate");
-            this.Property(t => t.Position).HasColumnName("Position");
+            this.Property(t => t.Company).HasColumnName("Company");
             this.Property(t => t.Phone).HasColumnName("Phone");
             this.Property(t => t.Email).HasColumnName("Email");
         }

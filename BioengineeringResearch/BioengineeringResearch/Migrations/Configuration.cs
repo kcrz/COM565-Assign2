@@ -27,15 +27,14 @@ namespace BioengineeringResearch.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            DateTime authorizedUntilDate = new DateTime(2015,06,30,0,0,0);
-            context.Employees.AddOrUpdate(i => i.EmployeeId, 
-                new Employee 
+            DateTime authorizedUntilDate = new DateTime(2015, 06, 30, 0, 0, 0);
+            context.Employees.AddOrUpdate(i => i.EmployeeId,
+                new Employee
                 {
-                    EmployeeId = 1,
                     FirstName = "Kenneth",
                     LastName = "Cruz",
                     PIN = 1234,
-                    AccessLevel = 4,                    
+                    AccessLevel = 4,
                     AuthorizedUntilDate = authorizedUntilDate,
                     Position = "Administrator",
                     Phone = "028-12345678",
@@ -46,18 +45,36 @@ namespace BioengineeringResearch.Migrations
             context.DoorTerminals.AddOrUpdate(i => i.DoorId,
                 new DoorTerminal
                 {
-                    DoorId = 1,
-                    MinimumLevelReq = 4
+                    MinimumLevelReq = 4,
+                    DoorName = "TestDoor"
                 }
 
                 );
-            DateTime dateTimeStamp = new DateTime(2015,03,30,0,0,0);
+            context.Visitors.AddOrUpdate(i => i.VisitorId,
+                new Visitor {
+                    FirstName = "Kaiyang",
+                    LastName = "Zhou",
+                    PIN = 1234,
+                    AccessLevel = 3,
+                    AuthorizedUntilDate = authorizedUntilDate,
+                    Company = "VisitorCompany",
+                    Phone = "028-23456789",
+                    Email = "visitor@email.visitor.com"
+                }
+
+                );
+            DateTime dateTimeStamp = new DateTime(2015, 03, 30, 0, 0, 0);
             context.AccessHistories.AddOrUpdate(i => i.HistoryId,
                 new AccessHistory
                 {
-                    HistoryId = 1,
-                    DoorId = 1,
-                    EmployeeId = 1,
+                    DoorId = "DR001",
+                    EmployeeId = "EM001",
+                    DateTimeStamp = dateTimeStamp
+                },
+                 new AccessHistory
+                {
+                    DoorId = "DR001",
+                    EmployeeId = "VT001",
                     DateTimeStamp = dateTimeStamp
                 }
                 );

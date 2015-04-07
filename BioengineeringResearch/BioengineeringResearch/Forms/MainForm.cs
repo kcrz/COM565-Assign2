@@ -50,6 +50,11 @@ namespace BioengineeringResearch
             }
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnDoorA1_Click(object sender, EventArgs e)
         {
             Form CardReader = new CardReader();
@@ -60,7 +65,7 @@ namespace BioengineeringResearch
         {
             if (isLogin)
             {
-                //isLogin = false;
+                isLogin = false;
             }
         }
 
@@ -70,19 +75,22 @@ namespace BioengineeringResearch
             {
                 LogForm LogForm = new LogForm();
                 DialogResult result = LogForm.ShowDialog();
-                //LogForm.Show();
+
                 switch (result)
                 {
                     case DialogResult.OK:
+                        
                         btn_login.Enabled = false;
                         btn_add.Enabled = true;
                         btn_modify.Enabled = true;
+                        
+                        isLogin = true;
+                        
                         break;
-                    case DialogResult.Cancel:
+                    case DialogResult.Cancel:         
+                        isLogin = false;
                         break;
                 }
-
-                //isLogin = true;
             }
         }
 

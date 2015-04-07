@@ -89,6 +89,8 @@ INSERT into [dbo].[Employee] (FirstName,LastName,PIN, AccessLevel, AuthorizedUnt
 
 INSERT into [dbo].[Visitor] (FirstName,LastName,PIN, AccessLevel, AuthorizedUntilDate, Company, Phone, Email) values ('Kaiyang','Zhou','1234','3','10-APR-2015', 'VisitorCompany', '028-87654321','visitor@email.visitor.com')
 
+INSERT into [dbo].[Visitor] (FirstName,LastName,PIN, AccessLevel, AuthorizedUntilDate, Company, Phone, Email) values ('John','Smith','1234','3','10-APR-2015', 'VisitorCompany', '028-87654321','visitor@email.visitor.com')
+
 INSERT into [dbo].[DoorTerminal] (MinimumLevelReq, DoorName) values ('4', 'TestDoor')
 
 INSERT into [dbo].[AccessHistory] (DoorId, EmployeeId, DateTimeStamp) values ('DR001','EM001','2015-03-31 11:19:50')

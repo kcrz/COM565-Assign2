@@ -14,6 +14,9 @@ namespace BioengineeringResearch
     public partial class MainForm : Form
     {
         public bool isLogin = false;
+        public const int STATUS_Employee = 1;
+        public const int STATUS_Visitor = 2;
+        public int loginStatus = 0;
 
         public MainForm()
         {
@@ -65,8 +68,19 @@ namespace BioengineeringResearch
         {
             if (!isLogin)
             {
-                Form LogForm = new LogForm();
-                LogForm.Show();
+                LogForm LogForm = new LogForm();
+                DialogResult result = LogForm.ShowDialog();
+                //LogForm.Show();
+                switch (result)
+                {
+                    case DialogResult.OK:
+                        btn_login.Enabled = false;
+                        btn_add.Enabled = true;
+                        btn_modify.Enabled = true;
+                        break;
+                    case DialogResult.Cancel:
+                        break;
+                }
 
                 //isLogin = true;
             }

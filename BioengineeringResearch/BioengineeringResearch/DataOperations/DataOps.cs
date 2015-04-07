@@ -9,6 +9,8 @@ namespace BioengineeringResearch.DataOperations
 {
     class DataOps
     {
+        
+        
         /// <summary>
         /// Returns Employee details using the id parameter
         /// Returns null if id is not found
@@ -19,6 +21,7 @@ namespace BioengineeringResearch.DataOperations
         {
             using (var db = new BioEngResearchSecurityContext())
             {
+                
                 if (id.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
                 {
                     var query = from em in db.Employees where em.EmployeeId == id select em;
@@ -240,6 +243,37 @@ namespace BioengineeringResearch.DataOperations
                     }
                 }
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Returns the position of the employee using the employee id
+        /// Will return null if id is not an employee 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static String getEmployeePosition(String id)
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                //Check if the ID is an employee
+                if (id.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
+                {
+                    var employeePosition = from em in db.Employees where em.EmployeeId == id select em.Position;
+                    String[] positionList = employeePosition.ToArray();
+                    if (positionList != null || positionList.Length != 0)
+                    {
+                        return positionList[0];
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+
+                return null;
+                
+                
             }
         }
     }

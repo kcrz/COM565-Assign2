@@ -23,6 +23,8 @@ namespace BioengineeringResearch
         public MainForm()
         {
             InitializeComponent();
+            //Set data directory for the database
+            AppDomain.CurrentDomain.SetData("DataDirectory", Application.StartupPath);
             this.Activated += new EventHandler(this.MainForm_Activated);
         }
 

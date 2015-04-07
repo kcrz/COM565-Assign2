@@ -19,7 +19,7 @@ namespace BioengineeringResearch.DataOperations
         {
             using (var db = new BioEngResearchSecurityContext())
             {
-                if (id.ToUpper().StartsWith("EM"))
+                if (id.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
                 {
                     var query = from em in db.Employees where em.EmployeeId == id select em;
                     Employee[] employee = query.ToArray();
@@ -49,7 +49,7 @@ namespace BioengineeringResearch.DataOperations
         {
             using (var db = new BioEngResearchSecurityContext())
             {
-                if (id.ToUpper().StartsWith("VT"))
+                if (id.ToUpper().StartsWith(DataStrings.VISITOR_TAG))
                 {
                     var query = from vt in db.Visitors where vt.VisitorId == id select vt;
                     Visitor[] visitor = query.ToArray();
@@ -84,7 +84,7 @@ namespace BioengineeringResearch.DataOperations
             {
                 using (var db = new BioEngResearchSecurityContext())
                 {
-                    if (id.ToUpper().StartsWith("EM"))
+                    if (id.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
                     {
                         var query = from em in db.Employees where em.EmployeeId == id && em.PIN == pinInt select em;
                         Employee[] empl = query.ToArray();
@@ -100,7 +100,7 @@ namespace BioengineeringResearch.DataOperations
                         }
                     }
                     //Visitor
-                    else if (id.ToUpper().StartsWith("VT"))
+                    else if (id.ToUpper().StartsWith(DataStrings.VISITOR_TAG))
                     {
                         var query = from vt in db.Visitors where vt.VisitorId == id && vt.PIN == pinInt select vt;
                         Visitor[] visitor = query.ToArray();
@@ -183,11 +183,63 @@ namespace BioengineeringResearch.DataOperations
             }
         }
 
-        public static void update()
+        /// <summary>
+        /// Updates the Employee ID with the new employee object.
+        /// Returns true if operation is successful otherwise false
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="emp"></param>
+        /// <returns></returns>
+        public static bool update(String id, Employee emp)
         {
             using (var db = new BioEngResearchSecurityContext())
             {
+                var query = from em in db.Employees where em.EmployeeId == id select em;
+                Employee[] employee = query.ToArray();
+                if (employee != null || employee.Length != 0)
+                {
+                    employee[0] = emp;
+                    try
+                    {
+                        db.SaveChanges();
+                        return true;
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+                    }
+                }
+                return false;
+            }
+        }
 
+        /// <summary>
+        /// Updates Visistor ID with new Visitor object.
+        /// Returns true if operation is successful otherwise false
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="visitor"></param>
+        /// <returns></returns>
+        public static bool update(String id, Visitor visitor)
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                var query = from vt in db.Visitors where vt.VisitorId == id select vt;
+                Visitor[] visistorList = query.ToArray();
+                if (visistorList != null || visistorList.Length != 0)
+                {
+                    visistorList[0] = visitor;
+                    try
+                    {
+                        db.SaveChanges();
+                        return true;
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+                    }
+                }
+                return false;
             }
         }
     }

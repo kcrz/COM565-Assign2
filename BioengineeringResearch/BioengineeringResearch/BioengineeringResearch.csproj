@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataOperations\DataOps.cs" />
+    <Compile Include="DataOperations\DataStrings.cs" />
     <Compile Include="Forms\CardReader.cs">
       <SubType>Form</SubType>
     </Compile>

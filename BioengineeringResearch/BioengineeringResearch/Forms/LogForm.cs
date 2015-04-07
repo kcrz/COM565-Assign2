@@ -35,11 +35,11 @@ namespace BioengineeringResearch
             else
             {
                 loginYes = DataOps.checkLogin(textID.Text, textPIN.Text);
-                
+
                 if (loginYes)
                 {
                     // login successfully
-                    MessageBox.Show("Yes", "Tip", MessageBoxButtons.OK);
+                    MessageBox.Show("Login successfully", "Tip", MessageBoxButtons.OK);
 
                     this.DialogResult = DialogResult.OK;
                     this.Close();

@@ -22,7 +22,7 @@ namespace BioengineeringResearch
             this.Close();
         }
 
-        private void btnStartFire_Click(object sender, EventArgs e)
+        private void btnStartFire_Click(object sender, EventArgs e) // start fire simulation
         {
             int index = getFireLocation.SelectedIndex;
             string message = null;
@@ -97,6 +97,33 @@ namespace BioengineeringResearch
                     message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C6, C8";
                     MessageBox.Show(message, caption);
                     break;
+                default:
+                    MessageBox.Show("Please select a fire location for simulation", "Tip");
+                    break;
+            }
+        }
+
+        private void btnStartCF_Click(object sender, EventArgs e) // start cardreader failure simulation
+        {
+            if (getFailedDoor.Text.Equals(""))
+            {
+                MessageBox.Show("Please select a cardreader location for simulation", "Tip");
+            }
+            else 
+            {
+                MessageBox.Show("Cardreader of door " + getFailedDoor.Text + " does not work, please fix it", "Tip");
+            }
+        }
+
+        private void btnStartIntr_Click(object sender, EventArgs e) // start intrusion simulation
+        {
+            if (getIntrDoor.Text.Equals(""))
+            {
+                MessageBox.Show("Please select a location for simulation", "Tip");
+            }
+            else
+            {
+                MessageBox.Show("Door " + getIntrDoor.Text + " is intruded, WARNING !!!", "Tip");
             }
         }
 

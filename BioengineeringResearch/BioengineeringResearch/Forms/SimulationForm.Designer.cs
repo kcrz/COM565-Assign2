@@ -39,7 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnStartIntr = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.getIntrDoor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -128,6 +128,7 @@
             this.btnStartCF.TabIndex = 5;
             this.btnStartCF.Text = "Start";
             this.btnStartCF.UseVisualStyleBackColor = true;
+            this.btnStartCF.Click += new System.EventHandler(this.btnStartCF_Click);
             // 
             // getFailedDoor
             // 
@@ -170,7 +171,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnStartIntr);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.getIntrDoor);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(12, 224);
             this.groupBox3.Name = "groupBox3";
@@ -187,12 +188,13 @@
             this.btnStartIntr.TabIndex = 5;
             this.btnStartIntr.Text = "Start";
             this.btnStartIntr.UseVisualStyleBackColor = true;
+            this.btnStartIntr.Click += new System.EventHandler(this.btnStartIntr_Click);
             // 
-            // comboBox3
+            // getIntrDoor
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.getIntrDoor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.getIntrDoor.FormattingEnabled = true;
+            this.getIntrDoor.Items.AddRange(new object[] {
             "A1",
             "A2",
             "A3",
@@ -212,10 +214,10 @@
             "C6",
             "C7",
             "C8"});
-            this.comboBox3.Location = new System.Drawing.Point(99, 20);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
-            this.comboBox3.TabIndex = 4;
+            this.getIntrDoor.Location = new System.Drawing.Point(99, 20);
+            this.getIntrDoor.Name = "getIntrDoor";
+            this.getIntrDoor.Size = new System.Drawing.Size(121, 20);
+            this.getIntrDoor.TabIndex = 4;
             // 
             // label3
             // 
@@ -262,7 +264,7 @@
         private System.Windows.Forms.Button btnStartCF;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnStartIntr;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox getIntrDoor;
         private System.Windows.Forms.Label label3;
 
 

@@ -35,6 +35,7 @@ namespace BioengineeringResearch
             else
             {
                 loginYes = DataOps.checkLogin(textID.Text, textPIN.Text);
+                //loginYes = true; // for debugging
 
                 if (loginYes)
                 {

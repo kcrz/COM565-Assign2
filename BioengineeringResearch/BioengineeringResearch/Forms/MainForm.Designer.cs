@@ -88,17 +88,17 @@
             this.panel1.Controls.Add(this.btnDoorA4);
             this.panel1.Controls.Add(this.btnDoorA2);
             this.panel1.Controls.Add(this.btnDoorA1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(766, 455);
+            this.panel1.Size = new System.Drawing.Size(766, 493);
             this.panel1.TabIndex = 0;
             // 
             // btnDoorPortal
             // 
             this.btnDoorPortal.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorPortal.Location = new System.Drawing.Point(41, 253);
+            this.btnDoorPortal.Location = new System.Drawing.Point(41, 274);
             this.btnDoorPortal.Name = "btnDoorPortal";
-            this.btnDoorPortal.Size = new System.Drawing.Size(55, 22);
+            this.btnDoorPortal.Size = new System.Drawing.Size(55, 24);
             this.btnDoorPortal.TabIndex = 22;
             this.btnDoorPortal.Text = "Portal";
             this.btnDoorPortal.UseVisualStyleBackColor = false;
@@ -107,9 +107,9 @@
             // btnDoorC3
             // 
             this.btnDoorC3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC3.Location = new System.Drawing.Point(696, 353);
+            this.btnDoorC3.Location = new System.Drawing.Point(696, 382);
             this.btnDoorC3.Name = "btnDoorC3";
-            this.btnDoorC3.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC3.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC3.TabIndex = 21;
             this.btnDoorC3.Text = "C3";
             this.btnDoorC3.UseVisualStyleBackColor = false;
@@ -118,9 +118,9 @@
             // btnDoorC4
             // 
             this.btnDoorC4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC4.Location = new System.Drawing.Point(696, 262);
+            this.btnDoorC4.Location = new System.Drawing.Point(696, 284);
             this.btnDoorC4.Name = "btnDoorC4";
-            this.btnDoorC4.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC4.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC4.TabIndex = 20;
             this.btnDoorC4.Text = "C4";
             this.btnDoorC4.UseVisualStyleBackColor = false;
@@ -129,9 +129,9 @@
             // btnDoorC5
             // 
             this.btnDoorC5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC5.Location = new System.Drawing.Point(696, 161);
+            this.btnDoorC5.Location = new System.Drawing.Point(696, 174);
             this.btnDoorC5.Name = "btnDoorC5";
-            this.btnDoorC5.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC5.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC5.TabIndex = 19;
             this.btnDoorC5.Text = "C5";
             this.btnDoorC5.UseVisualStyleBackColor = false;
@@ -140,9 +140,9 @@
             // btnDoorC6
             // 
             this.btnDoorC6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC6.Location = new System.Drawing.Point(696, 79);
+            this.btnDoorC6.Location = new System.Drawing.Point(696, 86);
             this.btnDoorC6.Name = "btnDoorC6";
-            this.btnDoorC6.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC6.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC6.TabIndex = 18;
             this.btnDoorC6.Text = "C6";
             this.btnDoorC6.UseVisualStyleBackColor = false;
@@ -151,9 +151,9 @@
             // btnDoorC7
             // 
             this.btnDoorC7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC7.Location = new System.Drawing.Point(495, 32);
+            this.btnDoorC7.Location = new System.Drawing.Point(495, 35);
             this.btnDoorC7.Name = "btnDoorC7";
-            this.btnDoorC7.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC7.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC7.TabIndex = 17;
             this.btnDoorC7.Text = "C7";
             this.btnDoorC7.UseVisualStyleBackColor = false;
@@ -162,9 +162,9 @@
             // btnDoorC2
             // 
             this.btnDoorC2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC2.Location = new System.Drawing.Point(495, 387);
+            this.btnDoorC2.Location = new System.Drawing.Point(495, 419);
             this.btnDoorC2.Name = "btnDoorC2";
-            this.btnDoorC2.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC2.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC2.TabIndex = 16;
             this.btnDoorC2.Text = "C2";
             this.btnDoorC2.UseVisualStyleBackColor = false;
@@ -173,9 +173,9 @@
             // btnDoorC8
             // 
             this.btnDoorC8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC8.Location = new System.Drawing.Point(442, 18);
+            this.btnDoorC8.Location = new System.Drawing.Point(442, 20);
             this.btnDoorC8.Name = "btnDoorC8";
-            this.btnDoorC8.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC8.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC8.TabIndex = 15;
             this.btnDoorC8.Text = "C8";
             this.btnDoorC8.UseVisualStyleBackColor = false;
@@ -184,9 +184,9 @@
             // btnDoorC1
             // 
             this.btnDoorC1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC1.Location = new System.Drawing.Point(436, 409);
+            this.btnDoorC1.Location = new System.Drawing.Point(436, 443);
             this.btnDoorC1.Name = "btnDoorC1";
-            this.btnDoorC1.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC1.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC1.TabIndex = 14;
             this.btnDoorC1.Text = "C1";
             this.btnDoorC1.UseVisualStyleBackColor = false;
@@ -195,9 +195,9 @@
             // btnDoorB2
             // 
             this.btnDoorB2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorB2.Location = new System.Drawing.Point(402, 18);
+            this.btnDoorB2.Location = new System.Drawing.Point(402, 20);
             this.btnDoorB2.Name = "btnDoorB2";
-            this.btnDoorB2.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorB2.Size = new System.Drawing.Size(34, 24);
             this.btnDoorB2.TabIndex = 13;
             this.btnDoorB2.Text = "B2";
             this.btnDoorB2.UseVisualStyleBackColor = false;
@@ -206,9 +206,9 @@
             // btnDoorB1
             // 
             this.btnDoorB1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorB1.Location = new System.Drawing.Point(402, 160);
+            this.btnDoorB1.Location = new System.Drawing.Point(402, 173);
             this.btnDoorB1.Name = "btnDoorB1";
-            this.btnDoorB1.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorB1.Size = new System.Drawing.Size(34, 24);
             this.btnDoorB1.TabIndex = 12;
             this.btnDoorB1.Text = "B1";
             this.btnDoorB1.UseVisualStyleBackColor = false;
@@ -217,9 +217,9 @@
             // btnDoorA8
             // 
             this.btnDoorA8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA8.Location = new System.Drawing.Point(391, 381);
+            this.btnDoorA8.Location = new System.Drawing.Point(391, 413);
             this.btnDoorA8.Name = "btnDoorA8";
-            this.btnDoorA8.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA8.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA8.TabIndex = 11;
             this.btnDoorA8.Text = "A8";
             this.btnDoorA8.UseVisualStyleBackColor = false;
@@ -228,9 +228,9 @@
             // btnDoorA5
             // 
             this.btnDoorA5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA5.Location = new System.Drawing.Point(249, 381);
+            this.btnDoorA5.Location = new System.Drawing.Point(249, 413);
             this.btnDoorA5.Name = "btnDoorA5";
-            this.btnDoorA5.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA5.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA5.TabIndex = 10;
             this.btnDoorA5.Text = "A5";
             this.btnDoorA5.UseVisualStyleBackColor = false;
@@ -239,9 +239,9 @@
             // btnDoorA6
             // 
             this.btnDoorA6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA6.Location = new System.Drawing.Point(297, 381);
+            this.btnDoorA6.Location = new System.Drawing.Point(297, 413);
             this.btnDoorA6.Name = "btnDoorA6";
-            this.btnDoorA6.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA6.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA6.TabIndex = 9;
             this.btnDoorA6.Text = "A6";
             this.btnDoorA6.UseVisualStyleBackColor = false;
@@ -250,9 +250,9 @@
             // btnDoorA7
             // 
             this.btnDoorA7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA7.Location = new System.Drawing.Point(349, 381);
+            this.btnDoorA7.Location = new System.Drawing.Point(349, 413);
             this.btnDoorA7.Name = "btnDoorA7";
-            this.btnDoorA7.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA7.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA7.TabIndex = 8;
             this.btnDoorA7.Text = "A7";
             this.btnDoorA7.UseVisualStyleBackColor = false;
@@ -261,9 +261,9 @@
             // btnDoorA3
             // 
             this.btnDoorA3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA3.Location = new System.Drawing.Point(364, 339);
+            this.btnDoorA3.Location = new System.Drawing.Point(364, 367);
             this.btnDoorA3.Name = "btnDoorA3";
-            this.btnDoorA3.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorA3.Size = new System.Drawing.Size(34, 24);
             this.btnDoorA3.TabIndex = 7;
             this.btnDoorA3.Text = "A3";
             this.btnDoorA3.UseVisualStyleBackColor = false;
@@ -272,9 +272,9 @@
             // btnDoorA9
             // 
             this.btnDoorA9.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA9.Location = new System.Drawing.Point(402, 360);
+            this.btnDoorA9.Location = new System.Drawing.Point(402, 390);
             this.btnDoorA9.Name = "btnDoorA9";
-            this.btnDoorA9.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorA9.Size = new System.Drawing.Size(34, 24);
             this.btnDoorA9.TabIndex = 6;
             this.btnDoorA9.Text = "A9";
             this.btnDoorA9.UseVisualStyleBackColor = false;
@@ -283,9 +283,9 @@
             // btnDoorA4
             // 
             this.btnDoorA4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA4.Location = new System.Drawing.Point(196, 381);
+            this.btnDoorA4.Location = new System.Drawing.Point(196, 413);
             this.btnDoorA4.Name = "btnDoorA4";
-            this.btnDoorA4.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA4.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA4.TabIndex = 2;
             this.btnDoorA4.Text = "A4";
             this.btnDoorA4.UseVisualStyleBackColor = false;
@@ -294,9 +294,9 @@
             // btnDoorA2
             // 
             this.btnDoorA2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA2.Location = new System.Drawing.Point(189, 339);
+            this.btnDoorA2.Location = new System.Drawing.Point(189, 367);
             this.btnDoorA2.Name = "btnDoorA2";
-            this.btnDoorA2.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorA2.Size = new System.Drawing.Size(34, 24);
             this.btnDoorA2.TabIndex = 1;
             this.btnDoorA2.Text = "A2";
             this.btnDoorA2.UseVisualStyleBackColor = false;
@@ -305,9 +305,9 @@
             // btnDoorA1
             // 
             this.btnDoorA1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA1.Location = new System.Drawing.Point(154, 360);
+            this.btnDoorA1.Location = new System.Drawing.Point(154, 390);
             this.btnDoorA1.Name = "btnDoorA1";
-            this.btnDoorA1.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorA1.Size = new System.Drawing.Size(34, 24);
             this.btnDoorA1.TabIndex = 0;
             this.btnDoorA1.Text = "A1";
             this.btnDoorA1.UseVisualStyleBackColor = false;
@@ -318,16 +318,16 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btn_logout);
             this.panel2.Controls.Add(this.btn_login);
-            this.panel2.Location = new System.Drawing.Point(209, 473);
+            this.panel2.Location = new System.Drawing.Point(209, 512);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(121, 85);
+            this.panel2.Size = new System.Drawing.Size(121, 92);
             this.panel2.TabIndex = 1;
             // 
             // btn_logout
             // 
-            this.btn_logout.Location = new System.Drawing.Point(3, 43);
+            this.btn_logout.Location = new System.Drawing.Point(3, 47);
             this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(113, 37);
+            this.btn_logout.Size = new System.Drawing.Size(113, 40);
             this.btn_logout.TabIndex = 1;
             this.btn_logout.Text = "Logout";
             this.btn_logout.UseVisualStyleBackColor = true;
@@ -337,7 +337,7 @@
             // 
             this.btn_login.Location = new System.Drawing.Point(3, 3);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(113, 37);
+            this.btn_login.Size = new System.Drawing.Size(113, 40);
             this.btn_login.TabIndex = 0;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -348,17 +348,16 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.btn_modify);
             this.panel3.Controls.Add(this.btn_add);
-            this.panel3.Location = new System.Drawing.Point(352, 473);
+            this.panel3.Location = new System.Drawing.Point(352, 512);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(254, 85);
+            this.panel3.Size = new System.Drawing.Size(254, 92);
             this.panel3.TabIndex = 2;
             // 
             // btn_modify
             // 
-            this.btn_modify.Enabled = false;
-            this.btn_modify.Location = new System.Drawing.Point(126, 19);
+            this.btn_modify.Location = new System.Drawing.Point(126, 21);
             this.btn_modify.Name = "btn_modify";
-            this.btn_modify.Size = new System.Drawing.Size(98, 45);
+            this.btn_modify.Size = new System.Drawing.Size(98, 49);
             this.btn_modify.TabIndex = 1;
             this.btn_modify.Text = "Update/Delete";
             this.btn_modify.UseVisualStyleBackColor = true;
@@ -366,10 +365,9 @@
             // 
             // btn_add
             // 
-            this.btn_add.Enabled = false;
-            this.btn_add.Location = new System.Drawing.Point(22, 19);
+            this.btn_add.Location = new System.Drawing.Point(22, 21);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(98, 45);
+            this.btn_add.Size = new System.Drawing.Size(98, 49);
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
@@ -379,16 +377,16 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.btn_Sim);
-            this.panel4.Location = new System.Drawing.Point(628, 473);
+            this.panel4.Location = new System.Drawing.Point(628, 512);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(150, 85);
+            this.panel4.Size = new System.Drawing.Size(150, 92);
             this.panel4.TabIndex = 3;
             // 
             // btn_Sim
             // 
-            this.btn_Sim.Location = new System.Drawing.Point(26, 19);
+            this.btn_Sim.Location = new System.Drawing.Point(26, 21);
             this.btn_Sim.Name = "btn_Sim";
-            this.btn_Sim.Size = new System.Drawing.Size(98, 45);
+            this.btn_Sim.Size = new System.Drawing.Size(98, 49);
             this.btn_Sim.TabIndex = 4;
             this.btn_Sim.Text = "Simulation";
             this.btn_Sim.UseVisualStyleBackColor = true;
@@ -396,10 +394,10 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(790, 568);
+            this.ClientSize = new System.Drawing.Size(790, 615);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

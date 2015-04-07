@@ -21,7 +21,7 @@ namespace BioengineeringResearch
         public MainForm()
         {
             InitializeComponent();
-            //this.Activated += new EventHandler(this.MainForm_Activated);
+            this.Activated += new EventHandler(this.MainForm_Activated);
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
@@ -50,22 +50,35 @@ namespace BioengineeringResearch
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDoorA1_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
             if (isLogin)
             {
-                isLogin = false;
+                DialogResult result = MessageBox.Show("Do you really want to logout?", "Tip", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes) // logout yes
+                {
+
+                }
+                else // logout no
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please login", "Tip");
             }
         }
 
@@ -80,11 +93,12 @@ namespace BioengineeringResearch
                 {
                     case DialogResult.OK:
                         
-                        btn_login.Enabled = false;
-                        btn_add.Enabled = true;
-                        btn_modify.Enabled = true;
+                        //btn_login.Enabled = false;
+                        //btn_add.Enabled = true;
+                        //btn_modify.Enabled = true;
                         
                         isLogin = true;
+                        
                         
                         break;
                     case DialogResult.Cancel:         
@@ -96,116 +110,206 @@ namespace BioengineeringResearch
 
         private void btn_Sim_Click(object sender, EventArgs e)
         {
-            Form simForm = new SimulationForm();
-            simForm.Show();
+            SimulationForm simForm = new SimulationForm();
+            simForm.ShowDialog();
         }
 
         private void btnDoorA2_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorA3_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorA4_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorA5_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorA6_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorA7_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorA8_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorA9_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorB1_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorB2_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorC1_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorC2_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorC3_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorC4_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorC5_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorC6_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorC7_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorC8_Click(object sender, EventArgs e)
         {
-            Form CardReader = new CardReader();
-            CardReader.Show();
+            CardReader cardreader = new CardReader();
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
         }
 
         private void btnDoorPortal_Click(object sender, EventArgs e)
@@ -215,14 +319,14 @@ namespace BioengineeringResearch
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            Form addform = new AddForm();
-            addform.Show();
+            AddForm addform = new AddForm();
+            addform.ShowDialog();
         }
 
         private void btn_modify_Click(object sender, EventArgs e)
         {
-            Form modifyform = new ModifyForm();
-            modifyform.Show();
+            ModifyForm modifyform = new ModifyForm();
+            modifyform.ShowDialog();
         }
 
     }

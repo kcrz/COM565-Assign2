@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textID = new System.Windows.Forms.TextBox();
+            this.textPIN = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_login = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
@@ -46,21 +46,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // textBox1
+            // textID
             // 
-            this.textBox1.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(93, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 38);
-            this.textBox1.TabIndex = 1;
+            this.textID.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textID.Location = new System.Drawing.Point(93, 44);
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(169, 38);
+            this.textID.TabIndex = 1;
             // 
-            // textBox2
+            // textPIN
             // 
-            this.textBox2.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(93, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 38);
-            this.textBox2.TabIndex = 3;
+            this.textPIN.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textPIN.Location = new System.Drawing.Point(93, 88);
+            this.textPIN.Name = "textPIN";
+            this.textPIN.PasswordChar = '*';
+            this.textPIN.Size = new System.Drawing.Size(169, 38);
+            this.textPIN.TabIndex = 3;
             // 
             // label2
             // 
@@ -99,11 +100,12 @@
             this.ClientSize = new System.Drawing.Size(290, 268);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_login);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textPIN);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textID);
             this.Controls.Add(this.label1);
             this.Name = "LogForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -113,8 +115,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textID;
+        private System.Windows.Forms.TextBox textPIN;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Button btn_cancel;

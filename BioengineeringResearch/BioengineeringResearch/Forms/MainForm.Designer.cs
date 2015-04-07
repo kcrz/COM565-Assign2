@@ -355,6 +355,7 @@
             // 
             // btn_modify
             // 
+            this.btn_modify.Enabled = false;
             this.btn_modify.Location = new System.Drawing.Point(126, 19);
             this.btn_modify.Name = "btn_modify";
             this.btn_modify.Size = new System.Drawing.Size(98, 45);
@@ -365,6 +366,7 @@
             // 
             // btn_add
             // 
+            this.btn_add.Enabled = false;
             this.btn_add.Location = new System.Drawing.Point(22, 19);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(98, 45);

@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.getFireLocation = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStartFire = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnStartCF = new System.Windows.Forms.Button();
+            this.getFailedDoor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnStartIntr = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -46,11 +46,11 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // getFireLocation
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.getFireLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.getFireLocation.FormattingEnabled = true;
+            this.getFireLocation.Items.AddRange(new object[] {
             "General Administration",
             "Research Support",
             "Corridor A",
@@ -62,10 +62,10 @@
             "SRA 4",
             "SRA 5",
             "SRA 6"});
-            this.comboBox1.Location = new System.Drawing.Point(99, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.getFireLocation.Location = new System.Drawing.Point(99, 22);
+            this.getFireLocation.Name = "getFireLocation";
+            this.getFireLocation.Size = new System.Drawing.Size(121, 21);
+            this.getFireLocation.TabIndex = 1;
             // 
             // label1
             // 
@@ -76,20 +76,21 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Location:";
             // 
-            // button1
+            // btnStartFire
             // 
-            this.button1.Location = new System.Drawing.Point(145, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStartFire.Location = new System.Drawing.Point(145, 61);
+            this.btnStartFire.Name = "btnStartFire";
+            this.btnStartFire.Size = new System.Drawing.Size(75, 25);
+            this.btnStartFire.TabIndex = 3;
+            this.btnStartFire.Text = "Start";
+            this.btnStartFire.UseVisualStyleBackColor = true;
+            this.btnStartFire.Click += new System.EventHandler(this.btnStartFire_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.btnStartFire);
+            this.groupBox1.Controls.Add(this.getFireLocation);
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(248, 108);
@@ -109,8 +110,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.btnStartCF);
+            this.groupBox2.Controls.Add(this.getFailedDoor);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(12, 128);
             this.groupBox2.Name = "groupBox2";
@@ -119,20 +120,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cardreader Failure";
             // 
-            // button2
+            // btnStartCF
             // 
-            this.button2.Location = new System.Drawing.Point(145, 63);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 25);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Start";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnStartCF.Location = new System.Drawing.Point(145, 63);
+            this.btnStartCF.Name = "btnStartCF";
+            this.btnStartCF.Size = new System.Drawing.Size(75, 25);
+            this.btnStartCF.TabIndex = 5;
+            this.btnStartCF.Text = "Start";
+            this.btnStartCF.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // getFailedDoor
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.getFailedDoor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.getFailedDoor.FormattingEnabled = true;
+            this.getFailedDoor.Items.AddRange(new object[] {
             "A1",
             "A2",
             "A3",
@@ -152,10 +153,10 @@
             "C6",
             "C7",
             "C8"});
-            this.comboBox2.Location = new System.Drawing.Point(99, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
+            this.getFailedDoor.Location = new System.Drawing.Point(99, 22);
+            this.getFailedDoor.Name = "getFailedDoor";
+            this.getFailedDoor.Size = new System.Drawing.Size(121, 21);
+            this.getFailedDoor.TabIndex = 4;
             // 
             // label2
             // 
@@ -168,7 +169,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.btnStartIntr);
             this.groupBox3.Controls.Add(this.comboBox3);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(12, 243);
@@ -178,14 +179,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Intruder";
             // 
-            // button3
+            // btnStartIntr
             // 
-            this.button3.Location = new System.Drawing.Point(145, 63);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 25);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Start";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnStartIntr.Location = new System.Drawing.Point(145, 63);
+            this.btnStartIntr.Name = "btnStartIntr";
+            this.btnStartIntr.Size = new System.Drawing.Size(75, 25);
+            this.btnStartIntr.TabIndex = 5;
+            this.btnStartIntr.Text = "Start";
+            this.btnStartIntr.UseVisualStyleBackColor = true;
             // 
             // comboBox3
             // 
@@ -250,17 +251,17 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox getFireLocation;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStartFire;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox getFailedDoor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnStartCF;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnStartIntr;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
 

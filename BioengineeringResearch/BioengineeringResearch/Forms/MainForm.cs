@@ -13,10 +13,11 @@ namespace BioengineeringResearch
 {
     public partial class MainForm : Form
     {
-        public bool isLogin = false;
+        // initialize variables
+        private bool isLogin = false;
         public const int STATUS_Employee = 1;
-        public const int STATUS_Visitor = 2;
-        public int loginStatus = 0;
+        public const int STATUS_Receptionist = 2;
+        private int loginStatus = 0;
 
         public MainForm()
         {
@@ -26,7 +27,7 @@ namespace BioengineeringResearch
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            if (!isLogin)
+            if (!isLogin) // login status is false
             {
                 //login and logout buttons
                 btn_login.Enabled = true;
@@ -37,7 +38,33 @@ namespace BioengineeringResearch
                 btn_modify.Enabled = false;
                 btn_Sim.Enabled = false;
             }
-            else
+            else // login status is true
+            {
+                //login and logout buttons
+                btn_login.Enabled = false;
+                btn_logout.Enabled = true;
+
+                //function buttons and simulation
+                btn_add.Enabled = true;
+                btn_modify.Enabled = true;
+                btn_Sim.Enabled = true;
+            }
+        }
+
+        private void updateMainForm() // this function is to refresh the form items
+        {
+            if (!isLogin) // login status is false
+            {
+                //login and logout buttons
+                btn_login.Enabled = true;
+                btn_logout.Enabled = false;
+
+                //function buttons and simulation
+                btn_add.Enabled = false;
+                btn_modify.Enabled = false;
+                btn_Sim.Enabled = false;
+            }
+            else // login status is true
             {
                 //login and logout buttons
                 btn_login.Enabled = false;
@@ -66,14 +93,10 @@ namespace BioengineeringResearch
             if (isLogin)
             {
                 DialogResult result = MessageBox.Show("Do you really want to logout?", "Tip", MessageBoxButtons.YesNo);
-
                 if (result == DialogResult.Yes) // logout yes
                 {
-
-                }
-                else // logout no
-                {
-
+                    isLogin = false;
+                    updateMainForm();
                 }
             }
             else
@@ -92,14 +115,10 @@ namespace BioengineeringResearch
                 switch (result)
                 {
                     case DialogResult.OK:
-                        
-                        //btn_login.Enabled = false;
-                        //btn_add.Enabled = true;
-                        //btn_modify.Enabled = true;
-                        
                         isLogin = true;
-                        
-                        
+                        // obtain the status of the login user
+                        //loginStatus = 
+                        updateMainForm();   
                         break;
                     case DialogResult.Cancel:         
                         isLogin = false;

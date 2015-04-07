@@ -29,6 +29,7 @@ namespace BioengineeringResearch
 
             if (textID.Text.Equals("") || textPIN.Text.Equals(""))
             {
+                // either the textbox is blank
                 MessageBox.Show("Please input correct ID or PIN", "Tip", MessageBoxButtons.OK);
             }
             else
@@ -37,10 +38,15 @@ namespace BioengineeringResearch
                 
                 if (loginYes)
                 {
+                    // login successfully
                     MessageBox.Show("Yes", "Tip", MessageBoxButtons.OK);
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                 {
+                    // login failed
                     MessageBox.Show("Invalid ID or PIN", "Tip", MessageBoxButtons.OK);
                 }
             }

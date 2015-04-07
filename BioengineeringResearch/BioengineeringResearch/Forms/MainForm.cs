@@ -14,7 +14,8 @@ namespace BioengineeringResearch
     public partial class MainForm : Form
     {
         // initialize variables
-        private bool isLogin = false;
+        //private bool isLogin = false;
+        private bool isLogin = true; // for debugging
         public const int STATUS_Employee = 1;
         public const int STATUS_Receptionist = 2;
         private int loginStatus = 0;

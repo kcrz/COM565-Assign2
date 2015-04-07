@@ -24,6 +24,10 @@ namespace BioengineeringResearch
 
         private void btnStartFire_Click(object sender, EventArgs e)
         {
+            int index = getFireLocation.SelectedIndex;
+            string message = null;
+            string caption = "FIRE Simulator";
+
             /*Combobox item index
              *0 General Administration
              *1 Research Support
@@ -35,9 +39,65 @@ namespace BioengineeringResearch
              *7 SRA 3
              *8 SRA 4
              *9 SRA 5
-             *10SRA 6
+             *10 SRA 6
              */
-            MessageBox.Show(getFireLocation.Text + " is on fire!!!", "Simulator");
+            switch (index)
+            {
+                case 0: // General Administration
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F1, A1, A2, A3, A9";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 1: // Research Support
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F2, B1, B2";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 2: // Corridor A
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F1, F3, F4, A1 - A9";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 3: // Corridor B
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3, F4";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 4: // Corridor C
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1 - C8";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 5: // SRA 1
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C2, C8";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 6: // SRA 2
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C7, C8";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 7: // SRA 3
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C3, C8";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 8: // SRA 4
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C4, C8";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 9: // SRA 5
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C5, C8";
+                    MessageBox.Show(message, caption);
+                    break;
+
+                case 10: // SRA 6
+                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C6, C8";
+                    MessageBox.Show(message, caption);
+                    break;
+            }
         }
 
     }

@@ -62,25 +62,25 @@
             "SRA 4",
             "SRA 5",
             "SRA 6"});
-            this.getFireLocation.Location = new System.Drawing.Point(99, 22);
+            this.getFireLocation.Location = new System.Drawing.Point(71, 20);
             this.getFireLocation.Name = "getFireLocation";
-            this.getFireLocation.Size = new System.Drawing.Size(121, 21);
+            this.getFireLocation.Size = new System.Drawing.Size(171, 20);
             this.getFireLocation.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 25);
+            this.label1.Location = new System.Drawing.Point(6, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 2;
             this.label1.Text = "Location:";
             // 
             // btnStartFire
             // 
-            this.btnStartFire.Location = new System.Drawing.Point(145, 61);
+            this.btnStartFire.Location = new System.Drawing.Point(145, 56);
             this.btnStartFire.Name = "btnStartFire";
-            this.btnStartFire.Size = new System.Drawing.Size(75, 25);
+            this.btnStartFire.Size = new System.Drawing.Size(75, 23);
             this.btnStartFire.TabIndex = 3;
             this.btnStartFire.Text = "Start";
             this.btnStartFire.UseVisualStyleBackColor = true;
@@ -91,18 +91,18 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnStartFire);
             this.groupBox1.Controls.Add(this.getFireLocation);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 108);
+            this.groupBox1.Size = new System.Drawing.Size(248, 100);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fire";
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(157, 368);
+            this.btnExit.Location = new System.Drawing.Point(157, 340);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 25);
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -113,18 +113,18 @@
             this.groupBox2.Controls.Add(this.btnStartCF);
             this.groupBox2.Controls.Add(this.getFailedDoor);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 128);
+            this.groupBox2.Location = new System.Drawing.Point(12, 118);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 108);
+            this.groupBox2.Size = new System.Drawing.Size(248, 100);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cardreader Failure";
             // 
             // btnStartCF
             // 
-            this.btnStartCF.Location = new System.Drawing.Point(145, 63);
+            this.btnStartCF.Location = new System.Drawing.Point(145, 58);
             this.btnStartCF.Name = "btnStartCF";
-            this.btnStartCF.Size = new System.Drawing.Size(75, 25);
+            this.btnStartCF.Size = new System.Drawing.Size(75, 23);
             this.btnStartCF.TabIndex = 5;
             this.btnStartCF.Text = "Start";
             this.btnStartCF.UseVisualStyleBackColor = true;
@@ -153,17 +153,17 @@
             "C6",
             "C7",
             "C8"});
-            this.getFailedDoor.Location = new System.Drawing.Point(99, 22);
+            this.getFailedDoor.Location = new System.Drawing.Point(99, 20);
             this.getFailedDoor.Name = "getFailedDoor";
-            this.getFailedDoor.Size = new System.Drawing.Size(121, 21);
+            this.getFailedDoor.Size = new System.Drawing.Size(121, 20);
             this.getFailedDoor.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 25);
+            this.label2.Location = new System.Drawing.Point(58, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "Door:";
             // 
@@ -172,18 +172,18 @@
             this.groupBox3.Controls.Add(this.btnStartIntr);
             this.groupBox3.Controls.Add(this.comboBox3);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(12, 243);
+            this.groupBox3.Location = new System.Drawing.Point(12, 224);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(248, 108);
+            this.groupBox3.Size = new System.Drawing.Size(248, 100);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Intruder";
             // 
             // btnStartIntr
             // 
-            this.btnStartIntr.Location = new System.Drawing.Point(145, 63);
+            this.btnStartIntr.Location = new System.Drawing.Point(145, 58);
             this.btnStartIntr.Name = "btnStartIntr";
-            this.btnStartIntr.Size = new System.Drawing.Size(75, 25);
+            this.btnStartIntr.Size = new System.Drawing.Size(75, 23);
             this.btnStartIntr.TabIndex = 5;
             this.btnStartIntr.Text = "Start";
             this.btnStartIntr.UseVisualStyleBackColor = true;
@@ -212,25 +212,25 @@
             "C6",
             "C7",
             "C8"});
-            this.comboBox3.Location = new System.Drawing.Point(99, 22);
+            this.comboBox3.Location = new System.Drawing.Point(99, 20);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.Size = new System.Drawing.Size(121, 20);
             this.comboBox3.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 25);
+            this.label3.Location = new System.Drawing.Point(58, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(35, 12);
             this.label3.TabIndex = 3;
             this.label3.Text = "Door:";
             // 
             // SimulationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 414);
+            this.ClientSize = new System.Drawing.Size(272, 382);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

@@ -350,7 +350,7 @@ namespace BioengineeringResearch
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            ModifyForm modifyform = new ModifyForm();
+            ManageForm modifyform = new ManageForm();
             modifyform.ShowDialog();
         }
 

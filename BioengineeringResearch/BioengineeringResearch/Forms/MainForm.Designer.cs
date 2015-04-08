@@ -503,7 +503,7 @@
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(98, 45);
             this.btn_search.TabIndex = 1;
-            this.btn_search.Text = "Search";
+            this.btn_search.Text = "Manage";
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
@@ -521,7 +521,7 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.btn_Sim);
-            this.panel4.Location = new System.Drawing.Point(433, 473);
+            this.panel4.Location = new System.Drawing.Point(628, 473);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(150, 85);
             this.panel4.TabIndex = 3;

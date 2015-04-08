@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BioengineeringResearch.Functions
 {
-    public partial class ModifyForm : Form
+    public partial class ManageForm : Form
     {
-        public ModifyForm()
+        public ManageForm()
         {
             InitializeComponent();
         }

@@ -57,11 +57,13 @@ namespace BioengineeringResearch.Functions
         private void radiobtn_emp_CheckedChanged(object sender, EventArgs e)
         {
             add_Position.Enabled = true;
+            add_Company.Enabled = false;
         }
 
         private void radiobtn_vis_CheckedChanged(object sender, EventArgs e)
         {
             add_Position.Enabled = false;
+            add_Company.Enabled = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

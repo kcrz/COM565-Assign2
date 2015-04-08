@@ -13,6 +13,12 @@ namespace BioengineeringResearch
 {
     public partial class LogForm : Form
     {
+        /* login status
+         * 1 Admin
+         * 2 Receptionist
+         */
+        public int loginStatus = 0;
+
         public LogForm()
         {
             InitializeComponent();
@@ -41,8 +47,22 @@ namespace BioengineeringResearch
                 {
                     // login successfully
                     MessageBox.Show("Login successfully", "Tip", MessageBoxButtons.OK);
-
                     this.DialogResult = DialogResult.OK;
+                    string position = DataOps.getEmployeePosition(textID.Text);
+
+                    /* login status
+                     * 1 Admin
+                     * 2 Receptionist
+                     */
+                    switch (position)
+                    {
+                        case "Admin":
+                            loginStatus = 1;
+                            break;
+                        case "Receptionist":
+                            loginStatus = 2;
+                            break;
+                    }
                     this.Close();
                 }
                 else

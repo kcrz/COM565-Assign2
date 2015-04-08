@@ -16,68 +16,70 @@ namespace BioengineeringResearch
         // initialize variables
         //private bool isLogin = false;
         private bool isLogin = true; // for debugging
-        public const int STATUS_Employee = 1;
-        public const int STATUS_Receptionist = 2;
-        private int loginStatus = 0;
+
+        /* login status
+         * 1 Admin
+         * 2 Receptionist
+         */
+        protected int loginStatus = 0;
 
         public MainForm()
         {
             InitializeComponent();
+
             //Set data directory for the database
             AppDomain.CurrentDomain.SetData("DataDirectory", Application.StartupPath);
+
             this.Activated += new EventHandler(this.MainForm_Activated);
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            if (!isLogin) // login status is false
-            {
-                //login and logout buttons
-                btn_login.Enabled = true;
-                btn_logout.Enabled = false;
-
-                //function buttons and simulation
-                btn_add.Enabled = false;
-                btn_modify.Enabled = false;
-                btn_Sim.Enabled = false;
-            }
-            else // login status is true
-            {
-                //login and logout buttons
-                btn_login.Enabled = false;
-                btn_logout.Enabled = true;
-
-                //function buttons and simulation
-                btn_add.Enabled = true;
-                btn_modify.Enabled = true;
-                btn_Sim.Enabled = true;
-            }
+            updateMainForm();
         }
 
         private void updateMainForm() // this function is to refresh the form items
         {
             if (!isLogin) // login status is false
             {
-                //login and logout buttons
+                // login and logout buttons
                 btn_login.Enabled = true;
                 btn_logout.Enabled = false;
 
-                //function buttons and simulation
+                // function buttons and simulation
                 btn_add.Enabled = false;
-                btn_modify.Enabled = false;
+                btn_search.Enabled = false;
                 btn_Sim.Enabled = false;
             }
             else // login status is true
             {
-                //login and logout buttons
+                // updata login and logout buttons
                 btn_login.Enabled = false;
                 btn_logout.Enabled = true;
 
-                //function buttons and simulation
+                // update function buttons and simulation
                 btn_add.Enabled = true;
-                btn_modify.Enabled = true;
+                btn_search.Enabled = true;
                 btn_Sim.Enabled = true;
             }
+
+            // update title
+                if (loginStatus != 0)
+                {
+                    switch (loginStatus)
+                    {
+                        case 1:
+                            this.Text = "Bioengineering Research Ltd.   Login Status: Admin.";
+                            break;
+                        case 2:
+                            this.Text = "Bioengineering Research Ltd.   Login Status: Receptionist.";
+                            break;
+                    }
+                }
+                else
+                {
+                    this.Text = "Bioengineering Research Ltd.   Login Status: Logout.";
+                }
         }
 
         private void btnDoorA1_Click(object sender, EventArgs e)
@@ -99,6 +101,7 @@ namespace BioengineeringResearch
                 if (result == DialogResult.Yes) // logout yes
                 {
                     isLogin = false;
+                    loginStatus = 0;
                     updateMainForm();
                 }
             }
@@ -112,15 +115,15 @@ namespace BioengineeringResearch
         {
             if (!isLogin)
             {
-                LogForm LogForm = new LogForm();
-                DialogResult result = LogForm.ShowDialog();
+                LogForm logForm = new LogForm();
+                DialogResult result = logForm.ShowDialog();
 
                 switch (result)
                 {
                     case DialogResult.OK:
                         isLogin = true;
-                        // obtain the status of the login user
-                        //loginStatus = 
+                        loginStatus = logForm.loginStatus; // obtain login user status
+                        //MessageBox.Show(loginStatus.ToString());
                         updateMainForm();   
                         break;
                     case DialogResult.Cancel:         
@@ -341,11 +344,11 @@ namespace BioengineeringResearch
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            AddForm addform = new AddForm();
+            AddForm addform = new AddForm(loginStatus);
             addform.ShowDialog();
         }
 
-        private void btn_modify_Click(object sender, EventArgs e)
+        private void btn_search_Click(object sender, EventArgs e)
         {
             ModifyForm modifyform = new ModifyForm();
             modifyform.ShowDialog();

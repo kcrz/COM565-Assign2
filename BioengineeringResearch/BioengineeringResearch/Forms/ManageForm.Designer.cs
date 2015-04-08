@@ -37,7 +37,6 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -63,8 +62,13 @@
             this.btnSrchHistBy = new System.Windows.Forms.Button();
             this.btnDeltHist = new System.Windows.Forms.Button();
             this.btnShowAllHist = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnShowAllVist = new System.Windows.Forms.Button();
+            this.btnShowAllEmp = new System.Windows.Forms.Button();
+            this.btnShowAll = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -86,9 +90,9 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            this.listviewPerson.Location = new System.Drawing.Point(12, 67);
+            this.listviewPerson.Location = new System.Drawing.Point(12, 81);
             this.listviewPerson.Name = "listviewPerson";
-            this.listviewPerson.Size = new System.Drawing.Size(700, 172);
+            this.listviewPerson.Size = new System.Drawing.Size(700, 170);
             this.listviewPerson.TabIndex = 5;
             this.listviewPerson.UseCompatibleStateImageBehavior = false;
             this.listviewPerson.View = System.Windows.Forms.View.Details;
@@ -125,32 +129,20 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Controls.Add(this.btnSrchPerson);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 49);
+            this.groupBox1.Size = new System.Drawing.Size(585, 63);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Person By";
             // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(278, 20);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(41, 16);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "All";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(183, 20);
+            this.radioButton3.Location = new System.Drawing.Point(165, 3);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(77, 16);
             this.radioButton3.TabIndex = 2;
@@ -161,7 +153,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(77, 20);
+            this.radioButton2.Location = new System.Drawing.Point(59, 3);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(83, 16);
             this.radioButton2.TabIndex = 1;
@@ -173,7 +165,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(21, 20);
+            this.radioButton1.Location = new System.Drawing.Point(3, 3);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(35, 16);
             this.radioButton1.TabIndex = 0;
@@ -183,14 +175,14 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(365, 27);
+            this.txtSearch.Location = new System.Drawing.Point(260, 23);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(234, 21);
             this.txtSearch.TabIndex = 7;
             // 
             // btnSrchPerson
             // 
-            this.btnSrchPerson.Location = new System.Drawing.Point(617, 25);
+            this.btnSrchPerson.Location = new System.Drawing.Point(500, 21);
             this.btnSrchPerson.Name = "btnSrchPerson";
             this.btnSrchPerson.Size = new System.Drawing.Size(75, 23);
             this.btnSrchPerson.TabIndex = 8;
@@ -199,7 +191,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(640, 245);
+            this.btnAdd.Location = new System.Drawing.Point(640, 257);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 9;
@@ -208,7 +200,7 @@
             // 
             // btnDeltPerson
             // 
-            this.btnDeltPerson.Location = new System.Drawing.Point(539, 245);
+            this.btnDeltPerson.Location = new System.Drawing.Point(539, 257);
             this.btnDeltPerson.Name = "btnDeltPerson";
             this.btnDeltPerson.Size = new System.Drawing.Size(75, 23);
             this.btnDeltPerson.TabIndex = 10;
@@ -392,20 +384,59 @@
             this.btnShowAllHist.Text = "Show All History";
             this.btnShowAllHist.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.radioButton3);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Location = new System.Drawing.Point(6, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(248, 26);
+            this.panel1.TabIndex = 9;
+            // 
+            // btnShowAllVist
+            // 
+            this.btnShowAllVist.Location = new System.Drawing.Point(13, 254);
+            this.btnShowAllVist.Name = "btnShowAllVist";
+            this.btnShowAllVist.Size = new System.Drawing.Size(148, 23);
+            this.btnShowAllVist.TabIndex = 0;
+            this.btnShowAllVist.Text = "Show All Visitors";
+            this.btnShowAllVist.UseVisualStyleBackColor = true;
+            // 
+            // btnShowAllEmp
+            // 
+            this.btnShowAllEmp.Location = new System.Drawing.Point(167, 254);
+            this.btnShowAllEmp.Name = "btnShowAllEmp";
+            this.btnShowAllEmp.Size = new System.Drawing.Size(148, 23);
+            this.btnShowAllEmp.TabIndex = 1;
+            this.btnShowAllEmp.Text = "Show All Employees";
+            this.btnShowAllEmp.UseVisualStyleBackColor = true;
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Location = new System.Drawing.Point(321, 254);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(148, 23);
+            this.btnShowAll.TabIndex = 2;
+            this.btnShowAll.Text = "Show All";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            // 
             // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 621);
             this.ControlBox = false;
+            this.Controls.Add(this.btnShowAll);
+            this.Controls.Add(this.btnShowAllEmp);
             this.Controls.Add(this.btnShowAllHist);
+            this.Controls.Add(this.btnShowAllVist);
             this.Controls.Add(this.btnDeltHist);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.listViewHist);
             this.Controls.Add(this.btnDeltPerson);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnSrchPerson);
-            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listviewPerson);
             this.Controls.Add(this.btnCancel);
@@ -416,8 +447,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -432,7 +464,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -458,5 +489,9 @@
         private System.Windows.Forms.Button btnSrchHistBy;
         private System.Windows.Forms.Button btnDeltHist;
         private System.Windows.Forms.Button btnShowAllHist;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnShowAllVist;
+        private System.Windows.Forms.Button btnShowAllEmp;
+        private System.Windows.Forms.Button btnShowAll;
     }
 }

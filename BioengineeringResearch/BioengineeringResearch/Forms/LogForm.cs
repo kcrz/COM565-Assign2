@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BioengineeringResearch.DataOperations;
+using BioengineeringResearch.Forms;
 
 namespace BioengineeringResearch
 {
@@ -47,7 +48,6 @@ namespace BioengineeringResearch
                 {
                     // login successfully
                     MessageBox.Show("Login successfully", "Tip", MessageBoxButtons.OK);
-                    this.DialogResult = DialogResult.OK;
                     string position = DataOps.getEmployeePosition(textID.Text);
 
                     /* login status
@@ -63,6 +63,7 @@ namespace BioengineeringResearch
                             loginStatus = 2;
                             break;
                     }
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else

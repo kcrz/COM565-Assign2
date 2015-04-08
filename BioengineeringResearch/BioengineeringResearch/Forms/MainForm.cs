@@ -8,20 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BioengineeringResearch.Forms;
 
 namespace BioengineeringResearch
 {
     public partial class MainForm : Form
     {
-        // initialize variables
-        //private bool isLogin = false;
-        private bool isLogin = true; // for debugging
-
         /* login status
+         * 0 logout
          * 1 Admin
          * 2 Receptionist
          */
-        protected int loginStatus = 0;
+        private int loginStatus = 0;
 
         public MainForm()
         {
@@ -35,51 +33,55 @@ namespace BioengineeringResearch
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            updateMainForm();
+            updateForm();
         }
 
-        private void updateMainForm() // this function is to refresh the form items
+        private void updateForm()
         {
-            if (!isLogin) // login status is false
+            /* login status
+             * 0 logout
+             * 1 Admin
+             * 2 Receptionist
+             */
+            switch (loginStatus)
             {
-                // login and logout buttons
-                btn_login.Enabled = true;
-                btn_logout.Enabled = false;
+                case 0:
+                    // Menue items
+                    btnManage.Enabled = false;
+                    btnSimulator.Enabled = false;
+                    btnTV.Enabled = false;
 
-                // function buttons and simulation
-                btn_add.Enabled = false;
-                btn_search.Enabled = false;
-                btn_Sim.Enabled = false;
+                    // log buttons
+                    btn_login.Enabled = true;
+                    btn_logout.Enabled = false;
+
+                    txtLogStatus.Text = "Your Status: Logout";
+                    break;
+                case 1:
+                    // Menue items
+                    btnManage.Enabled = true;
+                    btnSimulator.Enabled = true;
+                    btnTV.Enabled = true;
+
+                    // log buttons
+                    btn_login.Enabled = false;
+                    btn_logout.Enabled = true;
+
+                    txtLogStatus.Text = "Your Status: Admin";
+                    break;
+                case 2:
+                    // Menue items
+                    btnManage.Enabled = true;
+                    btnSimulator.Enabled = true;
+                    btnTV.Enabled = true;
+
+                    // log buttons
+                    btn_login.Enabled = false;
+                    btn_logout.Enabled = true;
+
+                    txtLogStatus.Text = "Your Status: Receptionist";
+                    break;
             }
-            else // login status is true
-            {
-                // updata login and logout buttons
-                btn_login.Enabled = false;
-                btn_logout.Enabled = true;
-
-                // update function buttons and simulation
-                btn_add.Enabled = true;
-                btn_search.Enabled = true;
-                btn_Sim.Enabled = true;
-            }
-
-            // update title
-                if (loginStatus != 0)
-                {
-                    switch (loginStatus)
-                    {
-                        case 1:
-                            this.Text = "Bioengineering Research Ltd.   Login Status: Admin.";
-                            break;
-                        case 2:
-                            this.Text = "Bioengineering Research Ltd.   Login Status: Receptionist.";
-                            break;
-                    }
-                }
-                else
-                {
-                    this.Text = "Bioengineering Research Ltd.   Login Status: Logout.";
-                }
         }
 
         private void btnDoorA1_Click(object sender, EventArgs e)
@@ -93,50 +95,16 @@ namespace BioengineeringResearch
             }
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
-        {
-            if (isLogin)
-            {
-                DialogResult result = MessageBox.Show("Do you really want to logout?", "Tip", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes) // logout yes
-                {
-                    isLogin = false;
-                    loginStatus = 0;
-                    updateMainForm();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please login", "Tip");
-            }
-        }
-
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (!isLogin)
+            LogForm logForm = new LogForm();
+            DialogResult result = logForm.ShowDialog();
+
+            if (result == DialogResult.OK)
             {
-                LogForm logForm = new LogForm();
-                DialogResult result = logForm.ShowDialog();
-
-                switch (result)
-                {
-                    case DialogResult.OK:
-                        isLogin = true;
-                        loginStatus = logForm.loginStatus; // obtain login user status
-                        //MessageBox.Show(loginStatus.ToString());
-                        updateMainForm();   
-                        break;
-                    case DialogResult.Cancel:         
-                        isLogin = false;
-                        break;
-                }
+                loginStatus = logForm.loginStatus;
+                updateForm();
             }
-        }
-
-        private void btn_Sim_Click(object sender, EventArgs e)
-        {
-            SimulationForm simForm = new SimulationForm();
-            simForm.ShowDialog();
         }
 
         private void btnDoorA2_Click(object sender, EventArgs e)
@@ -342,16 +310,26 @@ namespace BioengineeringResearch
             MessageBox.Show("Welcome to Bioengineering Research Ltd.", "Welcome");
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private void btn_logout_Click(object sender, EventArgs e)
         {
-            AddForm addform = new AddForm(loginStatus);
-            addform.ShowDialog();
+            DialogResult result = MessageBox.Show("Do you really want to logout?", "Tip", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                loginStatus = 0;
+                updateForm();
+            }
         }
 
-        private void btn_search_Click(object sender, EventArgs e)
+        private void btnManage_Click(object sender, EventArgs e)
         {
-            ManageForm modifyform = new ManageForm();
-            modifyform.ShowDialog();
+            ManageForm manageForm = new ManageForm(loginStatus);
+            manageForm.ShowDialog();
+        }
+
+        private void btnSimulator_Click(object sender, EventArgs e)
+        {
+            SimulationForm simulator = new SimulationForm();
+            simulator.ShowDialog();
         }
 
     }

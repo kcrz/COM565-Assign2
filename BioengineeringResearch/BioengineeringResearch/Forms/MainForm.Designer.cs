@@ -62,18 +62,13 @@
             this.btnDoorA4 = new System.Windows.Forms.Button();
             this.btnDoorA2 = new System.Windows.Forms.Button();
             this.btnDoorA1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_logout = new System.Windows.Forms.Button();
             this.btn_login = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_search = new System.Windows.Forms.Button();
-            this.btn_add = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_Sim = new System.Windows.Forms.Button();
+            this.txtLogStatus = new System.Windows.Forms.TextBox();
+            this.btn_logout = new System.Windows.Forms.Button();
+            this.btnManage = new System.Windows.Forms.Button();
+            this.btnSimulator = new System.Windows.Forms.Button();
+            this.btnTV = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -457,104 +452,84 @@
             this.btnDoorA1.UseVisualStyleBackColor = false;
             this.btnDoorA1.Click += new System.EventHandler(this.btnDoorA1_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btn_logout);
-            this.panel2.Controls.Add(this.btn_login);
-            this.panel2.Location = new System.Drawing.Point(12, 473);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(121, 85);
-            this.panel2.TabIndex = 1;
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.Location = new System.Drawing.Point(3, 43);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(113, 37);
-            this.btn_logout.TabIndex = 1;
-            this.btn_logout.Text = "Logout";
-            this.btn_logout.UseVisualStyleBackColor = true;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
-            // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(3, 3);
+            this.btn_login.Location = new System.Drawing.Point(784, 415);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(113, 37);
+            this.btn_login.Size = new System.Drawing.Size(75, 23);
             this.btn_login.TabIndex = 0;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
-            // panel3
+            // txtLogStatus
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.btn_search);
-            this.panel3.Controls.Add(this.btn_add);
-            this.panel3.Location = new System.Drawing.Point(157, 473);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(254, 85);
-            this.panel3.TabIndex = 2;
+            this.txtLogStatus.Enabled = false;
+            this.txtLogStatus.Location = new System.Drawing.Point(12, 475);
+            this.txtLogStatus.Name = "txtLogStatus";
+            this.txtLogStatus.Size = new System.Drawing.Size(167, 21);
+            this.txtLogStatus.TabIndex = 1;
+            this.txtLogStatus.Text = "Login Status: logout";
             // 
-            // btn_search
+            // btn_logout
             // 
-            this.btn_search.Location = new System.Drawing.Point(126, 19);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(98, 45);
-            this.btn_search.TabIndex = 1;
-            this.btn_search.Text = "Manage";
-            this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            this.btn_logout.Location = new System.Drawing.Point(784, 444);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(75, 23);
+            this.btn_logout.TabIndex = 2;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
-            // btn_add
+            // btnManage
             // 
-            this.btn_add.Location = new System.Drawing.Point(22, 19);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(98, 45);
-            this.btn_add.TabIndex = 0;
-            this.btn_add.Text = "Add";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            this.btnManage.Location = new System.Drawing.Point(784, 13);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Size = new System.Drawing.Size(75, 23);
+            this.btnManage.TabIndex = 3;
+            this.btnManage.Text = "Manage";
+            this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
-            // panel4
+            // btnSimulator
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.btn_Sim);
-            this.panel4.Location = new System.Drawing.Point(628, 473);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(150, 85);
-            this.panel4.TabIndex = 3;
+            this.btnSimulator.Location = new System.Drawing.Point(784, 42);
+            this.btnSimulator.Name = "btnSimulator";
+            this.btnSimulator.Size = new System.Drawing.Size(75, 23);
+            this.btnSimulator.TabIndex = 4;
+            this.btnSimulator.Text = "Simulator";
+            this.btnSimulator.UseVisualStyleBackColor = true;
+            this.btnSimulator.Click += new System.EventHandler(this.btnSimulator_Click);
             // 
-            // btn_Sim
+            // btnTV
             // 
-            this.btn_Sim.Location = new System.Drawing.Point(26, 19);
-            this.btn_Sim.Name = "btn_Sim";
-            this.btn_Sim.Size = new System.Drawing.Size(98, 45);
-            this.btn_Sim.TabIndex = 4;
-            this.btn_Sim.Text = "Simulation";
-            this.btn_Sim.UseVisualStyleBackColor = true;
-            this.btn_Sim.Click += new System.EventHandler(this.btn_Sim_Click);
+            this.btnTV.Location = new System.Drawing.Point(784, 71);
+            this.btnTV.Name = "btnTV";
+            this.btnTV.Size = new System.Drawing.Size(75, 23);
+            this.btnTV.TabIndex = 5;
+            this.btnTV.Text = "CCTV";
+            this.btnTV.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(790, 568);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(864, 508);
+            this.Controls.Add(this.btnTV);
+            this.Controls.Add(this.btnSimulator);
+            this.Controls.Add(this.btnManage);
+            this.Controls.Add(this.btn_logout);
+            this.Controls.Add(this.txtLogStatus);
+            this.Controls.Add(this.btn_login);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bioengineering Research Ltd.   Login Status: Logout.";
+            this.Text = "Bioengineering Research Ltd. ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -580,14 +555,7 @@
         private System.Windows.Forms.Button btnDoorA4;
         private System.Windows.Forms.Button btnDoorA2;
         private System.Windows.Forms.Button btnDoorA1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_login;
-        private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btn_Sim;
         private System.Windows.Forms.Button btnDoorPortal;
         private System.Windows.Forms.Label lblFireExit6;
         private System.Windows.Forms.Label lblFireExit5;
@@ -601,6 +569,11 @@
         private System.Windows.Forms.Label lblSRA3;
         private System.Windows.Forms.Label lblSRA2;
         private System.Windows.Forms.Label lblSRA1;
+        private System.Windows.Forms.TextBox txtLogStatus;
+        private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.Button btnSimulator;
+        private System.Windows.Forms.Button btnTV;
 
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace BioengineeringResearch.Functions
+﻿namespace BioengineeringResearch.Forms
 {
     partial class ManageForm
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.listviewPerson = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,9 +37,10 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSrchPerson = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -51,35 +52,35 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkboxDate = new System.Windows.Forms.CheckBox();
-            this.txtDate = new System.Windows.Forms.DateTimePicker();
-            this.chkboxDoor = new System.Windows.Forms.CheckBox();
-            this.txtDoor = new System.Windows.Forms.ComboBox();
-            this.chkboxID = new System.Windows.Forms.CheckBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.chkboxFirstName = new System.Windows.Forms.CheckBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.btnSrchHistBy = new System.Windows.Forms.Button();
+            this.chkboxFirstName = new System.Windows.Forms.CheckBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.chkboxID = new System.Windows.Forms.CheckBox();
+            this.txtDoor = new System.Windows.Forms.ComboBox();
+            this.chkboxDoor = new System.Windows.Forms.CheckBox();
+            this.txtDate = new System.Windows.Forms.DateTimePicker();
+            this.chkboxDate = new System.Windows.Forms.CheckBox();
             this.btnDeltHist = new System.Windows.Forms.Button();
             this.btnShowAllHist = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnShowAllVist = new System.Windows.Forms.Button();
             this.btnShowAllEmp = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
+            this.txtLogStatus = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnCancel
+            // btnExit
             // 
-            this.btnCancel.Location = new System.Drawing.Point(637, 585);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Logout";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnExit.Location = new System.Drawing.Point(637, 586);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // listviewPerson
             // 
@@ -139,6 +140,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Person By";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.radioButton3);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Location = new System.Drawing.Point(6, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(248, 26);
+            this.panel1.TabIndex = 9;
+            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
@@ -149,17 +161,6 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Last name";
             this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(59, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(83, 16);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "First name";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -172,6 +173,17 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "ID";
             this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(59, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(83, 16);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "First name";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -265,34 +277,48 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search History";
             // 
-            // chkboxDate
+            // txtFirstName
             // 
-            this.chkboxDate.AutoSize = true;
-            this.chkboxDate.Checked = true;
-            this.chkboxDate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkboxDate.Location = new System.Drawing.Point(123, 25);
-            this.chkboxDate.Name = "chkboxDate";
-            this.chkboxDate.Size = new System.Drawing.Size(54, 16);
-            this.chkboxDate.TabIndex = 0;
-            this.chkboxDate.Text = "Date:";
-            this.chkboxDate.UseVisualStyleBackColor = true;
+            this.txtFirstName.Location = new System.Drawing.Point(511, 54);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(121, 21);
+            this.txtFirstName.TabIndex = 9;
             // 
-            // txtDate
+            // btnSrchHistBy
             // 
-            this.txtDate.Location = new System.Drawing.Point(183, 22);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(200, 21);
-            this.txtDate.TabIndex = 1;
+            this.btnSrchHistBy.Location = new System.Drawing.Point(21, 20);
+            this.btnSrchHistBy.Name = "btnSrchHistBy";
+            this.btnSrchHistBy.Size = new System.Drawing.Size(75, 23);
+            this.btnSrchHistBy.TabIndex = 10;
+            this.btnSrchHistBy.Text = "Search By";
+            this.btnSrchHistBy.UseVisualStyleBackColor = true;
             // 
-            // chkboxDoor
+            // chkboxFirstName
             // 
-            this.chkboxDoor.AutoSize = true;
-            this.chkboxDoor.Location = new System.Drawing.Point(397, 25);
-            this.chkboxDoor.Name = "chkboxDoor";
-            this.chkboxDoor.Size = new System.Drawing.Size(108, 16);
-            this.chkboxDoor.TabIndex = 2;
-            this.chkboxDoor.Text = "Door location:";
-            this.chkboxDoor.UseVisualStyleBackColor = true;
+            this.chkboxFirstName.AutoSize = true;
+            this.chkboxFirstName.Location = new System.Drawing.Point(397, 56);
+            this.chkboxFirstName.Name = "chkboxFirstName";
+            this.chkboxFirstName.Size = new System.Drawing.Size(96, 16);
+            this.chkboxFirstName.TabIndex = 8;
+            this.chkboxFirstName.Text = "Passer name:";
+            this.chkboxFirstName.UseVisualStyleBackColor = true;
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(213, 54);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(170, 21);
+            this.txtID.TabIndex = 7;
+            // 
+            // chkboxID
+            // 
+            this.chkboxID.AutoSize = true;
+            this.chkboxID.Location = new System.Drawing.Point(123, 56);
+            this.chkboxID.Name = "chkboxID";
+            this.chkboxID.Size = new System.Drawing.Size(84, 16);
+            this.chkboxID.TabIndex = 6;
+            this.chkboxID.Text = "Passer ID:";
+            this.chkboxID.UseVisualStyleBackColor = true;
             // 
             // txtDoor
             // 
@@ -323,48 +349,34 @@
             this.txtDoor.Size = new System.Drawing.Size(121, 20);
             this.txtDoor.TabIndex = 5;
             // 
-            // chkboxID
+            // chkboxDoor
             // 
-            this.chkboxID.AutoSize = true;
-            this.chkboxID.Location = new System.Drawing.Point(123, 56);
-            this.chkboxID.Name = "chkboxID";
-            this.chkboxID.Size = new System.Drawing.Size(84, 16);
-            this.chkboxID.TabIndex = 6;
-            this.chkboxID.Text = "Passer ID:";
-            this.chkboxID.UseVisualStyleBackColor = true;
+            this.chkboxDoor.AutoSize = true;
+            this.chkboxDoor.Location = new System.Drawing.Point(397, 25);
+            this.chkboxDoor.Name = "chkboxDoor";
+            this.chkboxDoor.Size = new System.Drawing.Size(108, 16);
+            this.chkboxDoor.TabIndex = 2;
+            this.chkboxDoor.Text = "Door location:";
+            this.chkboxDoor.UseVisualStyleBackColor = true;
             // 
-            // txtID
+            // txtDate
             // 
-            this.txtID.Location = new System.Drawing.Point(213, 54);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(170, 21);
-            this.txtID.TabIndex = 7;
+            this.txtDate.Location = new System.Drawing.Point(183, 22);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(200, 21);
+            this.txtDate.TabIndex = 1;
             // 
-            // chkboxFirstName
+            // chkboxDate
             // 
-            this.chkboxFirstName.AutoSize = true;
-            this.chkboxFirstName.Location = new System.Drawing.Point(397, 56);
-            this.chkboxFirstName.Name = "chkboxFirstName";
-            this.chkboxFirstName.Size = new System.Drawing.Size(96, 16);
-            this.chkboxFirstName.TabIndex = 8;
-            this.chkboxFirstName.Text = "Passer name:";
-            this.chkboxFirstName.UseVisualStyleBackColor = true;
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(511, 54);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(121, 21);
-            this.txtFirstName.TabIndex = 9;
-            // 
-            // btnSrchHistBy
-            // 
-            this.btnSrchHistBy.Location = new System.Drawing.Point(21, 20);
-            this.btnSrchHistBy.Name = "btnSrchHistBy";
-            this.btnSrchHistBy.Size = new System.Drawing.Size(75, 23);
-            this.btnSrchHistBy.TabIndex = 10;
-            this.btnSrchHistBy.Text = "Search By";
-            this.btnSrchHistBy.UseVisualStyleBackColor = true;
+            this.chkboxDate.AutoSize = true;
+            this.chkboxDate.Checked = true;
+            this.chkboxDate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkboxDate.Location = new System.Drawing.Point(123, 25);
+            this.chkboxDate.Name = "chkboxDate";
+            this.chkboxDate.Size = new System.Drawing.Size(54, 16);
+            this.chkboxDate.TabIndex = 0;
+            this.chkboxDate.Text = "Date:";
+            this.chkboxDate.UseVisualStyleBackColor = true;
             // 
             // btnDeltHist
             // 
@@ -383,17 +395,6 @@
             this.btnShowAllHist.TabIndex = 15;
             this.btnShowAllHist.Text = "Show All History";
             this.btnShowAllHist.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Location = new System.Drawing.Point(6, 20);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 26);
-            this.panel1.TabIndex = 9;
             // 
             // btnShowAllVist
             // 
@@ -422,12 +423,22 @@
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = true;
             // 
+            // txtLogStatus
+            // 
+            this.txtLogStatus.Enabled = false;
+            this.txtLogStatus.Location = new System.Drawing.Point(458, 587);
+            this.txtLogStatus.Name = "txtLogStatus";
+            this.txtLogStatus.Size = new System.Drawing.Size(173, 21);
+            this.txtLogStatus.TabIndex = 16;
+            this.txtLogStatus.Text = "Your Status:";
+            // 
             // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 621);
             this.ControlBox = false;
+            this.Controls.Add(this.txtLogStatus);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnShowAllEmp);
             this.Controls.Add(this.btnShowAllHist);
@@ -439,23 +450,24 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listviewPerson);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnExit);
             this.Name = "ManageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ListView listviewPerson;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -493,5 +505,6 @@
         private System.Windows.Forms.Button btnShowAllVist;
         private System.Windows.Forms.Button btnShowAllEmp;
         private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.TextBox txtLogStatus;
     }
 }

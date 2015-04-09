@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(30, 47);
+            this.label1.Location = new System.Drawing.Point(31, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 27);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // textID
             // 
             this.textID.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textID.Location = new System.Drawing.Point(93, 44);
+            this.textID.Location = new System.Drawing.Point(94, 18);
             this.textID.Name = "textID";
             this.textID.Size = new System.Drawing.Size(169, 38);
             this.textID.TabIndex = 1;
@@ -57,7 +57,7 @@
             // textPIN
             // 
             this.textPIN.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textPIN.Location = new System.Drawing.Point(93, 88);
+            this.textPIN.Location = new System.Drawing.Point(94, 62);
             this.textPIN.Name = "textPIN";
             this.textPIN.PasswordChar = '*';
             this.textPIN.Size = new System.Drawing.Size(169, 38);
@@ -67,7 +67,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(15, 91);
+            this.label2.Location = new System.Drawing.Point(16, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 27);
             this.label2.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(50, 173);
+            this.btn_login.Location = new System.Drawing.Point(53, 122);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(78, 40);
             this.btn_login.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(159, 173);
+            this.btn_cancel.Location = new System.Drawing.Point(162, 122);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(78, 40);
             this.btn_cancel.TabIndex = 5;
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 268);
+            this.ClientSize = new System.Drawing.Size(290, 184);
             this.ControlBox = false;
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_login);

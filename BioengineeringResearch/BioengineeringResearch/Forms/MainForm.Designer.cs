@@ -67,7 +67,7 @@
             this.btn_logout = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.btnSimulator = new System.Windows.Forms.Button();
-            this.btnTV = new System.Windows.Forms.Button();
+            this.btnCCTV = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -501,14 +501,15 @@
             this.btnSimulator.UseVisualStyleBackColor = true;
             this.btnSimulator.Click += new System.EventHandler(this.btnSimulator_Click);
             // 
-            // btnTV
+            // btnCCTV
             // 
-            this.btnTV.Location = new System.Drawing.Point(784, 71);
-            this.btnTV.Name = "btnTV";
-            this.btnTV.Size = new System.Drawing.Size(75, 23);
-            this.btnTV.TabIndex = 5;
-            this.btnTV.Text = "CCTV";
-            this.btnTV.UseVisualStyleBackColor = true;
+            this.btnCCTV.Location = new System.Drawing.Point(784, 71);
+            this.btnCCTV.Name = "btnCCTV";
+            this.btnCCTV.Size = new System.Drawing.Size(75, 23);
+            this.btnCCTV.TabIndex = 5;
+            this.btnCCTV.Text = "CCTV";
+            this.btnCCTV.UseVisualStyleBackColor = true;
+            this.btnCCTV.Click += new System.EventHandler(this.btnCCTV_Click);
             // 
             // MainForm
             // 
@@ -516,7 +517,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(864, 508);
-            this.Controls.Add(this.btnTV);
+            this.Controls.Add(this.btnCCTV);
             this.Controls.Add(this.btnSimulator);
             this.Controls.Add(this.btnManage);
             this.Controls.Add(this.btn_logout);
@@ -573,7 +574,7 @@
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btnManage;
         private System.Windows.Forms.Button btnSimulator;
-        private System.Windows.Forms.Button btnTV;
+        private System.Windows.Forms.Button btnCCTV;
 
     }
 }

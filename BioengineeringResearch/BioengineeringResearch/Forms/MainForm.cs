@@ -49,37 +49,37 @@ namespace BioengineeringResearch
                     // Menue items
                     btnManage.Enabled = false;
                     btnSimulator.Enabled = false;
-                    btnTV.Enabled = false;
+                    btnCCTV.Enabled = false;
 
                     // log buttons
                     btn_login.Enabled = true;
                     btn_logout.Enabled = false;
 
-                    txtLogStatus.Text = "Your Status: Logout";
+                    txtLogStatus.Text = " Your Status: Logout";
                     break;
                 case 1:
                     // Menue items
                     btnManage.Enabled = true;
                     btnSimulator.Enabled = true;
-                    btnTV.Enabled = true;
+                    btnCCTV.Enabled = true;
 
                     // log buttons
                     btn_login.Enabled = false;
                     btn_logout.Enabled = true;
 
-                    txtLogStatus.Text = "Your Status: Admin";
+                    txtLogStatus.Text = " Your Status: Admin";
                     break;
                 case 2:
                     // Menue items
                     btnManage.Enabled = true;
                     btnSimulator.Enabled = true;
-                    btnTV.Enabled = true;
+                    btnCCTV.Enabled = true;
 
                     // log buttons
                     btn_login.Enabled = false;
                     btn_logout.Enabled = true;
 
-                    txtLogStatus.Text = "Your Status: Receptionist";
+                    txtLogStatus.Text = " Your Status: Receptionist";
                     break;
             }
         }
@@ -330,6 +330,12 @@ namespace BioengineeringResearch
         {
             SimulationForm simulator = new SimulationForm();
             simulator.ShowDialog();
+        }
+
+        private void btnCCTV_Click(object sender, EventArgs e)
+        {
+            CCTVForm cctvForm = new CCTVForm();
+            cctvForm.ShowDialog();
         }
 
     }

@@ -18,6 +18,7 @@ namespace BioengineeringResearch
          * 0 logout
          * 1 Admin
          * 2 Receptionist
+         * 3 Normal
          */
         private int loginStatus = 0;
 
@@ -80,6 +81,18 @@ namespace BioengineeringResearch
                     btn_logout.Enabled = true;
 
                     txtLogStatus.Text = " Your Status: Receptionist";
+                    break;
+                case 3:
+                    // Menue items
+                    btnManage.Enabled = true;
+                    btnSimulator.Enabled = false;
+                    btnCCTV.Enabled = false;
+
+                    // log buttons
+                    btn_login.Enabled = false;
+                    btn_logout.Enabled = true;
+
+                    txtLogStatus.Text = " Your Status: Normal";
                     break;
             }
         }

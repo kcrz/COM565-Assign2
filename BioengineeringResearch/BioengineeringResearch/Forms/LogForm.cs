@@ -17,6 +17,7 @@ namespace BioengineeringResearch
         /* login status
          * 1 Admin
          * 2 Receptionist
+         * 3 Normal
          */
         public int loginStatus = 0;
 
@@ -53,6 +54,7 @@ namespace BioengineeringResearch
                     /* login status
                      * 1 Admin
                      * 2 Receptionist
+                     * 3 Normal
                      */
                     switch (position)
                     {
@@ -61,6 +63,9 @@ namespace BioengineeringResearch
                             break;
                         case "Receptionist":
                             loginStatus = 2;
+                            break;
+                        case "Normal":
+                            loginStatus = 3;
                             break;
                     }
                     this.DialogResult = DialogResult.OK;

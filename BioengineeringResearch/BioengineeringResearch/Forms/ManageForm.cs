@@ -15,6 +15,7 @@ namespace BioengineeringResearch.Forms
         /* login status
          * 1 Admin
          * 2 Receptionist
+         * 3 Normal
          */
         private int loginStatus = 0;
 
@@ -30,6 +31,10 @@ namespace BioengineeringResearch.Forms
                 case 2: // 2 Receptionist
                     txtLogStatus.Text = "Your Status: Receptionist";
                     break;
+                case 2: // 3 Normal
+                    txtLogStatus.Text = "Your Status: Normal";
+                    break;
+
             }
         }
 

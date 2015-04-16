@@ -17,7 +17,7 @@ namespace BioengineeringResearch.DataOperations
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static Employee searchEmployeeDb(String id)
+        public static Employee searchEmployeeDbById(String id)
         {
             using (var db = new BioEngResearchSecurityContext())
             {
@@ -48,7 +48,7 @@ namespace BioengineeringResearch.DataOperations
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static Visitor searchVisitorDb(String id)
+        public static Visitor searchVisitorDbById(String id)
         {
             using (var db = new BioEngResearchSecurityContext())
             {
@@ -69,6 +69,62 @@ namespace BioengineeringResearch.DataOperations
                 {
                     return null;
                 }
+            }
+        }
+
+        public static List<Visitor> searchVisitorByLastName(String lastName)
+        {
+            List<Visitor> visitorList = new List<Visitor>();
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                var query = from vt in db.Visitors where vt.LastName == lastName select vt;
+                foreach(Visitor vt in query)
+                {
+                    visitorList.Add(vt);
+                }
+                return visitorList;
+            }
+        }
+
+        public static List<Visitor> searchVisitorByFirstName(String firstName)
+        {
+            List<Visitor> visitorList = new List<Visitor>();
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                var query = from vt in db.Visitors where vt.FirstName == firstName select vt;
+                foreach (Visitor vt in query)
+                {
+                    visitorList.Add(vt);
+                }
+                return visitorList;
+            }
+        }
+
+        public static List<Employee> searchEmployeeByLastName(String lastName)
+        {
+            List<Employee> employeeList = new List<Employee>();
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                var query = from em in db.Employees where em.LastName == lastName select em;
+                foreach (Employee em in query)
+                {
+                    employeeList.Add(em);
+                }
+                return employeeList;
+            }
+        }
+
+        public static List<Employee> searchEmployeeByFirstName(String firstName)
+        {
+            List<Employee> employeeList = new List<Employee>();
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                var query = from em in db.Employees where em.FirstName == firstName select em;
+                foreach (Employee em in query)
+                {
+                    employeeList.Add(em);
+                }
+                return employeeList;
             }
         }
 
@@ -274,6 +330,39 @@ namespace BioengineeringResearch.DataOperations
                 return null;
                 
                 
+            }
+        }
+
+        /// <summary>
+        /// Returns true if new access entry is success otherwise false
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="doorId"></param>
+        /// <returns></returns>
+        public static bool createNewAccessHistoryEntry(String userId, String doorId)
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                DateTime accessDate = DateTime.UtcNow;
+                if (userId.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
+                {
+                    AccessHistory newEntry = new AccessHistory { DoorId = doorId, EmployeeId = userId, DateTimeStamp = accessDate};
+                    db.AccessHistories.Add(newEntry);
+                    db.SaveChanges();
+                    return true;
+
+                }
+                else if (userId.ToUpper().StartsWith(DataStrings.VISITOR_TAG))
+                {
+                    AccessHistory newEntry = new AccessHistory { DoorId = doorId, VisitorId = userId, DateTimeStamp = accessDate };
+                    db.AccessHistories.Add(newEntry);
+                    db.SaveChanges();
+                    return true;
+                }
+                else {
+                    //invalid id
+                    return false;
+                }
             }
         }
     }

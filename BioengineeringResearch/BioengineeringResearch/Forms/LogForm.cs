@@ -50,7 +50,7 @@ namespace BioengineeringResearch
                     // login successfully
                     MessageBox.Show("Login successfully", "Tip", MessageBoxButtons.OK);
                     string position = DataOps.getEmployeePosition(textID.Text);
-
+                    //string position = "Admin"; //for debug
                     /* login status
                      * 1 Admin
                      * 2 Receptionist

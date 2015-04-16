@@ -30,17 +30,17 @@
         {
             this.btnExit = new System.Windows.Forms.Button();
             this.listviewPerson = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columFname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnAccessLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdoLastName = new System.Windows.Forms.RadioButton();
+            this.rdoId = new System.Windows.Forms.RadioButton();
+            this.rdoFirstName = new System.Windows.Forms.RadioButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSrchPerson = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -67,6 +67,7 @@
             this.btnShowAllEmp = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.txtLogStatus = new System.Windows.Forms.TextBox();
+            this.columnCompany = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,9 +75,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(637, 586);
+            this.btnExit.Location = new System.Drawing.Point(637, 635);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(75, 25);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -85,57 +86,61 @@
             // listviewPerson
             // 
             this.listviewPerson.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listviewPerson.Location = new System.Drawing.Point(12, 81);
+            this.columnID,
+            this.columFname,
+            this.columnLname,
+            this.columnAccessLevel,
+            this.columnPosition,
+            this.columnCompany,
+            this.columnEmail});
+            this.listviewPerson.Location = new System.Drawing.Point(12, 88);
             this.listviewPerson.Name = "listviewPerson";
-            this.listviewPerson.Size = new System.Drawing.Size(700, 170);
+            this.listviewPerson.Size = new System.Drawing.Size(700, 184);
             this.listviewPerson.TabIndex = 5;
             this.listviewPerson.UseCompatibleStateImageBehavior = false;
             this.listviewPerson.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // columnID
             // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 150;
+            this.columnID.Text = "ID";
+            this.columnID.Width = 61;
             // 
-            // columnHeader2
+            // columFname
             // 
-            this.columnHeader2.Text = "First name";
-            this.columnHeader2.Width = 100;
+            this.columFname.Text = "First name";
+            this.columFname.Width = 100;
             // 
-            // columnHeader3
+            // columnLname
             // 
-            this.columnHeader3.Text = "Last name";
-            this.columnHeader3.Width = 100;
+            this.columnLname.Text = "Last name";
+            this.columnLname.Width = 100;
             // 
-            // columnHeader4
+            // columnPosition
             // 
-            this.columnHeader4.Text = "Position";
-            this.columnHeader4.Width = 98;
+            this.columnPosition.DisplayIndex = 4;
+            this.columnPosition.Text = "Position";
+            this.columnPosition.Width = 98;
             // 
-            // columnHeader5
+            // columnEmail
             // 
-            this.columnHeader5.Text = "Email";
-            this.columnHeader5.Width = 154;
+            this.columnEmail.DisplayIndex = 6;
+            this.columnEmail.Text = "Email";
+            this.columnEmail.Width = 154;
             // 
-            // columnHeader6
+            // columnAccessLevel
             // 
-            this.columnHeader6.Text = "Access level";
-            this.columnHeader6.Width = 98;
+            this.columnAccessLevel.DisplayIndex = 3;
+            this.columnAccessLevel.Text = "Access level";
+            this.columnAccessLevel.Width = 73;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnSrchPerson);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 63);
+            this.groupBox1.Size = new System.Drawing.Size(585, 68);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Person By";
@@ -143,78 +148,79 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Location = new System.Drawing.Point(6, 20);
+            this.panel1.Controls.Add(this.rdoLastName);
+            this.panel1.Controls.Add(this.rdoId);
+            this.panel1.Controls.Add(this.rdoFirstName);
+            this.panel1.Location = new System.Drawing.Point(6, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 26);
+            this.panel1.Size = new System.Drawing.Size(248, 28);
             this.panel1.TabIndex = 9;
             // 
-            // radioButton3
+            // rdoLastName
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(165, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(77, 16);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Last name";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdoLastName.AutoSize = true;
+            this.rdoLastName.Location = new System.Drawing.Point(165, 3);
+            this.rdoLastName.Name = "rdoLastName";
+            this.rdoLastName.Size = new System.Drawing.Size(74, 17);
+            this.rdoLastName.TabIndex = 2;
+            this.rdoLastName.TabStop = true;
+            this.rdoLastName.Text = "Last name";
+            this.rdoLastName.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdoId
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(35, 16);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "ID";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoId.AutoSize = true;
+            this.rdoId.Checked = true;
+            this.rdoId.Location = new System.Drawing.Point(3, 3);
+            this.rdoId.Name = "rdoId";
+            this.rdoId.Size = new System.Drawing.Size(36, 17);
+            this.rdoId.TabIndex = 0;
+            this.rdoId.TabStop = true;
+            this.rdoId.Text = "ID";
+            this.rdoId.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdoFirstName
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(59, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(83, 16);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "First name";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoFirstName.AutoSize = true;
+            this.rdoFirstName.Location = new System.Drawing.Point(59, 3);
+            this.rdoFirstName.Name = "rdoFirstName";
+            this.rdoFirstName.Size = new System.Drawing.Size(73, 17);
+            this.rdoFirstName.TabIndex = 1;
+            this.rdoFirstName.TabStop = true;
+            this.rdoFirstName.Text = "First name";
+            this.rdoFirstName.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(260, 23);
+            this.txtSearch.Location = new System.Drawing.Point(260, 25);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(234, 21);
+            this.txtSearch.Size = new System.Drawing.Size(234, 20);
             this.txtSearch.TabIndex = 7;
             // 
             // btnSrchPerson
             // 
-            this.btnSrchPerson.Location = new System.Drawing.Point(500, 21);
+            this.btnSrchPerson.Location = new System.Drawing.Point(500, 23);
             this.btnSrchPerson.Name = "btnSrchPerson";
-            this.btnSrchPerson.Size = new System.Drawing.Size(75, 23);
+            this.btnSrchPerson.Size = new System.Drawing.Size(75, 25);
             this.btnSrchPerson.TabIndex = 8;
             this.btnSrchPerson.Text = "Search";
             this.btnSrchPerson.UseVisualStyleBackColor = true;
+            this.btnSrchPerson.Click += new System.EventHandler(this.btnSrchPerson_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(640, 257);
+            this.btnAdd.Location = new System.Drawing.Point(640, 278);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(75, 25);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add Person";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnDeltPerson
             // 
-            this.btnDeltPerson.Location = new System.Drawing.Point(539, 257);
+            this.btnDeltPerson.Location = new System.Drawing.Point(539, 278);
             this.btnDeltPerson.Name = "btnDeltPerson";
-            this.btnDeltPerson.Size = new System.Drawing.Size(75, 23);
+            this.btnDeltPerson.Size = new System.Drawing.Size(75, 25);
             this.btnDeltPerson.TabIndex = 10;
             this.btnDeltPerson.Text = "Delete";
             this.btnDeltPerson.UseVisualStyleBackColor = true;
@@ -227,9 +233,9 @@
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11});
-            this.listViewHist.Location = new System.Drawing.Point(12, 379);
+            this.listViewHist.Location = new System.Drawing.Point(12, 411);
             this.listViewHist.Name = "listViewHist";
-            this.listViewHist.Size = new System.Drawing.Size(700, 200);
+            this.listViewHist.Size = new System.Drawing.Size(700, 216);
             this.listViewHist.TabIndex = 11;
             this.listViewHist.UseCompatibleStateImageBehavior = false;
             this.listViewHist.View = System.Windows.Forms.View.Details;
@@ -270,25 +276,25 @@
             this.groupBox2.Controls.Add(this.chkboxDoor);
             this.groupBox2.Controls.Add(this.txtDate);
             this.groupBox2.Controls.Add(this.chkboxDate);
-            this.groupBox2.Location = new System.Drawing.Point(12, 283);
+            this.groupBox2.Location = new System.Drawing.Point(12, 307);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(700, 90);
+            this.groupBox2.Size = new System.Drawing.Size(700, 98);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search History";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(511, 54);
+            this.txtFirstName.Location = new System.Drawing.Point(511, 59);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(121, 21);
+            this.txtFirstName.Size = new System.Drawing.Size(121, 20);
             this.txtFirstName.TabIndex = 9;
             // 
             // btnSrchHistBy
             // 
-            this.btnSrchHistBy.Location = new System.Drawing.Point(21, 20);
+            this.btnSrchHistBy.Location = new System.Drawing.Point(21, 22);
             this.btnSrchHistBy.Name = "btnSrchHistBy";
-            this.btnSrchHistBy.Size = new System.Drawing.Size(75, 23);
+            this.btnSrchHistBy.Size = new System.Drawing.Size(75, 25);
             this.btnSrchHistBy.TabIndex = 10;
             this.btnSrchHistBy.Text = "Search By";
             this.btnSrchHistBy.UseVisualStyleBackColor = true;
@@ -296,26 +302,26 @@
             // chkboxFirstName
             // 
             this.chkboxFirstName.AutoSize = true;
-            this.chkboxFirstName.Location = new System.Drawing.Point(397, 56);
+            this.chkboxFirstName.Location = new System.Drawing.Point(397, 61);
             this.chkboxFirstName.Name = "chkboxFirstName";
-            this.chkboxFirstName.Size = new System.Drawing.Size(96, 16);
+            this.chkboxFirstName.Size = new System.Drawing.Size(90, 17);
             this.chkboxFirstName.TabIndex = 8;
             this.chkboxFirstName.Text = "Passer name:";
             this.chkboxFirstName.UseVisualStyleBackColor = true;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(213, 54);
+            this.txtID.Location = new System.Drawing.Point(213, 59);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(170, 21);
+            this.txtID.Size = new System.Drawing.Size(170, 20);
             this.txtID.TabIndex = 7;
             // 
             // chkboxID
             // 
             this.chkboxID.AutoSize = true;
-            this.chkboxID.Location = new System.Drawing.Point(123, 56);
+            this.chkboxID.Location = new System.Drawing.Point(123, 61);
             this.chkboxID.Name = "chkboxID";
-            this.chkboxID.Size = new System.Drawing.Size(84, 16);
+            this.chkboxID.Size = new System.Drawing.Size(75, 17);
             this.chkboxID.TabIndex = 6;
             this.chkboxID.Text = "Passer ID:";
             this.chkboxID.UseVisualStyleBackColor = true;
@@ -344,26 +350,26 @@
             "C6",
             "C7",
             "C8"});
-            this.txtDoor.Location = new System.Drawing.Point(511, 23);
+            this.txtDoor.Location = new System.Drawing.Point(511, 25);
             this.txtDoor.Name = "txtDoor";
-            this.txtDoor.Size = new System.Drawing.Size(121, 20);
+            this.txtDoor.Size = new System.Drawing.Size(121, 21);
             this.txtDoor.TabIndex = 5;
             // 
             // chkboxDoor
             // 
             this.chkboxDoor.AutoSize = true;
-            this.chkboxDoor.Location = new System.Drawing.Point(397, 25);
+            this.chkboxDoor.Location = new System.Drawing.Point(397, 27);
             this.chkboxDoor.Name = "chkboxDoor";
-            this.chkboxDoor.Size = new System.Drawing.Size(108, 16);
+            this.chkboxDoor.Size = new System.Drawing.Size(92, 17);
             this.chkboxDoor.TabIndex = 2;
             this.chkboxDoor.Text = "Door location:";
             this.chkboxDoor.UseVisualStyleBackColor = true;
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(183, 22);
+            this.txtDate.Location = new System.Drawing.Point(183, 24);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(200, 21);
+            this.txtDate.Size = new System.Drawing.Size(200, 20);
             this.txtDate.TabIndex = 1;
             // 
             // chkboxDate
@@ -371,54 +377,54 @@
             this.chkboxDate.AutoSize = true;
             this.chkboxDate.Checked = true;
             this.chkboxDate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkboxDate.Location = new System.Drawing.Point(123, 25);
+            this.chkboxDate.Location = new System.Drawing.Point(123, 27);
             this.chkboxDate.Name = "chkboxDate";
-            this.chkboxDate.Size = new System.Drawing.Size(54, 16);
+            this.chkboxDate.Size = new System.Drawing.Size(52, 17);
             this.chkboxDate.TabIndex = 0;
             this.chkboxDate.Text = "Date:";
             this.chkboxDate.UseVisualStyleBackColor = true;
             // 
             // btnDeltHist
             // 
-            this.btnDeltHist.Location = new System.Drawing.Point(174, 585);
+            this.btnDeltHist.Location = new System.Drawing.Point(174, 634);
             this.btnDeltHist.Name = "btnDeltHist";
-            this.btnDeltHist.Size = new System.Drawing.Size(75, 23);
+            this.btnDeltHist.Size = new System.Drawing.Size(75, 25);
             this.btnDeltHist.TabIndex = 14;
             this.btnDeltHist.Text = "Delete";
             this.btnDeltHist.UseVisualStyleBackColor = true;
             // 
             // btnShowAllHist
             // 
-            this.btnShowAllHist.Location = new System.Drawing.Point(12, 585);
+            this.btnShowAllHist.Location = new System.Drawing.Point(12, 634);
             this.btnShowAllHist.Name = "btnShowAllHist";
-            this.btnShowAllHist.Size = new System.Drawing.Size(145, 23);
+            this.btnShowAllHist.Size = new System.Drawing.Size(145, 25);
             this.btnShowAllHist.TabIndex = 15;
             this.btnShowAllHist.Text = "Show All History";
             this.btnShowAllHist.UseVisualStyleBackColor = true;
             // 
             // btnShowAllVist
             // 
-            this.btnShowAllVist.Location = new System.Drawing.Point(13, 254);
+            this.btnShowAllVist.Location = new System.Drawing.Point(13, 275);
             this.btnShowAllVist.Name = "btnShowAllVist";
-            this.btnShowAllVist.Size = new System.Drawing.Size(148, 23);
+            this.btnShowAllVist.Size = new System.Drawing.Size(148, 25);
             this.btnShowAllVist.TabIndex = 0;
             this.btnShowAllVist.Text = "Show All Visitors";
             this.btnShowAllVist.UseVisualStyleBackColor = true;
             // 
             // btnShowAllEmp
             // 
-            this.btnShowAllEmp.Location = new System.Drawing.Point(167, 254);
+            this.btnShowAllEmp.Location = new System.Drawing.Point(167, 275);
             this.btnShowAllEmp.Name = "btnShowAllEmp";
-            this.btnShowAllEmp.Size = new System.Drawing.Size(148, 23);
+            this.btnShowAllEmp.Size = new System.Drawing.Size(148, 25);
             this.btnShowAllEmp.TabIndex = 1;
             this.btnShowAllEmp.Text = "Show All Employees";
             this.btnShowAllEmp.UseVisualStyleBackColor = true;
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(321, 254);
+            this.btnShowAll.Location = new System.Drawing.Point(321, 275);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(148, 23);
+            this.btnShowAll.Size = new System.Drawing.Size(148, 25);
             this.btnShowAll.TabIndex = 2;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = true;
@@ -426,17 +432,23 @@
             // txtLogStatus
             // 
             this.txtLogStatus.Enabled = false;
-            this.txtLogStatus.Location = new System.Drawing.Point(458, 587);
+            this.txtLogStatus.Location = new System.Drawing.Point(458, 636);
             this.txtLogStatus.Name = "txtLogStatus";
-            this.txtLogStatus.Size = new System.Drawing.Size(173, 21);
+            this.txtLogStatus.Size = new System.Drawing.Size(173, 20);
             this.txtLogStatus.TabIndex = 16;
             this.txtLogStatus.Text = "Your Status:";
             // 
+            // columnCompany
+            // 
+            this.columnCompany.DisplayIndex = 5;
+            this.columnCompany.Text = "Company";
+            this.columnCompany.Width = 106;
+            // 
             // ManageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 621);
+            this.ClientSize = new System.Drawing.Size(736, 673);
             this.ControlBox = false;
             this.Controls.Add(this.txtLogStatus);
             this.Controls.Add(this.btnShowAll);
@@ -469,16 +481,16 @@
 
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ListView listviewPerson;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnID;
+        private System.Windows.Forms.ColumnHeader columFname;
+        private System.Windows.Forms.ColumnHeader columnLname;
+        private System.Windows.Forms.ColumnHeader columnPosition;
+        private System.Windows.Forms.ColumnHeader columnEmail;
+        private System.Windows.Forms.ColumnHeader columnAccessLevel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdoLastName;
+        private System.Windows.Forms.RadioButton rdoFirstName;
+        private System.Windows.Forms.RadioButton rdoId;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSrchPerson;
         private System.Windows.Forms.Button btnAdd;
@@ -506,5 +518,6 @@
         private System.Windows.Forms.Button btnShowAllEmp;
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.TextBox txtLogStatus;
+        private System.Windows.Forms.ColumnHeader columnCompany;
     }
 }

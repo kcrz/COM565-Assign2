@@ -7,14 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
 using BioengineeringResearch.Forms;
 using BioengineeringResearch.Functions;
-=======
 using BioengineeringResearch.DataOperations;
 using BioengineeringResearch.Models;
-
->>>>>>> origin/master
 
 namespace BioengineeringResearch.Forms
 {
@@ -57,7 +53,6 @@ namespace BioengineeringResearch.Forms
 
         private void btnSrchPerson_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             if (rbID.Checked == true)
             {
 
@@ -70,7 +65,6 @@ namespace BioengineeringResearch.Forms
             {
 
             }
-=======
             //Clear list view for every new search
             listviewPerson.Items.Clear();
             String searchParam = txtSearch.Text;
@@ -194,15 +188,10 @@ namespace BioengineeringResearch.Forms
                 //clear list view if search param is null or empty
                 listviewPerson.Items.Clear();
             }
-
->>>>>>> origin/master
         }
 
         private void btnShowAllVist_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-=======
             //clear existing items in list view
             listviewPerson.Items.Clear();
 
@@ -224,14 +213,11 @@ namespace BioengineeringResearch.Forms
             { 
                 MessageBox.Show("No visitors found", "Alert"); 
             }
->>>>>>> origin/master
+
         }
 
         private void btnShowAllEmp_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-=======
             //clear existing items in list view
             listviewPerson.Items.Clear();
 
@@ -253,12 +239,10 @@ namespace BioengineeringResearch.Forms
             {
                 MessageBox.Show("No employees found", "Alert");
             }
->>>>>>> origin/master
         }
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
 
         }
 
@@ -271,7 +255,6 @@ namespace BioengineeringResearch.Forms
         {
             AddForm addForm = new AddForm(loginStatus);
             addForm.ShowDialog();
-=======
             //clear existing items in list view
             listviewPerson.Items.Clear();
 
@@ -310,8 +293,6 @@ namespace BioengineeringResearch.Forms
             {
                 MessageBox.Show("No item found", "Alert");
             }
-
->>>>>>> origin/master
         }
     }
 }

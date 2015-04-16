@@ -39,15 +39,12 @@
             this.columnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
             this.rbLastName = new System.Windows.Forms.RadioButton();
             this.rbID = new System.Windows.Forms.RadioButton();
             this.rbFirstName = new System.Windows.Forms.RadioButton();
-=======
             this.rdoLastName = new System.Windows.Forms.RadioButton();
             this.rdoId = new System.Windows.Forms.RadioButton();
             this.rdoFirstName = new System.Windows.Forms.RadioButton();
->>>>>>> origin/master
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSrchPerson = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -68,7 +65,6 @@
             this.chkboxDoor = new System.Windows.Forms.CheckBox();
             this.txtDate = new System.Windows.Forms.DateTimePicker();
             this.chkboxDate = new System.Windows.Forms.CheckBox();
-            this.btnDeltHist = new System.Windows.Forms.Button();
             this.btnShowAllHist = new System.Windows.Forms.Button();
             this.btnShowAllVist = new System.Windows.Forms.Button();
             this.btnShowAllEmp = new System.Windows.Forms.Button();
@@ -81,9 +77,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(637, 635);
+            this.btnExit.Location = new System.Drawing.Point(637, 586);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 25);
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -99,9 +95,9 @@
             this.columnPosition,
             this.columnCompany,
             this.columnEmail});
-            this.listviewPerson.Location = new System.Drawing.Point(12, 88);
+            this.listviewPerson.Location = new System.Drawing.Point(12, 81);
             this.listviewPerson.Name = "listviewPerson";
-            this.listviewPerson.Size = new System.Drawing.Size(700, 184);
+            this.listviewPerson.Size = new System.Drawing.Size(700, 170);
             this.listviewPerson.TabIndex = 5;
             this.listviewPerson.UseCompatibleStateImageBehavior = false;
             this.listviewPerson.View = System.Windows.Forms.View.Details;
@@ -146,9 +142,9 @@
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnSrchPerson);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 68);
+            this.groupBox1.Size = new System.Drawing.Size(585, 63);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Person By";
@@ -156,22 +152,17 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-<<<<<<< HEAD
             this.panel1.Controls.Add(this.rbLastName);
             this.panel1.Controls.Add(this.rbID);
             this.panel1.Controls.Add(this.rbFirstName);
-            this.panel1.Location = new System.Drawing.Point(6, 20);
-=======
             this.panel1.Controls.Add(this.rdoLastName);
             this.panel1.Controls.Add(this.rdoId);
             this.panel1.Controls.Add(this.rdoFirstName);
-            this.panel1.Location = new System.Drawing.Point(6, 22);
->>>>>>> origin/master
+            this.panel1.Location = new System.Drawing.Point(6, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 28);
+            this.panel1.Size = new System.Drawing.Size(248, 26);
             this.panel1.TabIndex = 9;
             // 
-<<<<<<< HEAD
             // rbLastName
             // 
             this.rbLastName.AutoSize = true;
@@ -205,13 +196,13 @@
             this.rbFirstName.TabStop = true;
             this.rbFirstName.Text = "First name";
             this.rbFirstName.UseVisualStyleBackColor = true;
-=======
+            // 
             // rdoLastName
             // 
             this.rdoLastName.AutoSize = true;
             this.rdoLastName.Location = new System.Drawing.Point(165, 3);
             this.rdoLastName.Name = "rdoLastName";
-            this.rdoLastName.Size = new System.Drawing.Size(74, 17);
+            this.rdoLastName.Size = new System.Drawing.Size(77, 16);
             this.rdoLastName.TabIndex = 2;
             this.rdoLastName.TabStop = true;
             this.rdoLastName.Text = "Last name";
@@ -223,7 +214,7 @@
             this.rdoId.Checked = true;
             this.rdoId.Location = new System.Drawing.Point(3, 3);
             this.rdoId.Name = "rdoId";
-            this.rdoId.Size = new System.Drawing.Size(36, 17);
+            this.rdoId.Size = new System.Drawing.Size(35, 16);
             this.rdoId.TabIndex = 0;
             this.rdoId.TabStop = true;
             this.rdoId.Text = "ID";
@@ -234,25 +225,24 @@
             this.rdoFirstName.AutoSize = true;
             this.rdoFirstName.Location = new System.Drawing.Point(59, 3);
             this.rdoFirstName.Name = "rdoFirstName";
-            this.rdoFirstName.Size = new System.Drawing.Size(73, 17);
+            this.rdoFirstName.Size = new System.Drawing.Size(83, 16);
             this.rdoFirstName.TabIndex = 1;
             this.rdoFirstName.TabStop = true;
             this.rdoFirstName.Text = "First name";
             this.rdoFirstName.UseVisualStyleBackColor = true;
->>>>>>> origin/master
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(260, 25);
+            this.txtSearch.Location = new System.Drawing.Point(260, 23);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(234, 20);
+            this.txtSearch.Size = new System.Drawing.Size(234, 21);
             this.txtSearch.TabIndex = 7;
             // 
             // btnSrchPerson
             // 
-            this.btnSrchPerson.Location = new System.Drawing.Point(500, 23);
+            this.btnSrchPerson.Location = new System.Drawing.Point(500, 21);
             this.btnSrchPerson.Name = "btnSrchPerson";
-            this.btnSrchPerson.Size = new System.Drawing.Size(75, 25);
+            this.btnSrchPerson.Size = new System.Drawing.Size(75, 23);
             this.btnSrchPerson.TabIndex = 8;
             this.btnSrchPerson.Text = "Search";
             this.btnSrchPerson.UseVisualStyleBackColor = true;
@@ -260,9 +250,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(640, 278);
+            this.btnAdd.Location = new System.Drawing.Point(640, 257);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 25);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add Person";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -270,9 +260,9 @@
             // 
             // btnDeltPerson
             // 
-            this.btnDeltPerson.Location = new System.Drawing.Point(539, 278);
+            this.btnDeltPerson.Location = new System.Drawing.Point(539, 257);
             this.btnDeltPerson.Name = "btnDeltPerson";
-            this.btnDeltPerson.Size = new System.Drawing.Size(75, 25);
+            this.btnDeltPerson.Size = new System.Drawing.Size(75, 23);
             this.btnDeltPerson.TabIndex = 10;
             this.btnDeltPerson.Text = "Delete";
             this.btnDeltPerson.UseVisualStyleBackColor = true;
@@ -286,9 +276,9 @@
             this.columnHeader9,
             this.columnHeader10,
             this.columnHeader11});
-            this.listViewHist.Location = new System.Drawing.Point(12, 411);
+            this.listViewHist.Location = new System.Drawing.Point(12, 379);
             this.listViewHist.Name = "listViewHist";
-            this.listViewHist.Size = new System.Drawing.Size(700, 216);
+            this.listViewHist.Size = new System.Drawing.Size(700, 200);
             this.listViewHist.TabIndex = 11;
             this.listViewHist.UseCompatibleStateImageBehavior = false;
             this.listViewHist.View = System.Windows.Forms.View.Details;
@@ -329,25 +319,25 @@
             this.groupBox2.Controls.Add(this.chkboxDoor);
             this.groupBox2.Controls.Add(this.txtDate);
             this.groupBox2.Controls.Add(this.chkboxDate);
-            this.groupBox2.Location = new System.Drawing.Point(12, 307);
+            this.groupBox2.Location = new System.Drawing.Point(12, 283);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(700, 98);
+            this.groupBox2.Size = new System.Drawing.Size(700, 90);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search History";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(511, 59);
+            this.txtFirstName.Location = new System.Drawing.Point(511, 54);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(121, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(121, 21);
             this.txtFirstName.TabIndex = 9;
             // 
             // btnSrchHistBy
             // 
-            this.btnSrchHistBy.Location = new System.Drawing.Point(21, 22);
+            this.btnSrchHistBy.Location = new System.Drawing.Point(21, 20);
             this.btnSrchHistBy.Name = "btnSrchHistBy";
-            this.btnSrchHistBy.Size = new System.Drawing.Size(75, 25);
+            this.btnSrchHistBy.Size = new System.Drawing.Size(75, 23);
             this.btnSrchHistBy.TabIndex = 10;
             this.btnSrchHistBy.Text = "Search By";
             this.btnSrchHistBy.UseVisualStyleBackColor = true;
@@ -355,26 +345,26 @@
             // chkboxFirstName
             // 
             this.chkboxFirstName.AutoSize = true;
-            this.chkboxFirstName.Location = new System.Drawing.Point(397, 61);
+            this.chkboxFirstName.Location = new System.Drawing.Point(397, 56);
             this.chkboxFirstName.Name = "chkboxFirstName";
-            this.chkboxFirstName.Size = new System.Drawing.Size(90, 17);
+            this.chkboxFirstName.Size = new System.Drawing.Size(96, 16);
             this.chkboxFirstName.TabIndex = 8;
             this.chkboxFirstName.Text = "Passer name:";
             this.chkboxFirstName.UseVisualStyleBackColor = true;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(213, 59);
+            this.txtID.Location = new System.Drawing.Point(213, 54);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(170, 20);
+            this.txtID.Size = new System.Drawing.Size(170, 21);
             this.txtID.TabIndex = 7;
             // 
             // chkboxID
             // 
             this.chkboxID.AutoSize = true;
-            this.chkboxID.Location = new System.Drawing.Point(123, 61);
+            this.chkboxID.Location = new System.Drawing.Point(123, 56);
             this.chkboxID.Name = "chkboxID";
-            this.chkboxID.Size = new System.Drawing.Size(75, 17);
+            this.chkboxID.Size = new System.Drawing.Size(84, 16);
             this.chkboxID.TabIndex = 6;
             this.chkboxID.Text = "Passer ID:";
             this.chkboxID.UseVisualStyleBackColor = true;
@@ -403,26 +393,26 @@
             "C6",
             "C7",
             "C8"});
-            this.txtDoor.Location = new System.Drawing.Point(511, 25);
+            this.txtDoor.Location = new System.Drawing.Point(511, 23);
             this.txtDoor.Name = "txtDoor";
-            this.txtDoor.Size = new System.Drawing.Size(121, 21);
+            this.txtDoor.Size = new System.Drawing.Size(121, 20);
             this.txtDoor.TabIndex = 5;
             // 
             // chkboxDoor
             // 
             this.chkboxDoor.AutoSize = true;
-            this.chkboxDoor.Location = new System.Drawing.Point(397, 27);
+            this.chkboxDoor.Location = new System.Drawing.Point(397, 25);
             this.chkboxDoor.Name = "chkboxDoor";
-            this.chkboxDoor.Size = new System.Drawing.Size(92, 17);
+            this.chkboxDoor.Size = new System.Drawing.Size(108, 16);
             this.chkboxDoor.TabIndex = 2;
             this.chkboxDoor.Text = "Door location:";
             this.chkboxDoor.UseVisualStyleBackColor = true;
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(183, 24);
+            this.txtDate.Location = new System.Drawing.Point(183, 22);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(200, 20);
+            this.txtDate.Size = new System.Drawing.Size(200, 21);
             this.txtDate.TabIndex = 1;
             // 
             // chkboxDate
@@ -430,36 +420,27 @@
             this.chkboxDate.AutoSize = true;
             this.chkboxDate.Checked = true;
             this.chkboxDate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkboxDate.Location = new System.Drawing.Point(123, 27);
+            this.chkboxDate.Location = new System.Drawing.Point(123, 25);
             this.chkboxDate.Name = "chkboxDate";
-            this.chkboxDate.Size = new System.Drawing.Size(52, 17);
+            this.chkboxDate.Size = new System.Drawing.Size(54, 16);
             this.chkboxDate.TabIndex = 0;
             this.chkboxDate.Text = "Date:";
             this.chkboxDate.UseVisualStyleBackColor = true;
             // 
-            // btnDeltHist
-            // 
-            this.btnDeltHist.Location = new System.Drawing.Point(174, 634);
-            this.btnDeltHist.Name = "btnDeltHist";
-            this.btnDeltHist.Size = new System.Drawing.Size(75, 25);
-            this.btnDeltHist.TabIndex = 14;
-            this.btnDeltHist.Text = "Delete";
-            this.btnDeltHist.UseVisualStyleBackColor = true;
-            // 
             // btnShowAllHist
             // 
-            this.btnShowAllHist.Location = new System.Drawing.Point(12, 634);
+            this.btnShowAllHist.Location = new System.Drawing.Point(12, 585);
             this.btnShowAllHist.Name = "btnShowAllHist";
-            this.btnShowAllHist.Size = new System.Drawing.Size(145, 25);
+            this.btnShowAllHist.Size = new System.Drawing.Size(145, 23);
             this.btnShowAllHist.TabIndex = 15;
             this.btnShowAllHist.Text = "Show All History";
             this.btnShowAllHist.UseVisualStyleBackColor = true;
             // 
             // btnShowAllVist
             // 
-            this.btnShowAllVist.Location = new System.Drawing.Point(13, 275);
+            this.btnShowAllVist.Location = new System.Drawing.Point(13, 254);
             this.btnShowAllVist.Name = "btnShowAllVist";
-            this.btnShowAllVist.Size = new System.Drawing.Size(148, 25);
+            this.btnShowAllVist.Size = new System.Drawing.Size(148, 23);
             this.btnShowAllVist.TabIndex = 0;
             this.btnShowAllVist.Text = "Show All Visitors";
             this.btnShowAllVist.UseVisualStyleBackColor = true;
@@ -467,9 +448,9 @@
             // 
             // btnShowAllEmp
             // 
-            this.btnShowAllEmp.Location = new System.Drawing.Point(167, 275);
+            this.btnShowAllEmp.Location = new System.Drawing.Point(167, 254);
             this.btnShowAllEmp.Name = "btnShowAllEmp";
-            this.btnShowAllEmp.Size = new System.Drawing.Size(148, 25);
+            this.btnShowAllEmp.Size = new System.Drawing.Size(148, 23);
             this.btnShowAllEmp.TabIndex = 1;
             this.btnShowAllEmp.Text = "Show All Employees";
             this.btnShowAllEmp.UseVisualStyleBackColor = true;
@@ -477,9 +458,9 @@
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(321, 275);
+            this.btnShowAll.Location = new System.Drawing.Point(321, 254);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(148, 25);
+            this.btnShowAll.Size = new System.Drawing.Size(148, 23);
             this.btnShowAll.TabIndex = 2;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = true;
@@ -488,24 +469,23 @@
             // txtLogStatus
             // 
             this.txtLogStatus.Enabled = false;
-            this.txtLogStatus.Location = new System.Drawing.Point(458, 636);
+            this.txtLogStatus.Location = new System.Drawing.Point(458, 587);
             this.txtLogStatus.Name = "txtLogStatus";
-            this.txtLogStatus.Size = new System.Drawing.Size(173, 20);
+            this.txtLogStatus.Size = new System.Drawing.Size(173, 21);
             this.txtLogStatus.TabIndex = 16;
             this.txtLogStatus.Text = "Your Status:";
             // 
             // ManageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 673);
+            this.ClientSize = new System.Drawing.Size(736, 621);
             this.ControlBox = false;
             this.Controls.Add(this.txtLogStatus);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnShowAllEmp);
             this.Controls.Add(this.btnShowAllHist);
             this.Controls.Add(this.btnShowAllVist);
-            this.Controls.Add(this.btnDeltHist);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.listViewHist);
             this.Controls.Add(this.btnDeltPerson);
@@ -538,15 +518,12 @@
         private System.Windows.Forms.ColumnHeader columnEmail;
         private System.Windows.Forms.ColumnHeader columnAccessLevel;
         private System.Windows.Forms.GroupBox groupBox1;
-<<<<<<< HEAD
         private System.Windows.Forms.RadioButton rbLastName;
         private System.Windows.Forms.RadioButton rbFirstName;
         private System.Windows.Forms.RadioButton rbID;
-=======
         private System.Windows.Forms.RadioButton rdoLastName;
         private System.Windows.Forms.RadioButton rdoFirstName;
         private System.Windows.Forms.RadioButton rdoId;
->>>>>>> origin/master
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSrchPerson;
         private System.Windows.Forms.Button btnAdd;
@@ -567,7 +544,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.CheckBox chkboxID;
         private System.Windows.Forms.Button btnSrchHistBy;
-        private System.Windows.Forms.Button btnDeltHist;
         private System.Windows.Forms.Button btnShowAllHist;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnShowAllVist;

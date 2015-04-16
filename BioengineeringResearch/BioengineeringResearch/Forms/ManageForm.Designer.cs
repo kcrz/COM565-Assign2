@@ -33,9 +33,10 @@
             this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columFname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnAccessLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCompany = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdoLastName = new System.Windows.Forms.RadioButton();
@@ -67,7 +68,6 @@
             this.btnShowAllEmp = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.txtLogStatus = new System.Windows.Forms.TextBox();
-            this.columnCompany = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -115,23 +115,25 @@
             this.columnLname.Text = "Last name";
             this.columnLname.Width = 100;
             // 
+            // columnAccessLevel
+            // 
+            this.columnAccessLevel.Text = "Access level";
+            this.columnAccessLevel.Width = 73;
+            // 
             // columnPosition
             // 
-            this.columnPosition.DisplayIndex = 4;
             this.columnPosition.Text = "Position";
             this.columnPosition.Width = 98;
             // 
+            // columnCompany
+            // 
+            this.columnCompany.Text = "Company";
+            this.columnCompany.Width = 106;
+            // 
             // columnEmail
             // 
-            this.columnEmail.DisplayIndex = 6;
             this.columnEmail.Text = "Email";
             this.columnEmail.Width = 154;
-            // 
-            // columnAccessLevel
-            // 
-            this.columnAccessLevel.DisplayIndex = 3;
-            this.columnAccessLevel.Text = "Access level";
-            this.columnAccessLevel.Width = 73;
             // 
             // groupBox1
             // 
@@ -410,6 +412,7 @@
             this.btnShowAllVist.TabIndex = 0;
             this.btnShowAllVist.Text = "Show All Visitors";
             this.btnShowAllVist.UseVisualStyleBackColor = true;
+            this.btnShowAllVist.Click += new System.EventHandler(this.btnShowAllVist_Click);
             // 
             // btnShowAllEmp
             // 
@@ -419,6 +422,7 @@
             this.btnShowAllEmp.TabIndex = 1;
             this.btnShowAllEmp.Text = "Show All Employees";
             this.btnShowAllEmp.UseVisualStyleBackColor = true;
+            this.btnShowAllEmp.Click += new System.EventHandler(this.btnShowAllEmp_Click);
             // 
             // btnShowAll
             // 
@@ -428,6 +432,7 @@
             this.btnShowAll.TabIndex = 2;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // txtLogStatus
             // 
@@ -437,12 +442,6 @@
             this.txtLogStatus.Size = new System.Drawing.Size(173, 20);
             this.txtLogStatus.TabIndex = 16;
             this.txtLogStatus.Text = "Your Status:";
-            // 
-            // columnCompany
-            // 
-            this.columnCompany.DisplayIndex = 5;
-            this.columnCompany.Text = "Company";
-            this.columnCompany.Width = 106;
             // 
             // ManageForm
             // 

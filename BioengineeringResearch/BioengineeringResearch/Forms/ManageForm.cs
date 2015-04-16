@@ -103,7 +103,7 @@ namespace BioengineeringResearch.Forms
                             }
                         }
                     }
-                    else { MessageBox.Show("Invalid id", "Alert"); }
+                    else { MessageBox.Show("Invalid ID", "Alert"); }
 
                 }
                 else if (rdoLastName.Checked == true)
@@ -174,6 +174,99 @@ namespace BioengineeringResearch.Forms
             {
                 //clear list view if search param is null or empty
                 listviewPerson.Items.Clear();
+            }
+
+        }
+
+        private void btnShowAllVist_Click(object sender, EventArgs e)
+        {
+            //clear existing items in list view
+            listviewPerson.Items.Clear();
+
+            visitorList = DataOps.getAllVisitors();
+            if (visitorList.Count != 0)
+            {
+                foreach (Visitor vt in visitorList)
+                {
+                    //Create string array containing column data
+                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), "", vt.Company, vt.Email };
+                    //create list view item using striny array
+                    listViewItem = new ListViewItem(dataRow);
+                    //add tpo list view
+                    listviewPerson.Items.Add(listViewItem);
+                }
+
+            }
+            else
+            { 
+                MessageBox.Show("No visitors found", "Alert"); 
+            }
+        }
+
+        private void btnShowAllEmp_Click(object sender, EventArgs e)
+        {
+            //clear existing items in list view
+            listviewPerson.Items.Clear();
+
+            employeeList = DataOps.getAllEmployees();
+            if (employeeList.Count != 0)
+            {
+                foreach (Employee em in employeeList)
+                {
+                    //Create string array containing column data
+                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.Position, "", em.Email };
+                    //create list view item using striny array
+                    listViewItem = new ListViewItem(dataRow);
+                    //add tpo list view
+                    listviewPerson.Items.Add(listViewItem);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No employees found", "Alert");
+            }
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            //clear existing items in list view
+            listviewPerson.Items.Clear();
+
+            employeeList = DataOps.getAllEmployees();
+            visitorList = DataOps.getAllVisitors();
+
+            if (employeeList.Count != 0)
+            {
+                foreach (Employee em in employeeList)
+                {
+                    //Create string array containing column data
+                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.Position, "", em.Email };
+                    //create list view item using striny array
+                    listViewItem = new ListViewItem(dataRow);
+                    //add tpo list view
+                    listviewPerson.Items.Add(listViewItem);
+                }
+            }
+
+            if (visitorList.Count != 0)
+            {
+                foreach (Visitor vt in visitorList)
+                {
+                    //Create string array containing column data
+                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), "", vt.Company, vt.Email };
+                    //create list view item using striny array
+                    listViewItem = new ListViewItem(dataRow);
+                    //add tpo list view
+                    listviewPerson.Items.Add(listViewItem);
+                }
+
+            }
+
+            //if nothing has beend added to listview show message box
+            if (listviewPerson.Items.Count == 0)
+            {
+                MessageBox.Show("No item found", "Alert");
             }
 
         }

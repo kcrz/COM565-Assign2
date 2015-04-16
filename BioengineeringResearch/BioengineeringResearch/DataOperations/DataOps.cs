@@ -87,7 +87,8 @@ namespace BioengineeringResearch.DataOperations
                 var query = from em in db.Employees select em;
                 foreach (Employee em in query)
                 {
-                    employeeList.Add(em);
+                    if (em != null)
+                    { employeeList.Add(em); }
                 }
                 return employeeList;
             }
@@ -109,8 +110,8 @@ namespace BioengineeringResearch.DataOperations
                     Visitor[] visitor = query.ToArray();
                     if (visitor != null && visitor.Length != 0)
                     {
-                        
-                            return visitor[0];
+
+                        return visitor[0];
                     }
                     else
                     {
@@ -168,7 +169,8 @@ namespace BioengineeringResearch.DataOperations
                 var query = from vt in db.Visitors select vt;
                 foreach (Visitor vt in query)
                 {
-                    visitorList.Add(vt);
+                    if (vt != null)
+                    { visitorList.Add(vt); }
                 }
                 return visitorList;
             }

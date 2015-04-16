@@ -99,7 +99,7 @@ namespace BioengineeringResearch
 
         private void btnDoorA1_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorA1.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -122,7 +122,7 @@ namespace BioengineeringResearch
 
         private void btnDoorA2_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorA2.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -133,7 +133,7 @@ namespace BioengineeringResearch
 
         private void btnDoorA3_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorA3.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -144,7 +144,7 @@ namespace BioengineeringResearch
 
         private void btnDoorA4_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorA4.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -155,7 +155,7 @@ namespace BioengineeringResearch
 
         private void btnDoorA5_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorA5.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -166,7 +166,7 @@ namespace BioengineeringResearch
 
         private void btnDoorA6_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorA6.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -177,7 +177,7 @@ namespace BioengineeringResearch
 
         private void btnDoorA7_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorA7.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -188,7 +188,7 @@ namespace BioengineeringResearch
 
         private void btnDoorA8_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorA8.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -199,7 +199,7 @@ namespace BioengineeringResearch
 
         private void btnDoorA9_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorA9.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -210,7 +210,7 @@ namespace BioengineeringResearch
 
         private void btnDoorB1_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorB1.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -221,7 +221,7 @@ namespace BioengineeringResearch
 
         private void btnDoorB2_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorB2.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -232,7 +232,7 @@ namespace BioengineeringResearch
 
         private void btnDoorC1_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorC1.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -243,7 +243,7 @@ namespace BioengineeringResearch
 
         private void btnDoorC2_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorC2.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -254,7 +254,7 @@ namespace BioengineeringResearch
 
         private void btnDoorC3_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorC3.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -265,7 +265,7 @@ namespace BioengineeringResearch
 
         private void btnDoorC4_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorC4.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -276,7 +276,7 @@ namespace BioengineeringResearch
 
         private void btnDoorC5_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorC5.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -287,7 +287,7 @@ namespace BioengineeringResearch
 
         private void btnDoorC6_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorC6.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -298,7 +298,7 @@ namespace BioengineeringResearch
 
         private void btnDoorC7_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorC7.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -309,7 +309,7 @@ namespace BioengineeringResearch
 
         private void btnDoorC8_Click(object sender, EventArgs e)
         {
-            CardReader cardreader = new CardReader();
+            CardReader cardreader = new CardReader(btnDoorC8.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)

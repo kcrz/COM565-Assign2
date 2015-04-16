@@ -51,14 +51,14 @@
             this.btnDoorC2 = new System.Windows.Forms.Button();
             this.btnDoorC8 = new System.Windows.Forms.Button();
             this.btnDoorC1 = new System.Windows.Forms.Button();
+            this.btnDoorB3 = new System.Windows.Forms.Button();
             this.btnDoorB2 = new System.Windows.Forms.Button();
-            this.btnDoorB1 = new System.Windows.Forms.Button();
             this.btnDoorA8 = new System.Windows.Forms.Button();
             this.btnDoorA5 = new System.Windows.Forms.Button();
             this.btnDoorA6 = new System.Windows.Forms.Button();
             this.btnDoorA7 = new System.Windows.Forms.Button();
             this.btnDoorA3 = new System.Windows.Forms.Button();
-            this.btnDoorA9 = new System.Windows.Forms.Button();
+            this.btnDoorB1 = new System.Windows.Forms.Button();
             this.btnDoorA4 = new System.Windows.Forms.Button();
             this.btnDoorA2 = new System.Windows.Forms.Button();
             this.btnDoorA1 = new System.Windows.Forms.Button();
@@ -96,29 +96,29 @@
             this.panel1.Controls.Add(this.btnDoorC2);
             this.panel1.Controls.Add(this.btnDoorC8);
             this.panel1.Controls.Add(this.btnDoorC1);
+            this.panel1.Controls.Add(this.btnDoorB3);
             this.panel1.Controls.Add(this.btnDoorB2);
-            this.panel1.Controls.Add(this.btnDoorB1);
             this.panel1.Controls.Add(this.btnDoorA8);
             this.panel1.Controls.Add(this.btnDoorA5);
             this.panel1.Controls.Add(this.btnDoorA6);
             this.panel1.Controls.Add(this.btnDoorA7);
             this.panel1.Controls.Add(this.btnDoorA3);
-            this.panel1.Controls.Add(this.btnDoorA9);
+            this.panel1.Controls.Add(this.btnDoorB1);
             this.panel1.Controls.Add(this.btnDoorA4);
             this.panel1.Controls.Add(this.btnDoorA2);
             this.panel1.Controls.Add(this.btnDoorA1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(766, 455);
+            this.panel1.Size = new System.Drawing.Size(766, 493);
             this.panel1.TabIndex = 0;
             // 
             // lblSRA6
             // 
             this.lblSRA6.AutoSize = true;
             this.lblSRA6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA6.Location = new System.Drawing.Point(628, 84);
+            this.lblSRA6.Location = new System.Drawing.Point(628, 91);
             this.lblSRA6.Name = "lblSRA6";
-            this.lblSRA6.Size = new System.Drawing.Size(37, 14);
+            this.lblSRA6.Size = new System.Drawing.Size(40, 15);
             this.lblSRA6.TabIndex = 34;
             this.lblSRA6.Text = "SRA 6";
             // 
@@ -126,9 +126,9 @@
             // 
             this.lblSRA5.AutoSize = true;
             this.lblSRA5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA5.Location = new System.Drawing.Point(628, 169);
+            this.lblSRA5.Location = new System.Drawing.Point(628, 183);
             this.lblSRA5.Name = "lblSRA5";
-            this.lblSRA5.Size = new System.Drawing.Size(37, 14);
+            this.lblSRA5.Size = new System.Drawing.Size(40, 15);
             this.lblSRA5.TabIndex = 33;
             this.lblSRA5.Text = "SRA 5";
             // 
@@ -136,9 +136,9 @@
             // 
             this.lblSRA4.AutoSize = true;
             this.lblSRA4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA4.Location = new System.Drawing.Point(628, 267);
+            this.lblSRA4.Location = new System.Drawing.Point(628, 289);
             this.lblSRA4.Name = "lblSRA4";
-            this.lblSRA4.Size = new System.Drawing.Size(37, 14);
+            this.lblSRA4.Size = new System.Drawing.Size(40, 15);
             this.lblSRA4.TabIndex = 32;
             this.lblSRA4.Text = "SRA 4";
             // 
@@ -146,9 +146,9 @@
             // 
             this.lblSRA3.AutoSize = true;
             this.lblSRA3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA3.Location = new System.Drawing.Point(628, 358);
+            this.lblSRA3.Location = new System.Drawing.Point(628, 388);
             this.lblSRA3.Name = "lblSRA3";
-            this.lblSRA3.Size = new System.Drawing.Size(37, 14);
+            this.lblSRA3.Size = new System.Drawing.Size(40, 15);
             this.lblSRA3.TabIndex = 31;
             this.lblSRA3.Text = "SRA 3";
             // 
@@ -156,9 +156,9 @@
             // 
             this.lblSRA2.AutoSize = true;
             this.lblSRA2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA2.Location = new System.Drawing.Point(495, 122);
+            this.lblSRA2.Location = new System.Drawing.Point(495, 132);
             this.lblSRA2.Name = "lblSRA2";
-            this.lblSRA2.Size = new System.Drawing.Size(37, 14);
+            this.lblSRA2.Size = new System.Drawing.Size(40, 15);
             this.lblSRA2.TabIndex = 30;
             this.lblSRA2.Text = "SRA 2";
             // 
@@ -166,9 +166,9 @@
             // 
             this.lblSRA1.AutoSize = true;
             this.lblSRA1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA1.Location = new System.Drawing.Point(495, 308);
+            this.lblSRA1.Location = new System.Drawing.Point(495, 334);
             this.lblSRA1.Name = "lblSRA1";
-            this.lblSRA1.Size = new System.Drawing.Size(37, 14);
+            this.lblSRA1.Size = new System.Drawing.Size(40, 15);
             this.lblSRA1.TabIndex = 29;
             this.lblSRA1.Text = "SRA 1";
             // 
@@ -176,9 +176,9 @@
             // 
             this.lblFireExit6.AutoSize = true;
             this.lblFireExit6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFireExit6.Location = new System.Drawing.Point(728, 426);
+            this.lblFireExit6.Location = new System.Drawing.Point(728, 462);
             this.lblFireExit6.Name = "lblFireExit6";
-            this.lblFireExit6.Size = new System.Drawing.Size(19, 14);
+            this.lblFireExit6.Size = new System.Drawing.Size(21, 15);
             this.lblFireExit6.TabIndex = 28;
             this.lblFireExit6.Text = "F6";
             // 
@@ -186,9 +186,9 @@
             // 
             this.lblFireExit5.AutoSize = true;
             this.lblFireExit5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFireExit5.Location = new System.Drawing.Point(729, 9);
+            this.lblFireExit5.Location = new System.Drawing.Point(729, 10);
             this.lblFireExit5.Name = "lblFireExit5";
-            this.lblFireExit5.Size = new System.Drawing.Size(19, 14);
+            this.lblFireExit5.Size = new System.Drawing.Size(21, 15);
             this.lblFireExit5.TabIndex = 27;
             this.lblFireExit5.Text = "F5";
             // 
@@ -198,7 +198,7 @@
             this.lblFireExit4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFireExit4.Location = new System.Drawing.Point(427, 5);
             this.lblFireExit4.Name = "lblFireExit4";
-            this.lblFireExit4.Size = new System.Drawing.Size(19, 14);
+            this.lblFireExit4.Size = new System.Drawing.Size(21, 15);
             this.lblFireExit4.TabIndex = 26;
             this.lblFireExit4.Text = "F4";
             // 
@@ -206,9 +206,9 @@
             // 
             this.lblFireExit3.AutoSize = true;
             this.lblFireExit3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFireExit3.Location = new System.Drawing.Point(420, 428);
+            this.lblFireExit3.Location = new System.Drawing.Point(420, 464);
             this.lblFireExit3.Name = "lblFireExit3";
-            this.lblFireExit3.Size = new System.Drawing.Size(19, 14);
+            this.lblFireExit3.Size = new System.Drawing.Size(21, 15);
             this.lblFireExit3.TabIndex = 25;
             this.lblFireExit3.Text = "F3";
             // 
@@ -216,9 +216,9 @@
             // 
             this.lblFireExit1.AutoSize = true;
             this.lblFireExit1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFireExit1.Location = new System.Drawing.Point(165, 243);
+            this.lblFireExit1.Location = new System.Drawing.Point(165, 263);
             this.lblFireExit1.Name = "lblFireExit1";
-            this.lblFireExit1.Size = new System.Drawing.Size(19, 14);
+            this.lblFireExit1.Size = new System.Drawing.Size(21, 15);
             this.lblFireExit1.TabIndex = 24;
             this.lblFireExit1.Text = "F1";
             // 
@@ -226,18 +226,18 @@
             // 
             this.lblFireExit2.AutoSize = true;
             this.lblFireExit2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFireExit2.Location = new System.Drawing.Point(165, 21);
+            this.lblFireExit2.Location = new System.Drawing.Point(165, 23);
             this.lblFireExit2.Name = "lblFireExit2";
-            this.lblFireExit2.Size = new System.Drawing.Size(19, 14);
+            this.lblFireExit2.Size = new System.Drawing.Size(21, 15);
             this.lblFireExit2.TabIndex = 23;
             this.lblFireExit2.Text = "F2";
             // 
             // btnDoorPortal
             // 
             this.btnDoorPortal.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorPortal.Location = new System.Drawing.Point(41, 253);
+            this.btnDoorPortal.Location = new System.Drawing.Point(41, 274);
             this.btnDoorPortal.Name = "btnDoorPortal";
-            this.btnDoorPortal.Size = new System.Drawing.Size(55, 22);
+            this.btnDoorPortal.Size = new System.Drawing.Size(55, 24);
             this.btnDoorPortal.TabIndex = 22;
             this.btnDoorPortal.Text = "Portal";
             this.btnDoorPortal.UseVisualStyleBackColor = false;
@@ -246,9 +246,9 @@
             // btnDoorC3
             // 
             this.btnDoorC3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC3.Location = new System.Drawing.Point(696, 353);
+            this.btnDoorC3.Location = new System.Drawing.Point(696, 382);
             this.btnDoorC3.Name = "btnDoorC3";
-            this.btnDoorC3.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC3.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC3.TabIndex = 21;
             this.btnDoorC3.Text = "C3";
             this.btnDoorC3.UseVisualStyleBackColor = false;
@@ -257,9 +257,9 @@
             // btnDoorC4
             // 
             this.btnDoorC4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC4.Location = new System.Drawing.Point(696, 262);
+            this.btnDoorC4.Location = new System.Drawing.Point(696, 284);
             this.btnDoorC4.Name = "btnDoorC4";
-            this.btnDoorC4.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC4.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC4.TabIndex = 20;
             this.btnDoorC4.Text = "C4";
             this.btnDoorC4.UseVisualStyleBackColor = false;
@@ -268,9 +268,9 @@
             // btnDoorC5
             // 
             this.btnDoorC5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC5.Location = new System.Drawing.Point(696, 161);
+            this.btnDoorC5.Location = new System.Drawing.Point(696, 174);
             this.btnDoorC5.Name = "btnDoorC5";
-            this.btnDoorC5.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC5.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC5.TabIndex = 19;
             this.btnDoorC5.Text = "C5";
             this.btnDoorC5.UseVisualStyleBackColor = false;
@@ -279,9 +279,9 @@
             // btnDoorC6
             // 
             this.btnDoorC6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC6.Location = new System.Drawing.Point(696, 79);
+            this.btnDoorC6.Location = new System.Drawing.Point(696, 86);
             this.btnDoorC6.Name = "btnDoorC6";
-            this.btnDoorC6.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC6.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC6.TabIndex = 18;
             this.btnDoorC6.Text = "C6";
             this.btnDoorC6.UseVisualStyleBackColor = false;
@@ -290,9 +290,9 @@
             // btnDoorC7
             // 
             this.btnDoorC7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC7.Location = new System.Drawing.Point(495, 32);
+            this.btnDoorC7.Location = new System.Drawing.Point(495, 35);
             this.btnDoorC7.Name = "btnDoorC7";
-            this.btnDoorC7.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC7.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC7.TabIndex = 17;
             this.btnDoorC7.Text = "C7";
             this.btnDoorC7.UseVisualStyleBackColor = false;
@@ -301,9 +301,9 @@
             // btnDoorC2
             // 
             this.btnDoorC2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC2.Location = new System.Drawing.Point(495, 387);
+            this.btnDoorC2.Location = new System.Drawing.Point(495, 419);
             this.btnDoorC2.Name = "btnDoorC2";
-            this.btnDoorC2.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC2.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC2.TabIndex = 16;
             this.btnDoorC2.Text = "C2";
             this.btnDoorC2.UseVisualStyleBackColor = false;
@@ -312,9 +312,9 @@
             // btnDoorC8
             // 
             this.btnDoorC8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC8.Location = new System.Drawing.Point(442, 18);
+            this.btnDoorC8.Location = new System.Drawing.Point(442, 20);
             this.btnDoorC8.Name = "btnDoorC8";
-            this.btnDoorC8.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC8.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC8.TabIndex = 15;
             this.btnDoorC8.Text = "C8";
             this.btnDoorC8.UseVisualStyleBackColor = false;
@@ -323,42 +323,42 @@
             // btnDoorC1
             // 
             this.btnDoorC1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorC1.Location = new System.Drawing.Point(436, 409);
+            this.btnDoorC1.Location = new System.Drawing.Point(436, 443);
             this.btnDoorC1.Name = "btnDoorC1";
-            this.btnDoorC1.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorC1.Size = new System.Drawing.Size(34, 24);
             this.btnDoorC1.TabIndex = 14;
             this.btnDoorC1.Text = "C1";
             this.btnDoorC1.UseVisualStyleBackColor = false;
             this.btnDoorC1.Click += new System.EventHandler(this.btnDoorC1_Click);
             // 
+            // btnDoorB3
+            // 
+            this.btnDoorB3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnDoorB3.Location = new System.Drawing.Point(402, 20);
+            this.btnDoorB3.Name = "btnDoorB3";
+            this.btnDoorB3.Size = new System.Drawing.Size(34, 24);
+            this.btnDoorB3.TabIndex = 13;
+            this.btnDoorB3.Text = "B3";
+            this.btnDoorB3.UseVisualStyleBackColor = false;
+            this.btnDoorB3.Click += new System.EventHandler(this.btnDoorB3_Click);
+            // 
             // btnDoorB2
             // 
             this.btnDoorB2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorB2.Location = new System.Drawing.Point(402, 18);
+            this.btnDoorB2.Location = new System.Drawing.Point(402, 173);
             this.btnDoorB2.Name = "btnDoorB2";
-            this.btnDoorB2.Size = new System.Drawing.Size(34, 22);
-            this.btnDoorB2.TabIndex = 13;
+            this.btnDoorB2.Size = new System.Drawing.Size(34, 24);
+            this.btnDoorB2.TabIndex = 12;
             this.btnDoorB2.Text = "B2";
             this.btnDoorB2.UseVisualStyleBackColor = false;
             this.btnDoorB2.Click += new System.EventHandler(this.btnDoorB2_Click);
             // 
-            // btnDoorB1
-            // 
-            this.btnDoorB1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorB1.Location = new System.Drawing.Point(402, 160);
-            this.btnDoorB1.Name = "btnDoorB1";
-            this.btnDoorB1.Size = new System.Drawing.Size(34, 22);
-            this.btnDoorB1.TabIndex = 12;
-            this.btnDoorB1.Text = "B1";
-            this.btnDoorB1.UseVisualStyleBackColor = false;
-            this.btnDoorB1.Click += new System.EventHandler(this.btnDoorB1_Click);
-            // 
             // btnDoorA8
             // 
             this.btnDoorA8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA8.Location = new System.Drawing.Point(391, 381);
+            this.btnDoorA8.Location = new System.Drawing.Point(391, 413);
             this.btnDoorA8.Name = "btnDoorA8";
-            this.btnDoorA8.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA8.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA8.TabIndex = 11;
             this.btnDoorA8.Text = "A8";
             this.btnDoorA8.UseVisualStyleBackColor = false;
@@ -367,9 +367,9 @@
             // btnDoorA5
             // 
             this.btnDoorA5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA5.Location = new System.Drawing.Point(249, 381);
+            this.btnDoorA5.Location = new System.Drawing.Point(249, 413);
             this.btnDoorA5.Name = "btnDoorA5";
-            this.btnDoorA5.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA5.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA5.TabIndex = 10;
             this.btnDoorA5.Text = "A5";
             this.btnDoorA5.UseVisualStyleBackColor = false;
@@ -378,9 +378,9 @@
             // btnDoorA6
             // 
             this.btnDoorA6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA6.Location = new System.Drawing.Point(297, 381);
+            this.btnDoorA6.Location = new System.Drawing.Point(297, 413);
             this.btnDoorA6.Name = "btnDoorA6";
-            this.btnDoorA6.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA6.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA6.TabIndex = 9;
             this.btnDoorA6.Text = "A6";
             this.btnDoorA6.UseVisualStyleBackColor = false;
@@ -389,9 +389,9 @@
             // btnDoorA7
             // 
             this.btnDoorA7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA7.Location = new System.Drawing.Point(349, 381);
+            this.btnDoorA7.Location = new System.Drawing.Point(349, 413);
             this.btnDoorA7.Name = "btnDoorA7";
-            this.btnDoorA7.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA7.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA7.TabIndex = 8;
             this.btnDoorA7.Text = "A7";
             this.btnDoorA7.UseVisualStyleBackColor = false;
@@ -400,31 +400,31 @@
             // btnDoorA3
             // 
             this.btnDoorA3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA3.Location = new System.Drawing.Point(364, 339);
+            this.btnDoorA3.Location = new System.Drawing.Point(364, 367);
             this.btnDoorA3.Name = "btnDoorA3";
-            this.btnDoorA3.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorA3.Size = new System.Drawing.Size(34, 24);
             this.btnDoorA3.TabIndex = 7;
             this.btnDoorA3.Text = "A3";
             this.btnDoorA3.UseVisualStyleBackColor = false;
             this.btnDoorA3.Click += new System.EventHandler(this.btnDoorA3_Click);
             // 
-            // btnDoorA9
+            // btnDoorB1
             // 
-            this.btnDoorA9.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA9.Location = new System.Drawing.Point(402, 360);
-            this.btnDoorA9.Name = "btnDoorA9";
-            this.btnDoorA9.Size = new System.Drawing.Size(34, 22);
-            this.btnDoorA9.TabIndex = 6;
-            this.btnDoorA9.Text = "A9";
-            this.btnDoorA9.UseVisualStyleBackColor = false;
-            this.btnDoorA9.Click += new System.EventHandler(this.btnDoorA9_Click);
+            this.btnDoorB1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnDoorB1.Location = new System.Drawing.Point(402, 390);
+            this.btnDoorB1.Name = "btnDoorB1";
+            this.btnDoorB1.Size = new System.Drawing.Size(34, 24);
+            this.btnDoorB1.TabIndex = 6;
+            this.btnDoorB1.Text = "B1";
+            this.btnDoorB1.UseVisualStyleBackColor = false;
+            this.btnDoorB1.Click += new System.EventHandler(this.btnDoorB1_Click);
             // 
             // btnDoorA4
             // 
             this.btnDoorA4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA4.Location = new System.Drawing.Point(196, 381);
+            this.btnDoorA4.Location = new System.Drawing.Point(196, 413);
             this.btnDoorA4.Name = "btnDoorA4";
-            this.btnDoorA4.Size = new System.Drawing.Size(25, 35);
+            this.btnDoorA4.Size = new System.Drawing.Size(25, 38);
             this.btnDoorA4.TabIndex = 2;
             this.btnDoorA4.Text = "A4";
             this.btnDoorA4.UseVisualStyleBackColor = false;
@@ -433,9 +433,9 @@
             // btnDoorA2
             // 
             this.btnDoorA2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA2.Location = new System.Drawing.Point(189, 339);
+            this.btnDoorA2.Location = new System.Drawing.Point(189, 367);
             this.btnDoorA2.Name = "btnDoorA2";
-            this.btnDoorA2.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorA2.Size = new System.Drawing.Size(34, 24);
             this.btnDoorA2.TabIndex = 1;
             this.btnDoorA2.Text = "A2";
             this.btnDoorA2.UseVisualStyleBackColor = false;
@@ -444,9 +444,9 @@
             // btnDoorA1
             // 
             this.btnDoorA1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDoorA1.Location = new System.Drawing.Point(154, 360);
+            this.btnDoorA1.Location = new System.Drawing.Point(154, 390);
             this.btnDoorA1.Name = "btnDoorA1";
-            this.btnDoorA1.Size = new System.Drawing.Size(34, 22);
+            this.btnDoorA1.Size = new System.Drawing.Size(34, 24);
             this.btnDoorA1.TabIndex = 0;
             this.btnDoorA1.Text = "A1";
             this.btnDoorA1.UseVisualStyleBackColor = false;
@@ -454,9 +454,9 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(784, 415);
+            this.btn_login.Location = new System.Drawing.Point(784, 450);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_login.Size = new System.Drawing.Size(75, 25);
             this.btn_login.TabIndex = 0;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -465,17 +465,17 @@
             // txtLogStatus
             // 
             this.txtLogStatus.Enabled = false;
-            this.txtLogStatus.Location = new System.Drawing.Point(12, 475);
+            this.txtLogStatus.Location = new System.Drawing.Point(12, 515);
             this.txtLogStatus.Name = "txtLogStatus";
-            this.txtLogStatus.Size = new System.Drawing.Size(167, 21);
+            this.txtLogStatus.Size = new System.Drawing.Size(167, 20);
             this.txtLogStatus.TabIndex = 1;
             this.txtLogStatus.Text = "Login Status: logout";
             // 
             // btn_logout
             // 
-            this.btn_logout.Location = new System.Drawing.Point(784, 444);
+            this.btn_logout.Location = new System.Drawing.Point(784, 481);
             this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(75, 23);
+            this.btn_logout.Size = new System.Drawing.Size(75, 25);
             this.btn_logout.TabIndex = 2;
             this.btn_logout.Text = "Logout";
             this.btn_logout.UseVisualStyleBackColor = true;
@@ -483,9 +483,9 @@
             // 
             // btnManage
             // 
-            this.btnManage.Location = new System.Drawing.Point(784, 13);
+            this.btnManage.Location = new System.Drawing.Point(784, 14);
             this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(75, 23);
+            this.btnManage.Size = new System.Drawing.Size(75, 25);
             this.btnManage.TabIndex = 3;
             this.btnManage.Text = "Manage";
             this.btnManage.UseVisualStyleBackColor = true;
@@ -493,9 +493,9 @@
             // 
             // btnSimulator
             // 
-            this.btnSimulator.Location = new System.Drawing.Point(784, 42);
+            this.btnSimulator.Location = new System.Drawing.Point(784, 46);
             this.btnSimulator.Name = "btnSimulator";
-            this.btnSimulator.Size = new System.Drawing.Size(75, 23);
+            this.btnSimulator.Size = new System.Drawing.Size(75, 25);
             this.btnSimulator.TabIndex = 4;
             this.btnSimulator.Text = "Simulator";
             this.btnSimulator.UseVisualStyleBackColor = true;
@@ -503,9 +503,9 @@
             // 
             // btnCCTV
             // 
-            this.btnCCTV.Location = new System.Drawing.Point(784, 71);
+            this.btnCCTV.Location = new System.Drawing.Point(784, 77);
             this.btnCCTV.Name = "btnCCTV";
-            this.btnCCTV.Size = new System.Drawing.Size(75, 23);
+            this.btnCCTV.Size = new System.Drawing.Size(75, 25);
             this.btnCCTV.TabIndex = 5;
             this.btnCCTV.Text = "CCTV";
             this.btnCCTV.UseVisualStyleBackColor = true;
@@ -513,10 +513,10 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(864, 508);
+            this.ClientSize = new System.Drawing.Size(864, 550);
             this.Controls.Add(this.btnCCTV);
             this.Controls.Add(this.btnSimulator);
             this.Controls.Add(this.btnManage);
@@ -545,14 +545,14 @@
         private System.Windows.Forms.Button btnDoorC2;
         private System.Windows.Forms.Button btnDoorC8;
         private System.Windows.Forms.Button btnDoorC1;
+        private System.Windows.Forms.Button btnDoorB3;
         private System.Windows.Forms.Button btnDoorB2;
-        private System.Windows.Forms.Button btnDoorB1;
         private System.Windows.Forms.Button btnDoorA8;
         private System.Windows.Forms.Button btnDoorA5;
         private System.Windows.Forms.Button btnDoorA6;
         private System.Windows.Forms.Button btnDoorA7;
         private System.Windows.Forms.Button btnDoorA3;
-        private System.Windows.Forms.Button btnDoorA9;
+        private System.Windows.Forms.Button btnDoorB1;
         private System.Windows.Forms.Button btnDoorA4;
         private System.Windows.Forms.Button btnDoorA2;
         private System.Windows.Forms.Button btnDoorA1;

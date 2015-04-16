@@ -197,17 +197,6 @@ namespace BioengineeringResearch
             }
         }
 
-        private void btnDoorA9_Click(object sender, EventArgs e)
-        {
-            CardReader cardreader = new CardReader(btnDoorA9.Text);
-            DialogResult result = cardreader.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                // open this door
-            }
-        }
-
         private void btnDoorB1_Click(object sender, EventArgs e)
         {
             CardReader cardreader = new CardReader(btnDoorB1.Text);
@@ -222,6 +211,17 @@ namespace BioengineeringResearch
         private void btnDoorB2_Click(object sender, EventArgs e)
         {
             CardReader cardreader = new CardReader(btnDoorB2.Text);
+            DialogResult result = cardreader.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // open this door
+            }
+        }
+
+        private void btnDoorB3_Click(object sender, EventArgs e)
+        {
+            CardReader cardreader = new CardReader(btnDoorB3.Text);
             DialogResult result = cardreader.ShowDialog();
 
             if (result == DialogResult.OK)

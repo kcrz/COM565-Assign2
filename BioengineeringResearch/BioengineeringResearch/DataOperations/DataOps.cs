@@ -9,8 +9,8 @@ namespace BioengineeringResearch.DataOperations
 {
     class DataOps
     {
-        
-        
+
+
         /// <summary>
         /// Returns Employee details using the id parameter
         /// Returns null if id is not found
@@ -21,12 +21,12 @@ namespace BioengineeringResearch.DataOperations
         {
             using (var db = new BioEngResearchSecurityContext())
             {
-                
+
                 if (id.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
                 {
                     var query = from em in db.Employees where em.EmployeeId == id select em;
                     Employee[] employee = query.ToArray();
-                    if (employee != null || employee.Length != 0)
+                    if (employee != null && employee.Length != 0)
                     {
                         return employee[0];
                     }
@@ -39,6 +39,58 @@ namespace BioengineeringResearch.DataOperations
                 {
                     return null;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Search Employee table by name
+        /// set second param to true if searching by last name
+        /// </summary>
+        /// <param name="name">
+        /// <returns></returns>
+        public static List<Employee> searchEmployeeByName(String name, bool isLastName)
+        {
+            List<Employee> employeeList = new List<Employee>();
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                if (!isLastName)
+                {
+                    //search by First Name
+                    var query = from em in db.Employees where em.FirstName == name select em;
+                    foreach (Employee em in query)
+                    {
+                        employeeList.Add(em);
+                    }
+                    return employeeList;
+
+                }
+                else
+                {
+                    //search by Last Name
+                    var query = from em in db.Employees where em.LastName == name select em;
+                    foreach (Employee em in query)
+                    {
+                        employeeList.Add(em);
+                    }
+                    return employeeList;
+                }
+
+
+            }
+        }
+
+        public static List<Employee> getAllEmployees()
+        {
+            List<Employee> employeeList = new List<Employee>();
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                var query = from em in db.Employees select em;
+                foreach (Employee em in query)
+                {
+                    if (em != null)
+                    { employeeList.Add(em); }
+                }
+                return employeeList;
             }
         }
 
@@ -56,8 +108,9 @@ namespace BioengineeringResearch.DataOperations
                 {
                     var query = from vt in db.Visitors where vt.VisitorId == id select vt;
                     Visitor[] visitor = query.ToArray();
-                    if (visitor != null || visitor.Length != 0)
+                    if (visitor != null && visitor.Length != 0)
                     {
+
                         return visitor[0];
                     }
                     else
@@ -72,61 +125,58 @@ namespace BioengineeringResearch.DataOperations
             }
         }
 
-        public static List<Visitor> searchVisitorByLastName(String lastName)
+        /// <summary>
+        /// Search Visitor table by name
+        /// set second param to true if searching by last name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="isLastName"></param>
+        /// <returns></returns>
+        public static List<Visitor> searchVisitorByName(String name, bool isLastName)
         {
             List<Visitor> visitorList = new List<Visitor>();
             using (var db = new BioEngResearchSecurityContext())
             {
-                var query = from vt in db.Visitors where vt.LastName == lastName select vt;
-                foreach(Visitor vt in query)
+                if (!isLastName)
                 {
-                    visitorList.Add(vt);
+                    //search by first name
+
+                    var query = from vt in db.Visitors where vt.FirstName == name select vt;
+                    foreach (Visitor vt in query)
+                    {
+                        visitorList.Add(vt);
+                    }
+                    return visitorList;
                 }
-                return visitorList;
+                else
+                {
+                    //search by last name
+                    var query = from vt in db.Visitors where vt.LastName == name select vt;
+                    foreach (Visitor vt in query)
+                    {
+                        visitorList.Add(vt);
+                    }
+                    return visitorList;
+                }
             }
         }
 
-        public static List<Visitor> searchVisitorByFirstName(String firstName)
+        public static List<Visitor> getAllVisitors()
         {
             List<Visitor> visitorList = new List<Visitor>();
             using (var db = new BioEngResearchSecurityContext())
             {
-                var query = from vt in db.Visitors where vt.FirstName == firstName select vt;
+                var query = from vt in db.Visitors select vt;
                 foreach (Visitor vt in query)
                 {
-                    visitorList.Add(vt);
+                    if (vt != null)
+                    { visitorList.Add(vt); }
                 }
                 return visitorList;
             }
         }
 
-        public static List<Employee> searchEmployeeByLastName(String lastName)
-        {
-            List<Employee> employeeList = new List<Employee>();
-            using (var db = new BioEngResearchSecurityContext())
-            {
-                var query = from em in db.Employees where em.LastName == lastName select em;
-                foreach (Employee em in query)
-                {
-                    employeeList.Add(em);
-                }
-                return employeeList;
-            }
-        }
 
-        public static List<Employee> searchEmployeeByFirstName(String firstName)
-        {
-            List<Employee> employeeList = new List<Employee>();
-            using (var db = new BioEngResearchSecurityContext())
-            {
-                var query = from em in db.Employees where em.FirstName == firstName select em;
-                foreach (Employee em in query)
-                {
-                    employeeList.Add(em);
-                }
-                return employeeList;
-            }
-        }
 
         /// <summary>
         /// Checks Login credentials. Returns true if credentials are valid, otherwise false
@@ -235,13 +285,6 @@ namespace BioengineeringResearch.DataOperations
             }
         }
 
-        public static void searchDoor()
-        {
-            using (var db = new BioEngResearchSecurityContext())
-            {
-            }
-        }
-
         /// <summary>
         /// Updates the Employee ID with the new employee object.
         /// Returns true if operation is successful otherwise false
@@ -328,8 +371,8 @@ namespace BioengineeringResearch.DataOperations
                 }
 
                 return null;
-                
-                
+
+
             }
         }
 
@@ -346,7 +389,7 @@ namespace BioengineeringResearch.DataOperations
                 DateTime accessDate = DateTime.UtcNow;
                 if (userId.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
                 {
-                    AccessHistory newEntry = new AccessHistory { DoorId = doorId, EmployeeId = userId, DateTimeStamp = accessDate};
+                    AccessHistory newEntry = new AccessHistory { DoorId = doorId, EmployeeId = userId, DateTimeStamp = accessDate };
                     db.AccessHistories.Add(newEntry);
                     db.SaveChanges();
                     return true;
@@ -359,10 +402,99 @@ namespace BioengineeringResearch.DataOperations
                     db.SaveChanges();
                     return true;
                 }
-                else {
+                else
+                {
                     //invalid id
                     return false;
                 }
+            }
+        }
+
+        public static List<AccessHistory> searchAccessHistoryByDate(DateTime date)
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                List<AccessHistory> historyList = new List<AccessHistory>();
+                var query = from history in db.AccessHistories where history.DateTimeStamp == date select history;
+                foreach (AccessHistory ht in query)
+                {
+                    historyList.Add(ht);
+                }
+                return historyList;
+            }
+        }
+
+        public static List<AccessHistory> searchAccessHistoryByDoor(String doorName)
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                List<AccessHistory> historyList = new List<AccessHistory>();
+
+                //get the door id using door name
+                var queryDoorId = from dr in db.DoorTerminals where dr.DoorName == doorName select dr.DoorId;
+                String doorId = queryDoorId.ToArray().GetValue(0).ToString();
+                if (doorId != null || doorId.Length != 0)
+                {
+                    var queryHistory = from ht in db.AccessHistories where ht.DoorId == doorId select ht;
+                    foreach (AccessHistory ht in queryHistory)
+                    {
+                        historyList.Add(ht);
+                    }
+                }
+
+                return historyList;
+            }
+        }
+
+        public static List<AccessHistory> searchAccessHistoryByUserId(String userId)
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                List<AccessHistory> historyList = new List<AccessHistory>();
+                var queryHistory = from ht in db.AccessHistories where ht.EmployeeId == userId || ht.VisitorId == userId select ht;
+                foreach (AccessHistory ht in queryHistory)
+                {
+                    historyList.Add(ht);
+                }
+
+                return historyList;
+            }
+        }
+
+        public static List<AccessHistory> searchAccessHistory(DateTime date, String userId)
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                List<AccessHistory> historyList = new List<AccessHistory>();
+                var queryHistory = from ht in db.AccessHistories where (ht.EmployeeId == userId || ht.VisitorId == userId) && ht.DateTimeStamp == date select ht;
+                foreach (AccessHistory ht in queryHistory)
+                {
+                    historyList.Add(ht);
+                }
+
+                return historyList;
+            }
+        }
+
+        public static List<AccessHistory> searchAccessHistory(DateTime date, String userId, String doorName)
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                List<AccessHistory> historyList = new List<AccessHistory>();
+
+                //get the door id using door name
+                var queryDoorId = from dr in db.DoorTerminals where dr.DoorName == doorName select dr.DoorId;
+                String doorId = queryDoorId.ToArray().GetValue(0).ToString();
+                if (doorId != null || doorId.Length != 0)
+                {
+                    var queryHistory = from ht in db.AccessHistories where (ht.EmployeeId == userId || ht.VisitorId == userId) && ht.DateTimeStamp == date && ht.DoorId == doorId select ht;
+                    foreach (AccessHistory ht in queryHistory)
+                    {
+                        historyList.Add(ht);
+                    }
+                }
+
+                return historyList;
             }
         }
     }

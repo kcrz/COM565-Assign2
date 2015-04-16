@@ -57,6 +57,11 @@ namespace BioengineeringResearch
                     MessageBox.Show(doorName + " is open successfully, after 5s door will be close.", _caption);
 
                     // save the history
+                    /*
+                    if (!DataOps.createNewAccessHistoryEntry(txtID.Text, doorName))
+                    {
+                        MessageBox.Show("save failed");
+                    }*/
 
                     this.Close();
                 }

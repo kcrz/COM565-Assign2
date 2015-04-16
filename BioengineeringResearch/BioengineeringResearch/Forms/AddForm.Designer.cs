@@ -108,6 +108,10 @@
             // add_Position
             // 
             this.add_Position.FormattingEnabled = true;
+            this.add_Position.Items.AddRange(new object[] {
+            "Admin",
+            "Receptionist",
+            "Normal"});
             this.add_Position.Location = new System.Drawing.Point(112, 272);
             this.add_Position.Name = "add_Position";
             this.add_Position.Size = new System.Drawing.Size(232, 20);

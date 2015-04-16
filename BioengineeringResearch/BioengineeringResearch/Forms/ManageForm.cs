@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BioengineeringResearch.Forms;
+using BioengineeringResearch.Functions;
 
 namespace BioengineeringResearch.Forms
 {
@@ -41,6 +43,48 @@ namespace BioengineeringResearch.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSrchPerson_Click(object sender, EventArgs e)
+        {
+            if (rbID.Checked == true)
+            {
+
+            }
+            else if (rbFirstName.Checked == true)
+            {
+
+            }
+            else if (rbLastName.Checked == true)
+            {
+
+            }
+        }
+
+        private void btnShowAllVist_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShowAllEmp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeltPerson_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddForm addForm = new AddForm(loginStatus);
+            addForm.ShowDialog();
         }
     }
 }

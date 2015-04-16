@@ -23,6 +23,7 @@ namespace BioengineeringResearch.Functions
             /* login status
              * 1 Admin
              * 2 Receptionist
+             * 3 Normal
              */
             switch (Status)
             {
@@ -68,7 +69,25 @@ namespace BioengineeringResearch.Functions
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // get information from widgets
+            if (add_PIN.Text.Equals(add_ConPIN.Text)) // check if two PINs are the same
+            {
+                if (radiobtn_emp.Checked == true) // add Employee
+                {
+                    Employee employee = new Employee();
+                }
+                else if (radiobtn_vis.Checked == true) // add Visitor
+                {
+                    Visitor visitor = new Visitor();
+                }
+            }
+            else
+            {
+                MessageBox.Show("PIN should be the same as the Confirm PIN");
+
+                // clear the text in PIN and ConPIN
+                add_PIN.Text = "";
+                add_ConPIN.Text = "";
+            }
         }
     }
 }

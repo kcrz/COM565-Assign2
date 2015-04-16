@@ -38,9 +38,9 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbLastName = new System.Windows.Forms.RadioButton();
+            this.rbID = new System.Windows.Forms.RadioButton();
+            this.rbFirstName = new System.Windows.Forms.RadioButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSrchPerson = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -143,47 +143,47 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.rbLastName);
+            this.panel1.Controls.Add(this.rbID);
+            this.panel1.Controls.Add(this.rbFirstName);
             this.panel1.Location = new System.Drawing.Point(6, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 26);
             this.panel1.TabIndex = 9;
             // 
-            // radioButton3
+            // rbLastName
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(165, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(77, 16);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Last name";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbLastName.AutoSize = true;
+            this.rbLastName.Location = new System.Drawing.Point(165, 3);
+            this.rbLastName.Name = "rbLastName";
+            this.rbLastName.Size = new System.Drawing.Size(77, 16);
+            this.rbLastName.TabIndex = 2;
+            this.rbLastName.TabStop = true;
+            this.rbLastName.Text = "Last name";
+            this.rbLastName.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbID
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(35, 16);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "ID";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbID.AutoSize = true;
+            this.rbID.Checked = true;
+            this.rbID.Location = new System.Drawing.Point(3, 3);
+            this.rbID.Name = "rbID";
+            this.rbID.Size = new System.Drawing.Size(35, 16);
+            this.rbID.TabIndex = 0;
+            this.rbID.TabStop = true;
+            this.rbID.Text = "ID";
+            this.rbID.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbFirstName
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(59, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(83, 16);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "First name";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbFirstName.AutoSize = true;
+            this.rbFirstName.Location = new System.Drawing.Point(59, 3);
+            this.rbFirstName.Name = "rbFirstName";
+            this.rbFirstName.Size = new System.Drawing.Size(83, 16);
+            this.rbFirstName.TabIndex = 1;
+            this.rbFirstName.TabStop = true;
+            this.rbFirstName.Text = "First name";
+            this.rbFirstName.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -200,6 +200,7 @@
             this.btnSrchPerson.TabIndex = 8;
             this.btnSrchPerson.Text = "Search";
             this.btnSrchPerson.UseVisualStyleBackColor = true;
+            this.btnSrchPerson.Click += new System.EventHandler(this.btnSrchPerson_Click);
             // 
             // btnAdd
             // 
@@ -209,6 +210,7 @@
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add Person";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDeltPerson
             // 
@@ -218,6 +220,7 @@
             this.btnDeltPerson.TabIndex = 10;
             this.btnDeltPerson.Text = "Delete";
             this.btnDeltPerson.UseVisualStyleBackColor = true;
+            this.btnDeltPerson.Click += new System.EventHandler(this.btnDeltPerson_Click);
             // 
             // listViewHist
             // 
@@ -404,6 +407,7 @@
             this.btnShowAllVist.TabIndex = 0;
             this.btnShowAllVist.Text = "Show All Visitors";
             this.btnShowAllVist.UseVisualStyleBackColor = true;
+            this.btnShowAllVist.Click += new System.EventHandler(this.btnShowAllVist_Click);
             // 
             // btnShowAllEmp
             // 
@@ -413,6 +417,7 @@
             this.btnShowAllEmp.TabIndex = 1;
             this.btnShowAllEmp.Text = "Show All Employees";
             this.btnShowAllEmp.UseVisualStyleBackColor = true;
+            this.btnShowAllEmp.Click += new System.EventHandler(this.btnShowAllEmp_Click);
             // 
             // btnShowAll
             // 
@@ -422,6 +427,7 @@
             this.btnShowAll.TabIndex = 2;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // txtLogStatus
             // 
@@ -476,9 +482,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbLastName;
+        private System.Windows.Forms.RadioButton rbFirstName;
+        private System.Windows.Forms.RadioButton rbID;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSrchPerson;
         private System.Windows.Forms.Button btnAdd;

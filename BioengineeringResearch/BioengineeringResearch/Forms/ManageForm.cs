@@ -311,5 +311,73 @@ namespace BioengineeringResearch.Forms
                 MessageBox.Show("No item found", "Alert");
             }
         }
+
+        private void btnSrchHistBy_Click(object sender, EventArgs e)
+        {
+            DateTime dateSelected;
+            DateTime timeSelected;
+            string personId;
+            string doorName;
+            //Check if an option is selected
+            if (chkboxDate.Checked || chkboxDoor.Checked || chkboxTime.Checked || chkBxPasserId.Checked)
+            {
+                //All options selected
+                if (datePicker.Enabled && timePicker.Enabled && txtPasserId.Enabled && dropDownDoor.Enabled)
+                { 
+                
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Tick an Option", "Alert");
+            }
+        }
+
+        private void chkboxDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkboxDate.Checked)
+            {
+                datePicker.Enabled = true;
+            }
+            else {
+                datePicker.Enabled = false;
+            }
+        }
+
+        private void chkboxTime_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkboxTime.Checked)
+            {
+                timePicker.Enabled = true;
+            }
+            else
+            {
+                timePicker.Enabled = false;
+            }
+        }
+
+        private void chkBxPasserId_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBxPasserId.Checked)
+            {
+                txtPasserId.Enabled = true;
+            }
+            else
+            {
+                txtPasserId.Enabled = false;
+            }
+        }
+
+        private void chkboxDoor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkboxDoor.Checked)
+            {
+                dropDownDoor.Enabled = true;
+            }
+            else
+            {
+                dropDownDoor.Enabled = false;
+            }
+        }
     }
 }

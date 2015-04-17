@@ -56,20 +56,20 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtPasserId = new System.Windows.Forms.TextBox();
             this.btnSrchHistBy = new System.Windows.Forms.Button();
-            this.chkboxFirstName = new System.Windows.Forms.CheckBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.chkboxID = new System.Windows.Forms.CheckBox();
-            this.txtDoor = new System.Windows.Forms.ComboBox();
+            this.chkBxPasserId = new System.Windows.Forms.CheckBox();
+            this.chkboxTime = new System.Windows.Forms.CheckBox();
+            this.dropDownDoor = new System.Windows.Forms.ComboBox();
             this.chkboxDoor = new System.Windows.Forms.CheckBox();
-            this.txtDate = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.chkboxDate = new System.Windows.Forms.CheckBox();
             this.btnShowAllHist = new System.Windows.Forms.Button();
             this.btnShowAllVist = new System.Windows.Forms.Button();
             this.btnShowAllEmp = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.txtLogStatus = new System.Windows.Forms.TextBox();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -310,14 +310,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtFirstName);
+            this.groupBox2.Controls.Add(this.timePicker);
+            this.groupBox2.Controls.Add(this.txtPasserId);
             this.groupBox2.Controls.Add(this.btnSrchHistBy);
-            this.groupBox2.Controls.Add(this.chkboxFirstName);
-            this.groupBox2.Controls.Add(this.txtID);
-            this.groupBox2.Controls.Add(this.chkboxID);
-            this.groupBox2.Controls.Add(this.txtDoor);
+            this.groupBox2.Controls.Add(this.chkBxPasserId);
+            this.groupBox2.Controls.Add(this.chkboxTime);
+            this.groupBox2.Controls.Add(this.dropDownDoor);
             this.groupBox2.Controls.Add(this.chkboxDoor);
-            this.groupBox2.Controls.Add(this.txtDate);
+            this.groupBox2.Controls.Add(this.datePicker);
             this.groupBox2.Controls.Add(this.chkboxDate);
             this.groupBox2.Location = new System.Drawing.Point(12, 307);
             this.groupBox2.Name = "groupBox2";
@@ -326,12 +326,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search History";
             // 
-            // txtFirstName
+            // txtPasserId
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(511, 59);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(121, 20);
-            this.txtFirstName.TabIndex = 9;
+            this.txtPasserId.Enabled = false;
+            this.txtPasserId.Location = new System.Drawing.Point(500, 27);
+            this.txtPasserId.Name = "txtPasserId";
+            this.txtPasserId.Size = new System.Drawing.Size(148, 20);
+            this.txtPasserId.TabIndex = 9;
             // 
             // btnSrchHistBy
             // 
@@ -341,39 +342,36 @@
             this.btnSrchHistBy.TabIndex = 10;
             this.btnSrchHistBy.Text = "Search By";
             this.btnSrchHistBy.UseVisualStyleBackColor = true;
+            this.btnSrchHistBy.Click += new System.EventHandler(this.btnSrchHistBy_Click);
             // 
-            // chkboxFirstName
+            // chkBxPasserId
             // 
-            this.chkboxFirstName.AutoSize = true;
-            this.chkboxFirstName.Location = new System.Drawing.Point(397, 61);
-            this.chkboxFirstName.Name = "chkboxFirstName";
-            this.chkboxFirstName.Size = new System.Drawing.Size(90, 17);
-            this.chkboxFirstName.TabIndex = 8;
-            this.chkboxFirstName.Text = "Passer name:";
-            this.chkboxFirstName.UseVisualStyleBackColor = true;
+            this.chkBxPasserId.AutoSize = true;
+            this.chkBxPasserId.Location = new System.Drawing.Point(402, 27);
+            this.chkBxPasserId.Name = "chkBxPasserId";
+            this.chkBxPasserId.Size = new System.Drawing.Size(75, 17);
+            this.chkBxPasserId.TabIndex = 8;
+            this.chkBxPasserId.Text = "Passer ID:";
+            this.chkBxPasserId.UseVisualStyleBackColor = true;
+            this.chkBxPasserId.CheckedChanged += new System.EventHandler(this.chkBxPasserId_CheckedChanged);
             // 
-            // txtID
+            // chkboxTime
             // 
-            this.txtID.Location = new System.Drawing.Point(213, 59);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(170, 20);
-            this.txtID.TabIndex = 7;
+            this.chkboxTime.AutoSize = true;
+            this.chkboxTime.Location = new System.Drawing.Point(123, 61);
+            this.chkboxTime.Name = "chkboxTime";
+            this.chkboxTime.Size = new System.Drawing.Size(52, 17);
+            this.chkboxTime.TabIndex = 6;
+            this.chkboxTime.Text = "Time:";
+            this.chkboxTime.UseVisualStyleBackColor = true;
+            this.chkboxTime.CheckedChanged += new System.EventHandler(this.chkboxTime_CheckedChanged);
             // 
-            // chkboxID
+            // dropDownDoor
             // 
-            this.chkboxID.AutoSize = true;
-            this.chkboxID.Location = new System.Drawing.Point(123, 61);
-            this.chkboxID.Name = "chkboxID";
-            this.chkboxID.Size = new System.Drawing.Size(75, 17);
-            this.chkboxID.TabIndex = 6;
-            this.chkboxID.Text = "Passer ID:";
-            this.chkboxID.UseVisualStyleBackColor = true;
-            // 
-            // txtDoor
-            // 
-            this.txtDoor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtDoor.FormattingEnabled = true;
-            this.txtDoor.Items.AddRange(new object[] {
+            this.dropDownDoor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropDownDoor.Enabled = false;
+            this.dropDownDoor.FormattingEnabled = true;
+            this.dropDownDoor.Items.AddRange(new object[] {
             "A1",
             "A2",
             "A3",
@@ -382,9 +380,9 @@
             "A6",
             "A7",
             "A8",
-            "A9",
             "B1",
             "B2",
+            "B3",
             "C1",
             "C2",
             "C3",
@@ -393,27 +391,28 @@
             "C6",
             "C7",
             "C8"});
-            this.txtDoor.Location = new System.Drawing.Point(511, 25);
-            this.txtDoor.Name = "txtDoor";
-            this.txtDoor.Size = new System.Drawing.Size(121, 21);
-            this.txtDoor.TabIndex = 5;
+            this.dropDownDoor.Location = new System.Drawing.Point(566, 58);
+            this.dropDownDoor.Name = "dropDownDoor";
+            this.dropDownDoor.Size = new System.Drawing.Size(82, 21);
+            this.dropDownDoor.TabIndex = 5;
             // 
             // chkboxDoor
             // 
             this.chkboxDoor.AutoSize = true;
-            this.chkboxDoor.Location = new System.Drawing.Point(397, 27);
+            this.chkboxDoor.Location = new System.Drawing.Point(402, 59);
             this.chkboxDoor.Name = "chkboxDoor";
             this.chkboxDoor.Size = new System.Drawing.Size(92, 17);
             this.chkboxDoor.TabIndex = 2;
             this.chkboxDoor.Text = "Door location:";
             this.chkboxDoor.UseVisualStyleBackColor = true;
+            this.chkboxDoor.CheckedChanged += new System.EventHandler(this.chkboxDoor_CheckedChanged);
             // 
-            // txtDate
+            // datePicker
             // 
-            this.txtDate.Location = new System.Drawing.Point(183, 24);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(200, 20);
-            this.txtDate.TabIndex = 1;
+            this.datePicker.Location = new System.Drawing.Point(183, 24);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(200, 20);
+            this.datePicker.TabIndex = 1;
             // 
             // chkboxDate
             // 
@@ -426,6 +425,7 @@
             this.chkboxDate.TabIndex = 0;
             this.chkboxDate.Text = "Date:";
             this.chkboxDate.UseVisualStyleBackColor = true;
+            this.chkboxDate.CheckedChanged += new System.EventHandler(this.chkboxDate_CheckedChanged);
             // 
             // btnShowAllHist
             // 
@@ -475,6 +475,17 @@
             this.txtLogStatus.Size = new System.Drawing.Size(173, 20);
             this.txtLogStatus.TabIndex = 16;
             this.txtLogStatus.Text = "Your Status:";
+            // 
+            // timePicker
+            // 
+            this.timePicker.Enabled = false;
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timePicker.Location = new System.Drawing.Point(183, 59);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.ShowUpDown = true;
+            this.timePicker.Size = new System.Drawing.Size(87, 20);
+            this.timePicker.TabIndex = 11;
+            this.timePicker.Value = new System.DateTime(2015, 4, 17, 22, 20, 20, 0);
             // 
             // ManageForm
             // 
@@ -537,13 +548,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox chkboxDoor;
-        private System.Windows.Forms.DateTimePicker txtDate;
+        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.CheckBox chkboxDate;
-        private System.Windows.Forms.ComboBox txtDoor;
-        private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.CheckBox chkboxFirstName;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.CheckBox chkboxID;
+        private System.Windows.Forms.ComboBox dropDownDoor;
+        private System.Windows.Forms.TextBox txtPasserId;
+        private System.Windows.Forms.CheckBox chkBxPasserId;
+        private System.Windows.Forms.CheckBox chkboxTime;
         private System.Windows.Forms.Button btnSrchHistBy;
         private System.Windows.Forms.Button btnShowAllHist;
         private System.Windows.Forms.Panel panel1;
@@ -552,5 +562,6 @@
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.TextBox txtLogStatus;
         private System.Windows.Forms.ColumnHeader columnCompany;
+        private System.Windows.Forms.DateTimePicker timePicker;
     }
 }

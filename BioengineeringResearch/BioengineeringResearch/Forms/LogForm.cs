@@ -42,7 +42,7 @@ namespace BioengineeringResearch
             }
             else
             {
-                loginYes = DataOps.checkLogin(textID.Text, textPIN.Text);
+                loginYes = DataOps.checkLogin(textID.Text.ToUpper(), textPIN.Text);
                 //loginYes = true; // for debugging
 
                 if (loginYes)

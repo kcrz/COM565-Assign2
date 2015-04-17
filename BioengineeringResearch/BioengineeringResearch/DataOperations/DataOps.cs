@@ -418,7 +418,10 @@ namespace BioengineeringResearch.DataOperations
                 var query = from history in db.AccessHistories where history.DateTimeStamp == date select history;
                 foreach (AccessHistory ht in query)
                 {
-                    historyList.Add(ht);
+                    if (ht != null)
+                    {
+                        historyList.Add(ht);
+                    }
                 }
                 return historyList;
             }
@@ -432,15 +435,23 @@ namespace BioengineeringResearch.DataOperations
 
                 //get the door id using door name
                 var queryDoorId = from dr in db.DoorTerminals where dr.DoorName == doorName select dr.DoorId;
-                String doorId = queryDoorId.ToArray().GetValue(0).ToString();
-                if (doorId != null || doorId.Length != 0)
+                string[] doorArray = queryDoorId.ToArray();
+                if (doorArray != null && doorArray.Length != 0)
                 {
-                    var queryHistory = from ht in db.AccessHistories where ht.DoorId == doorId select ht;
-                    foreach (AccessHistory ht in queryHistory)
+                    String doorId = doorArray.GetValue(0).ToString();
+                    if (doorId != null && doorId.Length != 0)
                     {
-                        historyList.Add(ht);
+                        var queryHistory = from ht in db.AccessHistories where ht.DoorId == doorId select ht;
+                        foreach (AccessHistory ht in queryHistory)
+                        {
+                            if (ht != null)
+                            {
+                                historyList.Add(ht);
+                            }
+                        }
                     }
                 }
+
 
                 return historyList;
             }
@@ -454,7 +465,10 @@ namespace BioengineeringResearch.DataOperations
                 var queryHistory = from ht in db.AccessHistories where ht.EmployeeId == userId || ht.VisitorId == userId select ht;
                 foreach (AccessHistory ht in queryHistory)
                 {
-                    historyList.Add(ht);
+                    if (ht != null)
+                    {
+                        historyList.Add(ht);
+                    }
                 }
 
                 return historyList;
@@ -469,7 +483,10 @@ namespace BioengineeringResearch.DataOperations
                 var queryHistory = from ht in db.AccessHistories where (ht.EmployeeId == userId || ht.VisitorId == userId) && ht.DateTimeStamp == date select ht;
                 foreach (AccessHistory ht in queryHistory)
                 {
-                    historyList.Add(ht);
+                    if (ht != null)
+                    {
+                        historyList.Add(ht);
+                    }
                 }
 
                 return historyList;
@@ -484,17 +501,79 @@ namespace BioengineeringResearch.DataOperations
 
                 //get the door id using door name
                 var queryDoorId = from dr in db.DoorTerminals where dr.DoorName == doorName select dr.DoorId;
-                String doorId = queryDoorId.ToArray().GetValue(0).ToString();
-                if (doorId != null || doorId.Length != 0)
+                string[] doorArray = queryDoorId.ToArray();
+                if (doorArray != null && doorArray.Length != 0)
                 {
-                    var queryHistory = from ht in db.AccessHistories where (ht.EmployeeId == userId || ht.VisitorId == userId) && ht.DateTimeStamp == date && ht.DoorId == doorId select ht;
-                    foreach (AccessHistory ht in queryHistory)
+                    String doorId = doorArray.GetValue(0).ToString();
+                    if (doorId != null && doorId.Length != 0)
                     {
-                        historyList.Add(ht);
+                        var queryHistory = from ht in db.AccessHistories where (ht.EmployeeId == userId || ht.VisitorId == userId) && ht.DateTimeStamp == date && ht.DoorId == doorId select ht;
+                        foreach (AccessHistory ht in queryHistory)
+                        {
+                            if (ht != null)
+                            {
+                                historyList.Add(ht);
+                            }
+                        }
                     }
                 }
 
+
                 return historyList;
+            }
+        }
+
+        public static List<DisplayedHistory> getAllEmployeeAccessHistory()
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                List<DisplayedHistory> hisList = new List<DisplayedHistory>();
+
+                var query = from ht in db.AccessHistories
+                            from dr in db.DoorTerminals
+                            from em in db.Employees
+                            where ht.DoorId == dr.DoorId
+                            && ht.EmployeeId != null
+                            && ht.EmployeeId == em.EmployeeId
+                            join tbl in db.AccessHistories on ht.EmployeeId equals tbl.EmployeeId
+                            select new DisplayedHistory { DateTimeStamp = tbl.DateTimeStamp, DoorName = dr.DoorName, EmployeeId = tbl.EmployeeId, FirstName = em.FirstName, LastName = em.LastName };
+
+                foreach (DisplayedHistory data in query)
+                {
+                    if (data != null)
+                    {
+                        hisList.Add(data);
+                    }
+                }
+                
+                return hisList;
+            }
+        }
+
+        public static List<DisplayedHistory> getAllVisitorAccessHistory()
+        {
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                List<DisplayedHistory> hisList = new List<DisplayedHistory>();
+
+                var query = from ht in db.AccessHistories
+                            from dr in db.DoorTerminals
+                            from vt in db.Visitors
+                            where ht.DoorId == dr.DoorId
+                            && ht.VisitorId != null
+                            && ht.VisitorId == vt.VisitorId
+                            join tbl in db.AccessHistories on ht.VisitorId equals tbl.VisitorId
+                            select new DisplayedHistory { DateTimeStamp = tbl.DateTimeStamp, DoorName = dr.DoorName, VisitorId = tbl.VisitorId, FirstName = vt.FirstName, LastName = vt.LastName };
+
+                foreach (DisplayedHistory data in query)
+                {
+                    if (data != null)
+                    {
+                        hisList.Add(data);
+                    }
+                }
+
+                return hisList;
             }
         }
     }

@@ -25,6 +25,7 @@ namespace BioengineeringResearch.Forms
 
         private List<Employee> employeeList;
         private List<Visitor> visitorList;
+        private List<DisplayedHistory> displayedHistoryList;
         private ListViewItem listViewItem;
 
         public ManageForm(int Status)
@@ -243,18 +244,6 @@ namespace BioengineeringResearch.Forms
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnDeltPerson_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            AddForm addForm = new AddForm(loginStatus);
-            addForm.ShowDialog();
             //clear existing items in list view
             listviewPerson.Items.Clear();
 
@@ -290,6 +279,49 @@ namespace BioengineeringResearch.Forms
 
             //if nothing has beend added to listview show message box
             if (listviewPerson.Items.Count == 0)
+            {
+                MessageBox.Show("No item found", "Alert");
+            }
+        }
+
+        private void btnDeltPerson_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddForm addForm = new AddForm(loginStatus);
+            addForm.ShowDialog();
+        }
+
+        private void btnShowAllHist_Click(object sender, EventArgs e)
+        {
+            listViewHist.Items.Clear();
+            displayedHistoryList = DataOps.getAllEmployeeAccessHistory();
+            foreach(DisplayedHistory dhl in displayedHistoryList)
+            {
+                if (dhl != null)
+                {
+                    string[] dataRow = { dhl.DateTimeStamp.ToString(), dhl.DoorName, dhl.EmployeeId, dhl.LastName, dhl.FirstName };
+                    listViewItem = new ListViewItem(dataRow);
+                    listViewHist.Items.Add(listViewItem);
+                }
+            }
+
+
+            displayedHistoryList = DataOps.getAllVisitorAccessHistory();
+            foreach (DisplayedHistory dhl in displayedHistoryList)
+            {
+                if(dhl!=null)
+                {
+                    string[] dataRow = { dhl.DateTimeStamp.ToString(), dhl.DoorName, dhl.VisitorId, dhl.LastName, dhl.FirstName };
+                    listViewItem = new ListViewItem(dataRow);
+                    listViewHist.Items.Add(listViewItem);
+                }
+            }
+
+            if (listViewHist.Items.Count == 0)
             {
                 MessageBox.Show("No item found", "Alert");
             }

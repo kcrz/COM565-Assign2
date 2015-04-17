@@ -54,18 +54,6 @@ namespace BioengineeringResearch.Forms
 
         private void btnSrchPerson_Click(object sender, EventArgs e)
         {
-            if (rbID.Checked == true)
-            {
-
-            }
-            else if (rbFirstName.Checked == true)
-            {
-
-            }
-            else if (rbLastName.Checked == true)
-            {
-
-            }
             //Clear list view for every new search
             listviewPerson.Items.Clear();
             String searchParam = txtSearch.Text;
@@ -208,13 +196,11 @@ namespace BioengineeringResearch.Forms
                     //add tpo list view
                     listviewPerson.Items.Add(listViewItem);
                 }
-
             }
             else
             { 
                 MessageBox.Show("No visitors found", "Alert"); 
             }
-
         }
 
         private void btnShowAllEmp_Click(object sender, EventArgs e)
@@ -274,7 +260,6 @@ namespace BioengineeringResearch.Forms
                     //add tpo list view
                     listviewPerson.Items.Add(listViewItem);
                 }
-
             }
 
             //if nothing has beend added to listview show message box

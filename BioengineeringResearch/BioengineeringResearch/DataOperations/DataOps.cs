@@ -545,7 +545,7 @@ namespace BioengineeringResearch.DataOperations
                         hisList.Add(data);
                     }
                 }
-                
+
                 return hisList;
             }
         }

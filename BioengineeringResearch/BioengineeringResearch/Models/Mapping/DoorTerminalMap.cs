@@ -16,7 +16,8 @@ namespace BioengineeringResearch.Models.Mapping
 
             this.Property(t => t.DoorId)
                 .IsRequired()
-                .HasMaxLength(14);
+                .HasMaxLength(14)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             this.Property(t => t.DoorName)
                 .IsRequired()

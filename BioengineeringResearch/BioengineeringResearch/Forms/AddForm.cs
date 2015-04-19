@@ -70,49 +70,71 @@ namespace BioengineeringResearch.Functions
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (add_PIN.Text.Equals(add_ConPIN.Text)) // check if the two PINs are the same
+            //Check if all fields are populated
+            if (add_FirstName.Text != "" && add_LastName.Text != "" && add_PIN.Text != "" && add_AccessLevel.SelectedIndex > 0
+                        && add_ExpiredDate.Value > DateTime.Now && add_Position.Text != "" && add_Phone.Text != "" && add_Email.Text != "")
             {
-                if (radiobtn_emp.Checked == true) // add Employee
+                if (add_PIN.Text.Equals(add_ConPIN.Text)) // check if the two PINs are the same
                 {
-                    Employee employee = new Employee();
-                    employee.FirstName = add_FirstName.Text;
-                    employee.LastName = add_LastName.Text;
-                    employee.PIN = Convert.ToInt32(add_PIN.Text);
-                    employee.AuthorizedUntilDate = add_ExpiredDate.Value;
-                    employee.Position = add_Position.Text;
-                    employee.Phone = add_Phone.Text;
-                    employee.Email = add_Email.Text;
-
-                    if (!DataOps.addEmployee(employee))
+                    if (radiobtn_emp.Checked == true) // add Employee
                     {
-                        MessageBox.Show("Failed to add ...");
+                        Employee employee = new Employee();
+                        employee.FirstName = add_FirstName.Text;
+                        employee.LastName = add_LastName.Text;
+                        employee.PIN = Convert.ToInt32(add_PIN.Text);
+                        employee.AccessLevel = Convert.ToInt32(add_AccessLevel.SelectedItem);
+                        employee.AuthorizedUntilDate = add_ExpiredDate.Value;
+                        employee.Position = add_Position.Text;
+                        employee.Phone = add_Phone.Text;
+                        employee.Email = add_Email.Text;
+
+                        if (!DataOps.addEmployee(employee))
+                        {
+                            MessageBox.Show("Failed to add Employee");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your new ID is: " + employee.EmployeeId, "Information");
+                        }
+                    }
+                    else if (radiobtn_vis.Checked == true) // add Visitor
+                    {
+                        Visitor visitor = new Visitor();
+                        visitor.FirstName = add_FirstName.Text;
+                        visitor.LastName = add_LastName.Text;
+                        visitor.PIN = Convert.ToInt32(add_PIN.Text);
+                        visitor.AccessLevel = Convert.ToInt32(add_AccessLevel.SelectedItem);
+                        visitor.AuthorizedUntilDate = add_ExpiredDate.Value;
+                        visitor.Company = add_Company.Text;
+                        visitor.Phone = add_Phone.Text;
+                        visitor.Email = add_Email.Text;
+
+                        if (!DataOps.addVisitor(visitor))
+                        {
+                            MessageBox.Show("Failed to add Visitor");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your new ID is: " + visitor.VisitorId, "Information");
+                        }
+
                     }
                 }
-                else if (radiobtn_vis.Checked == true) // add Visitor
+                else
                 {
-                    Visitor visitor = new Visitor();
-                    visitor.FirstName = add_FirstName.Text;
-                    visitor.LastName = add_LastName.Text;
-                    visitor.PIN = Convert.ToInt32(add_PIN.Text);
-                    visitor.AuthorizedUntilDate = add_ExpiredDate.Value;
-                    visitor.Company = add_Company.Text;
-                    visitor.Phone = add_Phone.Text;
-                    visitor.Email = add_Email.Text;
+                    MessageBox.Show("PIN should be the same as the Confirm PIN");
 
-                    if (!DataOps.addVisitor(visitor))
-                    {
-                        MessageBox.Show("Failed to add ...");
-                    }
+                    // clear the text in PIN and ConPIN
+                    add_PIN.Text = "";
+                    add_ConPIN.Text = "";
                 }
             }
             else
             {
-                MessageBox.Show("PIN should be the same as the Confirm PIN");
-
-                // clear the text in PIN and ConPIN
-                add_PIN.Text = "";
-                add_ConPIN.Text = "";
+                MessageBox.Show("Please populate all fields and select a date in the future", "Alert");
             }
+
+
         }
     }
 }

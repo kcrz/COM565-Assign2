@@ -271,7 +271,14 @@ namespace BioengineeringResearch.Forms
 
         private void btnDeltPerson_Click(object sender, EventArgs e)
         {
-
+            if (listviewPerson.SelectedItems.Count != 0)
+            {
+                // delete the selected item by database operation
+            }
+            else
+            {
+                MessageBox.Show("Please select one item to be deleted.", "Tip");
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

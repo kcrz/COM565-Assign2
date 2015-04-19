@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BioengineeringResearch.Models;
+using BioengineeringResearch.DataOperations;
 
 namespace BioengineeringResearch.Functions
 {
@@ -69,15 +70,39 @@ namespace BioengineeringResearch.Functions
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (add_PIN.Text.Equals(add_ConPIN.Text)) // check if two PINs are the same
+            if (add_PIN.Text.Equals(add_ConPIN.Text)) // check if the two PINs are the same
             {
                 if (radiobtn_emp.Checked == true) // add Employee
                 {
                     Employee employee = new Employee();
+                    employee.FirstName = add_FirstName.Text;
+                    employee.LastName = add_LastName.Text;
+                    employee.PIN = Convert.ToInt32(add_PIN.Text);
+                    employee.AuthorizedUntilDate = add_ExpiredDate.Value;
+                    employee.Position = add_Position.Text;
+                    employee.Phone = add_Phone.Text;
+                    employee.Email = add_Email.Text;
+
+                    if (!DataOps.addEmployee(employee))
+                    {
+                        MessageBox.Show("Failed to add ...");
+                    }
                 }
                 else if (radiobtn_vis.Checked == true) // add Visitor
                 {
                     Visitor visitor = new Visitor();
+                    visitor.FirstName = add_FirstName.Text;
+                    visitor.LastName = add_LastName.Text;
+                    visitor.PIN = Convert.ToInt32(add_PIN.Text);
+                    visitor.AuthorizedUntilDate = add_ExpiredDate.Value;
+                    visitor.Company = add_Company.Text;
+                    visitor.Phone = add_Phone.Text;
+                    visitor.Email = add_Email.Text;
+
+                    if (!DataOps.addVisitor(visitor))
+                    {
+                        MessageBox.Show("Failed to add ...");
+                    }
                 }
             }
             else

@@ -93,6 +93,7 @@
             // 
             this.add_ConPIN.Location = new System.Drawing.Point(112, 170);
             this.add_ConPIN.Name = "add_ConPIN";
+            this.add_ConPIN.PasswordChar = '*';
             this.add_ConPIN.Size = new System.Drawing.Size(232, 21);
             this.add_ConPIN.TabIndex = 25;
             // 
@@ -269,6 +270,7 @@
             // 
             this.add_PIN.Location = new System.Drawing.Point(112, 135);
             this.add_PIN.Name = "add_PIN";
+            this.add_PIN.PasswordChar = '*';
             this.add_PIN.Size = new System.Drawing.Size(232, 21);
             this.add_PIN.TabIndex = 6;
             // 

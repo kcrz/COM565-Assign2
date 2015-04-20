@@ -29,10 +29,10 @@ namespace BioengineeringResearch.Functions
             switch (Status)
             {
                 case 1:
-                    this.Text = "AddForm. Your authority: Admin.";
+                    this.Text = DataStrings.ADD_FORM_ADMIN_STATUS;
                     break;
                 case 2:
-                    this.Text = "AddForm. Your authority: Receptionist.";
+                    this.Text = DataStrings.ADD_FORM_RECEPTIONIST_STATUS;
                     radiobtn_emp.Visible = false;
                     add_Position.Enabled = false;
                     break;
@@ -71,8 +71,8 @@ namespace BioengineeringResearch.Functions
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //Check if all fields are populated
-            if (add_FirstName.Text != "" && add_LastName.Text != "" && add_PIN.Text != "" && add_AccessLevel.SelectedIndex > 0
-                        && add_ExpiredDate.Value > DateTime.Now && add_Position.Text != "" && add_Phone.Text != "" && add_Email.Text != "")
+            if (add_FirstName.Text != DataStrings.EMPTY_STRING && add_LastName.Text != DataStrings.EMPTY_STRING && add_PIN.Text != DataStrings.EMPTY_STRING && add_AccessLevel.SelectedIndex > 0
+                        && add_ExpiredDate.Value > DateTime.Now && add_Position.Text != DataStrings.EMPTY_STRING && add_Phone.Text != DataStrings.EMPTY_STRING && add_Email.Text != DataStrings.EMPTY_STRING)
             {
                 if (add_PIN.Text.Equals(add_ConPIN.Text)) // check if the two PINs are the same
                 {
@@ -90,11 +90,11 @@ namespace BioengineeringResearch.Functions
 
                         if (!DataOps.addEmployee(employee))
                         {
-                            MessageBox.Show("Failed to add Employee");
+                            MessageBox.Show(DataStrings.FAILED_TO_ADD_EMPLOYEE, DataStrings.INFORMATION);
                         }
                         else
                         {
-                            MessageBox.Show("Your new ID is: " + employee.EmployeeId, "Information");
+                            MessageBox.Show(DataStrings.YOUR_NEW_ID + employee.EmployeeId, DataStrings.INFORMATION);
                         }
                     }
                     else if (radiobtn_vis.Checked == true) // add Visitor
@@ -111,27 +111,27 @@ namespace BioengineeringResearch.Functions
 
                         if (!DataOps.addVisitor(visitor))
                         {
-                            MessageBox.Show("Failed to add Visitor");
+                            MessageBox.Show(DataStrings.FAILED_TO_ADD_VISITOR);
                         }
                         else
                         {
-                            MessageBox.Show("Your new ID is: " + visitor.VisitorId, "Information");
+                            MessageBox.Show(DataStrings.YOUR_NEW_ID + visitor.VisitorId, DataStrings.INFORMATION);
                         }
 
                     }
                 }
                 else
                 {
-                    MessageBox.Show("PIN should be the same as the Confirm PIN");
+                    MessageBox.Show(DataStrings.PIN_DOES_NOT_MATCH, DataStrings.ALERT);
 
                     // clear the text in PIN and ConPIN
-                    add_PIN.Text = "";
-                    add_ConPIN.Text = "";
+                    add_PIN.Text = DataStrings.EMPTY_STRING;
+                    add_ConPIN.Text = DataStrings.EMPTY_STRING;
                 }
             }
             else
             {
-                MessageBox.Show("Please populate all fields and select a date in the future", "Alert");
+                MessageBox.Show(DataStrings.ADD_FORM_FIELD_CHECK, DataStrings.ALERT);
             }
 
 

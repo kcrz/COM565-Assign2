@@ -14,7 +14,6 @@ namespace BioengineeringResearch
     public partial class CardReader : Form
     {
         private static int invalidEnter = 0;
-        string _caption = "Door Tip";
         System.Threading.Timer _timeoutTimer;
         private string doorName = null;
 
@@ -31,18 +30,18 @@ namespace BioengineeringResearch
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtID.Text = "";
-            txtPIN.Text = "";
+            txtID.Text = DataStrings.EMPTY_STRING;
+            txtPIN.Text = DataStrings.EMPTY_STRING;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
             bool loginYes = false;
 
-            if (txtID.Text.Equals("") || txtPIN.Text.Equals(""))
+            if (txtID.Text.Equals(DataStrings.EMPTY_STRING) || txtPIN.Text.Equals(DataStrings.EMPTY_STRING))
             {
                 // either the textbox is blank
-                MessageBox.Show("Please input correct ID or PIN", "Tip", MessageBoxButtons.OK);
+                MessageBox.Show(DataStrings.INVALID_ID, DataStrings.ALERT, MessageBoxButtons.OK);
             }
             else
             {
@@ -54,7 +53,7 @@ namespace BioengineeringResearch
                     // login successfully                   
                     _timeoutTimer = new System.Threading.Timer(OnTimerElapsed, null, 
                         5000, System.Threading.Timeout.Infinite); // timeout is 5s
-                    MessageBox.Show(doorName + " is open successfully, after 5s door will be close.", _caption);
+                    MessageBox.Show(doorName + DataStrings.DOOR_OPEN_NOTICE, DataStrings.INFORMATION);
 
                     // save the history
                     /*
@@ -67,14 +66,14 @@ namespace BioengineeringResearch
                 }
                 else
                 {
-                    MessageBox.Show("Invalid ID or PIN !!!", "Tip", MessageBoxButtons.OK);
+                    MessageBox.Show(DataStrings.INVALID_LOGIN_CREDENTIAL, DataStrings.ALERT, MessageBoxButtons.OK);
 
                     invalidEnter++; // invalid attempt increases
 
                     // check if the invalid attempts are more than 3 times
                     if (invalidEnter == 3)
                     {
-                        MessageBox.Show("Multiple invalid attempts. Disabling door !!!", "Tip", MessageBoxButtons.OK);
+                        MessageBox.Show(DataStrings.DOOR_MULTIPLE_INVALID_ATTEMPT, DataStrings.ALERT, MessageBoxButtons.OK);
                         this.Close();
                     }
                 }
@@ -83,7 +82,7 @@ namespace BioengineeringResearch
 
         private void OnTimerElapsed(object state)
         {
-            IntPtr mbWnd = FindWindow(null, _caption);
+            IntPtr mbWnd = FindWindow(null, DataStrings.INFORMATION);
             if (mbWnd != IntPtr.Zero)
                 SendMessage(mbWnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
             _timeoutTimer.Dispose();

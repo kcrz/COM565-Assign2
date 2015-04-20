@@ -469,7 +469,7 @@
             this.txtLogStatus.Name = "txtLogStatus";
             this.txtLogStatus.Size = new System.Drawing.Size(167, 20);
             this.txtLogStatus.TabIndex = 1;
-            this.txtLogStatus.Text = "Login Status: logout";
+            this.txtLogStatus.Text = "User Status: Not logged in";
             // 
             // btn_logout
             // 

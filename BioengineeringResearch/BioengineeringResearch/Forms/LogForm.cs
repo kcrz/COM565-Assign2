@@ -35,10 +35,10 @@ namespace BioengineeringResearch
         {
             bool loginYes = false;
 
-            if (textID.Text.Equals("") || textPIN.Text.Equals(""))
+            if (textID.Text.Equals(DataStrings.EMPTY_STRING) || textPIN.Text.Equals(DataStrings.EMPTY_STRING))
             {
                 // either the textbox is blank
-                MessageBox.Show("Please input correct ID or PIN", "Tip", MessageBoxButtons.OK);
+                MessageBox.Show(DataStrings.INVALID_ID_PIN, DataStrings.ALERT, MessageBoxButtons.OK);
             }
             else
             {
@@ -48,7 +48,7 @@ namespace BioengineeringResearch
                 if (loginYes)
                 {
                     // login successfully
-                    MessageBox.Show("Login successfully", "Tip", MessageBoxButtons.OK);
+                    MessageBox.Show(DataStrings.LOGIN_OK, DataStrings.INFORMATION, MessageBoxButtons.OK);
                     string position = DataOps.getEmployeePosition(textID.Text);
                     //string position = "Admin"; //for debug
                     /* login status
@@ -58,13 +58,13 @@ namespace BioengineeringResearch
                      */
                     switch (position)
                     {
-                        case "Admin":
+                        case DataStrings.ADMIN_USER:
                             loginStatus = 1;
                             break;
-                        case "Receptionist":
+                        case DataStrings.RECEPTIONIST_USER:
                             loginStatus = 2;
                             break;
-                        case "Normal":
+                        case DataStrings.NORMAL_USER:
                             loginStatus = 3;
                             break;
                     }
@@ -74,7 +74,7 @@ namespace BioengineeringResearch
                 else
                 {
                     // login failed
-                    MessageBox.Show("Invalid ID or PIN", "Tip", MessageBoxButtons.OK);
+                    MessageBox.Show(DataStrings.INVALID_LOGIN_CREDENTIAL, DataStrings.ALERT, MessageBoxButtons.OK);
                 }
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BioengineeringResearch.DataOperations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace BioengineeringResearch
         {
             int index = getFireLocation.SelectedIndex;
             string message = null;
-            string caption = "FIRE Simulator";
+            string caption = DataStrings.FIRE_SIMULATOR;
 
             /*Combobox item index
              *0 General Administration
@@ -44,86 +45,86 @@ namespace BioengineeringResearch
             switch (index)
             {
                 case 0: // General Administration
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F1, A1, A2, A3, A9";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_GEN_ADMIN;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 1: // Research Support
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F2, B1, B2";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_RESEARCH_SUPP;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 2: // Corridor A
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F1, F3, F4, A1 - A9";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_CORRIDOR_A;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 3: // Corridor B
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3, F4";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_CORRIDOR_B;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 4: // Corridor C
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1 - C8";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_CORRIDOR_C;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 5: // SRA 1
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C2, C8";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_1;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 6: // SRA 2
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C7, C8";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_2;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 7: // SRA 3
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C3, C8";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_3;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 8: // SRA 4
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C4, C8";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_4;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 9: // SRA 5
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C5, C8";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_5;
                     MessageBox.Show(message, caption);
                     break;
 
                 case 10: // SRA 6
-                    message = "WARNING: " + getFireLocation.Text + " is on FIRE!!! \n Deactivate door: F3 - F6, C1, C6, C8";
+                    message = DataStrings.WARNING + getFireLocation.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_6;
                     MessageBox.Show(message, caption);
                     break;
                 default:
-                    MessageBox.Show("Please select a fire location for simulation", "Tip");
+                    MessageBox.Show(DataStrings.FIRE_SELECT_LOCATION, DataStrings.INFORMATION);
                     break;
             }
         }
 
         private void btnStartCF_Click(object sender, EventArgs e) // start cardreader failure simulation
         {
-            if (getFailedDoor.Text.Equals(""))
+            if (getFailedDoor.Text.Equals(DataStrings.EMPTY_STRING))
             {
-                MessageBox.Show("Please select a cardreader location for simulation", "Tip");
+                MessageBox.Show(DataStrings.SELECT_CARD_READER_SIMUL, DataStrings.ALERT);
             }
             else 
             {
-                MessageBox.Show("Cardreader of door " + getFailedDoor.Text + " does not work, please fix it", "Tip");
+                MessageBox.Show(DataStrings.DOOR + getFailedDoor.Text + DataStrings.CARD_READER_FAILURE, DataStrings.ALERT);
             }
         }
 
         private void btnStartIntr_Click(object sender, EventArgs e) // start intrusion simulation
         {
-            if (getIntrDoor.Text.Equals(""))
+            if (getIntrDoor.Text.Equals(DataStrings.EMPTY_STRING))
             {
-                MessageBox.Show("Please select a location for simulation", "Tip");
+                MessageBox.Show(DataStrings.INTRUDER_SELECT_LOCATION, DataStrings.ALERT);
             }
             else
             {
-                MessageBox.Show("Door " + getIntrDoor.Text + " is intruded, WARNING !!!", "Tip");
+                MessageBox.Show(DataStrings.DOOR + getIntrDoor.Text + DataStrings.INTRUDER_DETECTED, DataStrings.ALERT);
             }
         }
 

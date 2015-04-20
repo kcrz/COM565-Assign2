@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BioengineeringResearch.DataOperations;
 
 namespace BioengineeringResearch.Forms
 {
@@ -24,7 +25,7 @@ namespace BioengineeringResearch.Forms
 
         private void btnCallPolice_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Connecting to Police Station... ...");
+            MessageBox.Show(DataStrings.CONTACTING_POLICE);
         }
     }
 }

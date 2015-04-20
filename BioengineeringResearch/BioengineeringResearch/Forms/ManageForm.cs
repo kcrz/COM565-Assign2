@@ -35,13 +35,13 @@ namespace BioengineeringResearch.Forms
             switch (Status)
             {
                 case 1: // 1 Admin
-                    txtLogStatus.Text = "Your Status: Admin";
+                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.ADMIN_USER;
                     break;
                 case 2: // 2 Receptionist
-                    txtLogStatus.Text = "Your Status: Receptionist";
+                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.RECEPTIONIST_USER;
                     break;
                 case 3: // 3 Normal
-                    txtLogStatus.Text = "Your Status: Normal";
+                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.NORMAL_USER;
                     break;
 
             }
@@ -83,7 +83,7 @@ namespace BioengineeringResearch.Forms
                             //means there are no values found
                             if (listviewPerson.Items.Count == 0)
                             {
-                                MessageBox.Show("No Person found", "Search Result");
+                                MessageBox.Show(DataStrings.NO_PERSON_FOUND, DataStrings.SEARCH_RESULT);
                             }
                         }
                     }
@@ -105,7 +105,7 @@ namespace BioengineeringResearch.Forms
                             }
                         }
                     }
-                    else { MessageBox.Show("Invalid ID", "Alert"); }
+                    else { MessageBox.Show(DataStrings.INVALID_ID, DataStrings.ALERT); }
 
                 }
                 else if (rdoLastName.Checked == true)
@@ -136,7 +136,7 @@ namespace BioengineeringResearch.Forms
                     //means there are no values found
                     if (listviewPerson.Items.Count == 0)
                     {
-                        MessageBox.Show("No Person found", "Search Result");
+                        MessageBox.Show(DataStrings.NO_PERSON_FOUND, DataStrings.SEARCH_RESULT);
                     }
                 }
                 else if (rdoFirstName.Checked == true)
@@ -167,7 +167,7 @@ namespace BioengineeringResearch.Forms
                     //means there are no values found
                     if (listviewPerson.Items.Count == 0)
                     {
-                        MessageBox.Show("No Person found", "Search Result");
+                        MessageBox.Show(DataStrings.NO_PERSON_FOUND, DataStrings.SEARCH_RESULT);
                     }
 
                 }
@@ -198,8 +198,8 @@ namespace BioengineeringResearch.Forms
                 }
             }
             else
-            { 
-                MessageBox.Show("No visitors found", "Alert"); 
+            {
+                MessageBox.Show(DataStrings.NO_VISITORS_FOUND, DataStrings.ALERT); 
             }
         }
 
@@ -224,7 +224,7 @@ namespace BioengineeringResearch.Forms
             }
             else
             {
-                MessageBox.Show("No employees found", "Alert");
+                MessageBox.Show(DataStrings.NO_EMPLOYEES_FOUND, DataStrings.ALERT);
             }
         }
 
@@ -265,7 +265,7 @@ namespace BioengineeringResearch.Forms
             //if nothing has beend added to listview show message box
             if (listviewPerson.Items.Count == 0)
             {
-                MessageBox.Show("No item found", "Alert");
+                MessageBox.Show(DataStrings.NO_ITEM_FOUND, DataStrings.ALERT);
             }
         }
 
@@ -277,7 +277,7 @@ namespace BioengineeringResearch.Forms
             }
             else
             {
-                MessageBox.Show("Please select one item to be deleted.", "Tip");
+                MessageBox.Show(DataStrings.SELECT_ITEM_DELETION, DataStrings.ALERT);
             }
         }
 
@@ -315,7 +315,7 @@ namespace BioengineeringResearch.Forms
 
             if (listViewHist.Items.Count == 0)
             {
-                MessageBox.Show("No item found", "Alert");
+                MessageBox.Show(DataStrings.NO_ITEM_FOUND, DataStrings.ALERT);
             }
         }
 
@@ -331,12 +331,21 @@ namespace BioengineeringResearch.Forms
                 //All options selected
                 if (datePicker.Enabled && timePicker.Enabled && txtPasserId.Enabled && dropDownDoor.Enabled)
                 { 
-                
+                    //Check if ID is valid
+                    if (DataUtils.isUserIdValid(txtPasserId.Text))
+                    {
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(DataStrings.INVALID_ID,DataStrings.ALERT);
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Please Tick an Option", "Alert");
+                MessageBox.Show(DataStrings.TICK_AN_OPTION, DataStrings.ALERT);
             }
         }
 

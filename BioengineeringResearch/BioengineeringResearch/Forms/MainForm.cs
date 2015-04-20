@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BioengineeringResearch.Forms;
+using BioengineeringResearch.DataOperations;
 
 namespace BioengineeringResearch
 {
@@ -27,7 +28,7 @@ namespace BioengineeringResearch
             InitializeComponent();
 
             //Set data directory for the database
-            AppDomain.CurrentDomain.SetData("DataDirectory", Application.StartupPath);
+            AppDomain.CurrentDomain.SetData(DataStrings.DATA_DIRECTORY, Application.StartupPath);
 
             this.Activated += new EventHandler(this.MainForm_Activated);
         }
@@ -56,7 +57,7 @@ namespace BioengineeringResearch
                     btn_login.Enabled = true;
                     btn_logout.Enabled = false;
 
-                    txtLogStatus.Text = " Your Status: Logout";
+                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.NOT_LOGGED_IN;
                     break;
                 case 1:
                     // Menue items
@@ -68,7 +69,7 @@ namespace BioengineeringResearch
                     btn_login.Enabled = false;
                     btn_logout.Enabled = true;
 
-                    txtLogStatus.Text = " Your Status: Admin";
+                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.ADMIN_USER;
                     break;
                 case 2:
                     // Menue items
@@ -80,7 +81,7 @@ namespace BioengineeringResearch
                     btn_login.Enabled = false;
                     btn_logout.Enabled = true;
 
-                    txtLogStatus.Text = " Your Status: Receptionist";
+                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.RECEPTIONIST_USER;
                     break;
                 case 3:
                     // Menue items
@@ -92,7 +93,7 @@ namespace BioengineeringResearch
                     btn_login.Enabled = false;
                     btn_logout.Enabled = true;
 
-                    txtLogStatus.Text = " Your Status: Normal";
+                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.NORMAL_USER;
                     break;
             }
         }
@@ -320,12 +321,12 @@ namespace BioengineeringResearch
 
         private void btnDoorPortal_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Welcome to Bioengineering Research Ltd.", "Welcome");
+            MessageBox.Show(DataStrings.WELCOME_MSG, DataStrings.WELCOME);
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you really want to logout?", "Tip", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(DataStrings.LOGOUT_MSG, DataStrings.INFORMATION, MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 loginStatus = 0;

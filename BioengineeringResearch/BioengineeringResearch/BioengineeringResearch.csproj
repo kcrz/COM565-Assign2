@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataOperations\DataUtils.cs" />
     <Compile Include="DataOperations\DisplayedHistory.cs" />
     <Compile Include="DataOperations\DataOps.cs" />
     <Compile Include="DataOperations\DataStrings.cs" />

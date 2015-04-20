@@ -33,47 +33,26 @@ namespace BioengineeringResearch.Functions
                     break;
                 case 2:
                     this.Text = DataStrings.ADD_FORM_RECEPTIONIST_STATUS;
-                    radiobtn_emp.Visible = false;
-                    add_Position.Enabled = false;
+                    radiobtn_emp.Enabled = false;
                     break;
             }
-
-            this.Activated += new EventHandler(this.AddForm_Activated);
         }
 
-        private void AddForm_Activated(object sender, EventArgs e)
-        {
-            // refresh items status
-            // radiobutton
-            if (radiobtn_vis.Checked == true)
-            {
-                add_Position.Enabled = false;
-            }
-        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void radiobtn_emp_CheckedChanged(object sender, EventArgs e)
-        {
-            add_Position.Enabled = true;
-            add_Company.Enabled = false;
-        }
-
-        private void radiobtn_vis_CheckedChanged(object sender, EventArgs e)
-        {
-            add_Position.Enabled = false;
-            add_Company.Enabled = true;
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //Check if all fields are populated
-            if (add_FirstName.Text != DataStrings.EMPTY_STRING && add_LastName.Text != DataStrings.EMPTY_STRING && add_PIN.Text != DataStrings.EMPTY_STRING && add_AccessLevel.SelectedIndex > 0
+            if (add_FirstName.Text != DataStrings.EMPTY_STRING && add_LastName.Text != DataStrings.EMPTY_STRING && add_PIN.Text != DataStrings.EMPTY_STRING && add_AccessLevel.SelectedIndex >= 0
                         && add_ExpiredDate.Value > DateTime.Now && add_Position.Text != DataStrings.EMPTY_STRING && add_Phone.Text != DataStrings.EMPTY_STRING && add_Email.Text != DataStrings.EMPTY_STRING)
             {
+                DateTime currentDate = DateTime.Today;
                 if (add_PIN.Text.Equals(add_ConPIN.Text)) // check if the two PINs are the same
                 {
                     if (radiobtn_emp.Checked == true) // add Employee
@@ -83,8 +62,11 @@ namespace BioengineeringResearch.Functions
                         employee.LastName = add_LastName.Text;
                         employee.PIN = Convert.ToInt32(add_PIN.Text);
                         employee.AccessLevel = Convert.ToInt32(add_AccessLevel.SelectedItem);
+                        employee.AccessGrantedDate = currentDate;
                         employee.AuthorizedUntilDate = add_ExpiredDate.Value;
                         employee.Position = add_Position.Text;
+                        employee.Department = add_Department.Text;
+                        employee.Company = add_Company.Text;
                         employee.Phone = add_Phone.Text;
                         employee.Email = add_Email.Text;
 
@@ -104,7 +86,10 @@ namespace BioengineeringResearch.Functions
                         visitor.LastName = add_LastName.Text;
                         visitor.PIN = Convert.ToInt32(add_PIN.Text);
                         visitor.AccessLevel = Convert.ToInt32(add_AccessLevel.SelectedItem);
+                        visitor.AccessGrantedDate = currentDate;
                         visitor.AuthorizedUntilDate = add_ExpiredDate.Value;
+                        visitor.Position = add_Position.Text;
+                        visitor.Department = add_Department.Text;
                         visitor.Company = add_Company.Text;
                         visitor.Phone = add_Phone.Text;
                         visitor.Email = add_Email.Text;

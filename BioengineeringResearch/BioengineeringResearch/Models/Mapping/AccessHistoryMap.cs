@@ -36,7 +36,8 @@ namespace BioengineeringResearch.Models.Mapping
             this.Property(t => t.DoorId).HasColumnName("DoorId");
             this.Property(t => t.EmployeeId).HasColumnName("EmployeeId");
             this.Property(t => t.VisitorId).HasColumnName("VisitorId");
-            this.Property(t => t.DateTimeStamp).HasColumnName("DateTimeStamp");
+            this.Property(t => t.DateStamp).HasColumnName("DateStamp");
+            this.Property(t => t.TimeStamp).HasColumnName("TimeStamp");
 
             // Relationships
             this.HasRequired(t => t.DoorTerminal)

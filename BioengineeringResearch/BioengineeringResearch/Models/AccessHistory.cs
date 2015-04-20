@@ -10,7 +10,8 @@ namespace BioengineeringResearch.Models
         public string DoorId { get; set; }
         public string EmployeeId { get; set; }
         public string VisitorId { get; set; }
-        public System.DateTime DateTimeStamp { get; set; }
+        public System.DateTime DateStamp { get; set; }
+        public System.TimeSpan TimeStamp { get; set; }
         public virtual DoorTerminal DoorTerminal { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual Visitor Visitor { get; set; }

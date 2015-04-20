@@ -386,10 +386,11 @@ namespace BioengineeringResearch.DataOperations
         {
             using (var db = new BioEngResearchSecurityContext())
             {
-                DateTime accessDate = DateTime.UtcNow;
+                DateTime accessDate = DateTime.Today;
+                TimeSpan accessTime = DateTime.Today.TimeOfDay;
                 if (userId.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
                 {
-                    AccessHistory newEntry = new AccessHistory { DoorId = doorId, EmployeeId = userId, DateTimeStamp = accessDate };
+                    AccessHistory newEntry = new AccessHistory { DoorId = doorId, EmployeeId = userId, DateStamp = accessDate, TimeStamp = accessTime };
                     db.AccessHistories.Add(newEntry);
                     db.SaveChanges();
                     return true;
@@ -397,7 +398,7 @@ namespace BioengineeringResearch.DataOperations
                 }
                 else if (userId.ToUpper().StartsWith(DataStrings.VISITOR_TAG))
                 {
-                    AccessHistory newEntry = new AccessHistory { DoorId = doorId, VisitorId = userId, DateTimeStamp = accessDate };
+                    AccessHistory newEntry = new AccessHistory { DoorId = doorId, VisitorId = userId, DateStamp = accessDate, TimeStamp = accessTime };
                     db.AccessHistories.Add(newEntry);
                     db.SaveChanges();
                     return true;
@@ -415,7 +416,7 @@ namespace BioengineeringResearch.DataOperations
             using (var db = new BioEngResearchSecurityContext())
             {
                 List<AccessHistory> historyList = new List<AccessHistory>();
-                var query = from history in db.AccessHistories where history.DateTimeStamp == date select history;
+                var query = from history in db.AccessHistories where history.DateStamp == date select history;
                 foreach (AccessHistory ht in query)
                 {
                     if (ht != null)
@@ -480,7 +481,7 @@ namespace BioengineeringResearch.DataOperations
             using (var db = new BioEngResearchSecurityContext())
             {
                 List<AccessHistory> historyList = new List<AccessHistory>();
-                var queryHistory = from ht in db.AccessHistories where (ht.EmployeeId == userId || ht.VisitorId == userId) && ht.DateTimeStamp == date select ht;
+                var queryHistory = from ht in db.AccessHistories where (ht.EmployeeId == userId || ht.VisitorId == userId) && ht.DateStamp == date select ht;
                 foreach (AccessHistory ht in queryHistory)
                 {
                     if (ht != null)
@@ -507,7 +508,7 @@ namespace BioengineeringResearch.DataOperations
                     String doorId = doorArray.GetValue(0).ToString();
                     if (doorId != null && doorId.Length != 0)
                     {
-                        var queryHistory = from ht in db.AccessHistories where (ht.EmployeeId == userId || ht.VisitorId == userId) && ht.DateTimeStamp == date && ht.DoorId == doorId select ht;
+                        var queryHistory = from ht in db.AccessHistories where (ht.EmployeeId == userId || ht.VisitorId == userId) && ht.DateStamp == date && ht.DoorId == doorId select ht;
                         foreach (AccessHistory ht in queryHistory)
                         {
                             if (ht != null)
@@ -536,7 +537,7 @@ namespace BioengineeringResearch.DataOperations
                             && ht.EmployeeId != null
                             && ht.EmployeeId == em.EmployeeId
                             join tbl in db.AccessHistories on ht.EmployeeId equals tbl.EmployeeId
-                            select new DisplayedHistory { DateTimeStamp = tbl.DateTimeStamp, DoorName = dr.DoorName, EmployeeId = tbl.EmployeeId, FirstName = em.FirstName, LastName = em.LastName };
+                            select new DisplayedHistory { DateStamp = tbl.DateStamp,TimeStamp=tbl.TimeStamp, DoorName = dr.DoorName, EmployeeId = tbl.EmployeeId, FirstName = em.FirstName, LastName = em.LastName, AccessLevel = em.AccessLevel};
 
                 foreach (DisplayedHistory data in query)
                 {
@@ -563,7 +564,7 @@ namespace BioengineeringResearch.DataOperations
                             && ht.VisitorId != null
                             && ht.VisitorId == vt.VisitorId
                             join tbl in db.AccessHistories on ht.VisitorId equals tbl.VisitorId
-                            select new DisplayedHistory { DateTimeStamp = tbl.DateTimeStamp, DoorName = dr.DoorName, VisitorId = tbl.VisitorId, FirstName = vt.FirstName, LastName = vt.LastName };
+                            select new DisplayedHistory { DateStamp = tbl.DateStamp, TimeStamp = tbl.TimeStamp, DoorName = dr.DoorName, VisitorId = tbl.VisitorId, FirstName = vt.FirstName, LastName = vt.LastName ,AccessLevel = vt.AccessLevel};
 
                 foreach (DisplayedHistory data in query)
                 {

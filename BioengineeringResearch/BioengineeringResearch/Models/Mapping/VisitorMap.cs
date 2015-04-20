@@ -27,6 +27,14 @@ namespace BioengineeringResearch.Models.Mapping
                 .IsRequired()
                 .HasMaxLength(50);
 
+            this.Property(t => t.Position)
+                .IsRequired()
+                .HasMaxLength(50);
+
+            this.Property(t => t.Department)
+                .IsRequired()
+                .HasMaxLength(50);
+
             this.Property(t => t.Company)
                 .IsRequired()
                 .HasMaxLength(50);
@@ -47,7 +55,10 @@ namespace BioengineeringResearch.Models.Mapping
             this.Property(t => t.LastName).HasColumnName("LastName");
             this.Property(t => t.PIN).HasColumnName("PIN");
             this.Property(t => t.AccessLevel).HasColumnName("AccessLevel");
+            this.Property(t => t.AccessGrantedDate).HasColumnName("AccessGrantedDate");
             this.Property(t => t.AuthorizedUntilDate).HasColumnName("AuthorizedUntilDate");
+            this.Property(t => t.Position).HasColumnName("Position");
+            this.Property(t => t.Department).HasColumnName("Department");
             this.Property(t => t.Company).HasColumnName("Company");
             this.Property(t => t.Phone).HasColumnName("Phone");
             this.Property(t => t.Email).HasColumnName("Email");

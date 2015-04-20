@@ -42,6 +42,9 @@ namespace BioengineeringResearch.Forms
                     break;
                 case 3: // 3 Normal
                     txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.NORMAL_USER;
+                    //disable add and delete for normal users
+                    btnAdd.Enabled = false;
+                    btnDeltPerson.Enabled = false;
                     break;
 
             }
@@ -61,7 +64,7 @@ namespace BioengineeringResearch.Forms
             if (searchParam != null || searchParam.Length != 0)
             {
                 //check if its by ID, LastName or First Name
-                if (rdoId.Checked == true)
+                if (rbID.Checked == true)
                 {
                     if (searchParam.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
                     {
@@ -73,7 +76,7 @@ namespace BioengineeringResearch.Forms
                             if (em != null)
                             {
                                 //Create string array containing column data
-                                string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.Position, "", em.Email };
+                                string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company,em.Phone, em.Email };
                                 //create list view item using striny array
                                 listViewItem = new ListViewItem(dataRow);
                                 //add tpo list view
@@ -97,7 +100,7 @@ namespace BioengineeringResearch.Forms
                             if (vt != null)
                             {
                                 //Create string array containing column data
-                                string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), "", vt.Company, vt.Email };
+                                string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                                 //create list view item using striny array
                                 listViewItem = new ListViewItem(dataRow);
                                 //add tpo list view
@@ -108,7 +111,7 @@ namespace BioengineeringResearch.Forms
                     else { MessageBox.Show(DataStrings.INVALID_ID, DataStrings.ALERT); }
 
                 }
-                else if (rdoLastName.Checked == true)
+                else if (rbLastName.Checked == true)
                 {
                     employeeList = DataOps.searchEmployeeByName(searchParam, true);
                     visitorList = DataOps.searchVisitorByName(searchParam, true);
@@ -116,7 +119,7 @@ namespace BioengineeringResearch.Forms
                     foreach (Employee em in employeeList)
                     {
                         //Create string array containing column data
-                        string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.Position, "", em.Email };
+                        string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
                         //create list view item using striny array
                         listViewItem = new ListViewItem(dataRow);
                         //add tpo list view
@@ -126,7 +129,7 @@ namespace BioengineeringResearch.Forms
                     foreach (Visitor vt in visitorList)
                     {
                         //Create string array containing column data
-                        string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), "", vt.Company, vt.Email };
+                        string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                         //create list view item using striny array
                         listViewItem = new ListViewItem(dataRow);
                         //add tpo list view
@@ -139,7 +142,7 @@ namespace BioengineeringResearch.Forms
                         MessageBox.Show(DataStrings.NO_PERSON_FOUND, DataStrings.SEARCH_RESULT);
                     }
                 }
-                else if (rdoFirstName.Checked == true)
+                else if (rbFirstName.Checked == true)
                 {
                     employeeList = DataOps.searchEmployeeByName(searchParam, false);
                     visitorList = DataOps.searchVisitorByName(searchParam, false);
@@ -147,7 +150,7 @@ namespace BioengineeringResearch.Forms
                     foreach (Employee em in employeeList)
                     {
                         //Create string array containing column data
-                        string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.Position, "", em.Email };
+                        string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
                         //create list view item using striny array
                         listViewItem = new ListViewItem(dataRow);
                         //add tpo list view
@@ -157,7 +160,7 @@ namespace BioengineeringResearch.Forms
                     foreach (Visitor vt in visitorList)
                     {
                         //Create string array containing column data
-                        string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), "", vt.Company, vt.Email };
+                        string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                         //create list view item using striny array
                         listViewItem = new ListViewItem(dataRow);
                         //add tpo list view
@@ -190,7 +193,7 @@ namespace BioengineeringResearch.Forms
                 foreach (Visitor vt in visitorList)
                 {
                     //Create string array containing column data
-                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), "", vt.Company, vt.Email };
+                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                     //create list view item using striny array
                     listViewItem = new ListViewItem(dataRow);
                     //add tpo list view
@@ -199,7 +202,7 @@ namespace BioengineeringResearch.Forms
             }
             else
             {
-                MessageBox.Show(DataStrings.NO_VISITORS_FOUND, DataStrings.ALERT); 
+                MessageBox.Show(DataStrings.NO_VISITORS_FOUND, DataStrings.ALERT);
             }
         }
 
@@ -214,7 +217,7 @@ namespace BioengineeringResearch.Forms
                 foreach (Employee em in employeeList)
                 {
                     //Create string array containing column data
-                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.Position, "", em.Email };
+                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
                     //create list view item using striny array
                     listViewItem = new ListViewItem(dataRow);
                     //add tpo list view
@@ -241,7 +244,7 @@ namespace BioengineeringResearch.Forms
                 foreach (Employee em in employeeList)
                 {
                     //Create string array containing column data
-                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.Position, "", em.Email };
+                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
                     //create list view item using striny array
                     listViewItem = new ListViewItem(dataRow);
                     //add tpo list view
@@ -254,7 +257,7 @@ namespace BioengineeringResearch.Forms
                 foreach (Visitor vt in visitorList)
                 {
                     //Create string array containing column data
-                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), "", vt.Company, vt.Email };
+                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                     //create list view item using striny array
                     listViewItem = new ListViewItem(dataRow);
                     //add tpo list view
@@ -295,7 +298,7 @@ namespace BioengineeringResearch.Forms
             {
                 if (dhl != null)
                 {
-                    string[] dataRow = { dhl.DateTimeStamp.ToString(), dhl.DoorName, dhl.EmployeeId, dhl.LastName, dhl.FirstName };
+                    string[] dataRow = { dhl.DateStamp.ToString(),dhl.TimeStamp.ToString(), dhl.DoorName, dhl.EmployeeId, dhl.LastName, dhl.FirstName, Convert.ToString(dhl.AccessLevel) };
                     listViewItem = new ListViewItem(dataRow);
                     listViewHist.Items.Add(listViewItem);
                 }
@@ -307,7 +310,7 @@ namespace BioengineeringResearch.Forms
             {
                 if(dhl!=null)
                 {
-                    string[] dataRow = { dhl.DateTimeStamp.ToString(), dhl.DoorName, dhl.VisitorId, dhl.LastName, dhl.FirstName };
+                    string[] dataRow = { dhl.DateStamp.ToString(), dhl.TimeStamp.ToString(), dhl.DoorName, dhl.VisitorId, dhl.LastName, dhl.FirstName, Convert.ToString(dhl.AccessLevel) };
                     listViewItem = new ListViewItem(dataRow);
                     listViewHist.Items.Add(listViewItem);
                 }
@@ -330,7 +333,7 @@ namespace BioengineeringResearch.Forms
             {
                 //All options selected
                 if (datePicker.Enabled && timePicker.Enabled && txtPasserId.Enabled && dropDownDoor.Enabled)
-                { 
+                {
                     //Check if ID is valid
                     if (DataUtils.isUserIdValid(txtPasserId.Text))
                     {
@@ -339,7 +342,7 @@ namespace BioengineeringResearch.Forms
                     }
                     else
                     {
-                        MessageBox.Show(DataStrings.INVALID_ID,DataStrings.ALERT);
+                        MessageBox.Show(DataStrings.INVALID_ID, DataStrings.ALERT);
                     }
                 }
             }
@@ -355,7 +358,8 @@ namespace BioengineeringResearch.Forms
             {
                 datePicker.Enabled = true;
             }
-            else {
+            else
+            {
                 datePicker.Enabled = false;
             }
         }

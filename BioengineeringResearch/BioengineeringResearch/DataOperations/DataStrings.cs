@@ -46,7 +46,7 @@ namespace BioengineeringResearch.DataOperations
         public const String FAILED_TO_ADD_VISITOR = "Failed to add Visitor. Check if all fields are valid";
 
         public const String SELECT_ITEM_DELETION = "Select an item to be deleted";
-        public const String TICK_AN_OPTION = "Please Tick an Option";
+        public const String SELECT_HISTORY_SEARCH_OPTION = "Please Select a Search Option";
         public const String PIN_DOES_NOT_MATCH = "PIN does not match";
         
         public const String ADD_FORM_FIELD_CHECK = "Please populate all fields and select a date in the future";

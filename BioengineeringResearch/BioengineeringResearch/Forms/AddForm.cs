@@ -45,6 +45,21 @@ namespace BioengineeringResearch.Functions
             this.Close();
         }
 
+        private void clearAllFormFields()
+        {
+            //clear all fields
+            add_FirstName.Text = DataStrings.EMPTY_STRING;
+            add_LastName.Text = DataStrings.EMPTY_STRING;
+            add_PIN.Text = DataStrings.EMPTY_STRING;
+            add_ConPIN.Text = DataStrings.EMPTY_STRING;
+            add_AccessLevel.SelectedIndex = 0;
+            add_ExpiredDate.Value = DateTime.Now;
+            add_Position.Text = DataStrings.EMPTY_STRING;
+            add_Department.Text = DataStrings.EMPTY_STRING;
+            add_Company.Text = DataStrings.EMPTY_STRING;
+            add_Phone.Text = DataStrings.EMPTY_STRING;
+            add_Email.Text = DataStrings.EMPTY_STRING;
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -77,6 +92,8 @@ namespace BioengineeringResearch.Functions
                         else
                         {
                             MessageBox.Show(DataStrings.YOUR_NEW_ID + employee.EmployeeId, DataStrings.INFORMATION);
+                            //clear all fields
+                            clearAllFormFields();
                         }
                     }
                     else if (radiobtn_vis.Checked == true) // add Visitor
@@ -101,8 +118,9 @@ namespace BioengineeringResearch.Functions
                         else
                         {
                             MessageBox.Show(DataStrings.YOUR_NEW_ID + visitor.VisitorId, DataStrings.INFORMATION);
+                            //clear all fields
+                            clearAllFormFields();
                         }
-
                     }
                 }
                 else

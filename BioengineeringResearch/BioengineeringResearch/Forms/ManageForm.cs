@@ -44,7 +44,6 @@ namespace BioengineeringResearch.Forms
                     txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.NORMAL_USER;
                     //disable add and delete for normal users
                     btnAdd.Enabled = false;
-                    btnDeltPerson.Enabled = false;
                     break;
 
             }
@@ -64,7 +63,7 @@ namespace BioengineeringResearch.Forms
             if (searchParam != null || searchParam.Length != 0)
             {
                 //check if its by ID, LastName or First Name
-                if (rbID.Checked == true)
+                if (rdoId.Checked == true)
                 {
                     if (searchParam.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
                     {
@@ -111,7 +110,7 @@ namespace BioengineeringResearch.Forms
                     else { MessageBox.Show(DataStrings.INVALID_ID, DataStrings.ALERT); }
 
                 }
-                else if (rbLastName.Checked == true)
+                else if (rdoLastName.Checked == true)
                 {
                     employeeList = DataOps.searchEmployeeByName(searchParam, true);
                     visitorList = DataOps.searchVisitorByName(searchParam, true);
@@ -142,7 +141,7 @@ namespace BioengineeringResearch.Forms
                         MessageBox.Show(DataStrings.NO_PERSON_FOUND, DataStrings.SEARCH_RESULT);
                     }
                 }
-                else if (rbFirstName.Checked == true)
+                else if (rdoFirstName.Checked == true)
                 {
                     employeeList = DataOps.searchEmployeeByName(searchParam, false);
                     visitorList = DataOps.searchVisitorByName(searchParam, false);
@@ -290,31 +289,49 @@ namespace BioengineeringResearch.Forms
             addForm.ShowDialog();
         }
 
+        private void displayToHistoryListView(List<DisplayedHistory> historyList, bool isEmployee)
+        {
+            //Employee
+            if (isEmployee)
+            {
+                foreach (DisplayedHistory dhl in historyList)
+                {
+                    if (dhl != null)
+                    {
+                        string[] dataRow = { dhl.DateStamp.ToShortDateString(), dhl.TimeStamp.ToString(), dhl.DoorName, dhl.EmployeeId, dhl.LastName, dhl.FirstName, Convert.ToString(dhl.AccessLevel) };
+                        listViewItem = new ListViewItem(dataRow);
+                        listViewHist.Items.Add(listViewItem);
+                    }
+                }
+            }
+            //Visitor
+            else
+            {
+                foreach (DisplayedHistory dhl in historyList)
+                {
+                    if (dhl != null)
+                    {
+                        string[] dataRow = { dhl.DateStamp.ToShortDateString(), dhl.TimeStamp.ToString(), dhl.DoorName, dhl.VisitorId, dhl.LastName, dhl.FirstName, Convert.ToString(dhl.AccessLevel) };
+                        listViewItem = new ListViewItem(dataRow);
+                        listViewHist.Items.Add(listViewItem);
+                    }
+                }
+            }
+        }
+
+        private void checkHistoryListCount()
+        {
+            if (listViewHist.Items.Count == 0)
+            {
+                MessageBox.Show(DataStrings.NO_ITEM_FOUND, DataStrings.ALERT);
+            }
+        }
+
         private void btnShowAllHist_Click(object sender, EventArgs e)
         {
             listViewHist.Items.Clear();
-            displayedHistoryList = DataOps.getAllEmployeeAccessHistory();
-            foreach(DisplayedHistory dhl in displayedHistoryList)
-            {
-                if (dhl != null)
-                {
-                    string[] dataRow = { dhl.DateStamp.ToString(),dhl.TimeStamp.ToString(), dhl.DoorName, dhl.EmployeeId, dhl.LastName, dhl.FirstName, Convert.ToString(dhl.AccessLevel) };
-                    listViewItem = new ListViewItem(dataRow);
-                    listViewHist.Items.Add(listViewItem);
-                }
-            }
-
-
-            displayedHistoryList = DataOps.getAllVisitorAccessHistory();
-            foreach (DisplayedHistory dhl in displayedHistoryList)
-            {
-                if(dhl!=null)
-                {
-                    string[] dataRow = { dhl.DateStamp.ToString(), dhl.TimeStamp.ToString(), dhl.DoorName, dhl.VisitorId, dhl.LastName, dhl.FirstName, Convert.ToString(dhl.AccessLevel) };
-                    listViewItem = new ListViewItem(dataRow);
-                    listViewHist.Items.Add(listViewItem);
-                }
-            }
+            displayToHistoryListView(DataOps.getAllEmployeeAccessHistory(), true);
+            displayToHistoryListView(DataOps.getAllVisitorAccessHistory(), false);
 
             if (listViewHist.Items.Count == 0)
             {
@@ -322,82 +339,102 @@ namespace BioengineeringResearch.Forms
             }
         }
 
+        
+
         private void btnSrchHistBy_Click(object sender, EventArgs e)
         {
-            DateTime dateSelected;
-            DateTime timeSelected;
-            string personId;
-            string doorName;
-            //Check if an option is selected
-            if (chkboxDate.Checked || chkboxDoor.Checked || chkboxTime.Checked || chkBxPasserId.Checked)
+            listViewHist.Items.Clear();
+            DateTime searchDate;
+            TimeSpan searchTime;
+            string searchId;
+            string searchDoor;
+
+            if (rdoHistoryDate.Checked || rdoHistoryDoor.Checked || rdoHistoryPasserId.Checked || rdoHistoryTime.Checked)
             {
-                //All options selected
-                if (datePicker.Enabled && timePicker.Enabled && txtPasserId.Enabled && dropDownDoor.Enabled)
+                if (rdoHistoryDate.Checked)
                 {
-                    //Check if ID is valid
-                    if (DataUtils.isUserIdValid(txtPasserId.Text))
+                    searchDate = datePicker.Value.Date;
+                    displayToHistoryListView(DataOps.searchAccessHistoryByDate(searchDate, true), true);
+                    displayToHistoryListView(DataOps.searchAccessHistoryByDate(searchDate, false), false);
+                    checkHistoryListCount();
+                }
+                else if (rdoHistoryTime.Checked)
+                {
+                    searchTime = timePicker.Value.TimeOfDay;
+                    displayToHistoryListView(DataOps.searchAccessHistoryByTime(searchTime, true), true);
+                    displayToHistoryListView(DataOps.searchAccessHistoryByTime(searchTime, false), false);
+                    checkHistoryListCount();
+                }
+                else if (rdoHistoryPasserId.Checked)
+                {
+                    searchId = txtPasserId.Text;
+                    if (DataUtils.isUserIdValid(searchId))
                     {
-
-
+                        if (DataUtils.isUserIdEmployee(searchId))
+                        {
+                            displayToHistoryListView(DataOps.searchAccessHistoryByUserId(searchId), true);
+                            checkHistoryListCount();
+                        }
+                        else if (DataUtils.isUserIdVisitor(searchId))
+                        {
+                            displayToHistoryListView(DataOps.searchAccessHistoryByUserId(searchId), false);
+                            checkHistoryListCount();
+                        }
                     }
                     else
                     {
                         MessageBox.Show(DataStrings.INVALID_ID, DataStrings.ALERT);
                     }
                 }
+                else if (rdoHistoryDoor.Checked)
+                {
+                    searchDoor = dropDownDoor.Text;
+                    displayToHistoryListView(DataOps.searchAccessHistoryByDoor(searchDoor, true), true);
+                    displayToHistoryListView(DataOps.searchAccessHistoryByDoor(searchDoor, false), false);
+                    checkHistoryListCount();
+                }
             }
             else
             {
-                MessageBox.Show(DataStrings.TICK_AN_OPTION, DataStrings.ALERT);
+                MessageBox.Show(DataStrings.SELECT_HISTORY_SEARCH_OPTION, DataStrings.ALERT);
             }
+
+            
+            
         }
 
-        private void chkboxDate_CheckedChanged(object sender, EventArgs e)
+        private void rdoHistoryDate_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkboxDate.Checked)
-            {
-                datePicker.Enabled = true;
-            }
-            else
-            {
-                datePicker.Enabled = false;
-            }
+            datePicker.Enabled = true;
+            timePicker.Enabled = false;
+            txtPasserId.Enabled = false;
+            dropDownDoor.Enabled = false;
         }
 
-        private void chkboxTime_CheckedChanged(object sender, EventArgs e)
+        private void rdoHistoryTime_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkboxTime.Checked)
-            {
-                timePicker.Enabled = true;
-            }
-            else
-            {
-                timePicker.Enabled = false;
-            }
+            datePicker.Enabled = false;
+            timePicker.Enabled = true;
+            txtPasserId.Enabled = false;
+            dropDownDoor.Enabled = false;
         }
 
-        private void chkBxPasserId_CheckedChanged(object sender, EventArgs e)
+        private void rdoHistoryPasserId_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkBxPasserId.Checked)
-            {
-                txtPasserId.Enabled = true;
-            }
-            else
-            {
-                txtPasserId.Enabled = false;
-            }
+            datePicker.Enabled = false;
+            timePicker.Enabled = false;
+            txtPasserId.Enabled = true;
+            dropDownDoor.Enabled = false;
+
         }
 
-        private void chkboxDoor_CheckedChanged(object sender, EventArgs e)
+        private void rdoHistoryDoor_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkboxDoor.Checked)
-            {
-                dropDownDoor.Enabled = true;
-            }
-            else
-            {
-                dropDownDoor.Enabled = false;
-            }
+            datePicker.Enabled = false;
+            timePicker.Enabled = false;
+            txtPasserId.Enabled = false;
+            dropDownDoor.Enabled = true;
+
         }
-    }
+}
 }

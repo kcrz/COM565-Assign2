@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.add_Position = new System.Windows.Forms.TextBox();
             this.add_Department = new System.Windows.Forms.TextBox();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.add_ConPIN = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.add_Position = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.container.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +92,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(355, 362);
             this.panel1.TabIndex = 0;
+            // 
+            // add_Position
+            // 
+            this.add_Position.Location = new System.Drawing.Point(112, 222);
+            this.add_Position.Name = "add_Position";
+            this.add_Position.Size = new System.Drawing.Size(232, 20);
+            this.add_Position.TabIndex = 8;
             // 
             // add_Department
             // 
@@ -331,13 +338,6 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // add_Position
-            // 
-            this.add_Position.Location = new System.Drawing.Point(112, 222);
-            this.add_Position.Name = "add_Position";
-            this.add_Position.Size = new System.Drawing.Size(232, 20);
-            this.add_Position.TabIndex = 26;
             // 
             // AddForm
             // 

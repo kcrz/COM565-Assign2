@@ -24,5 +24,29 @@ namespace BioengineeringResearch.DataOperations
                 return false;
             }
         }
+
+        public static bool isUserIdEmployee(String userId)
+        {
+            if (userId.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool isUserIdVisitor(String userId)
+        {
+            if (userId.ToUpper().StartsWith(DataStrings.VISITOR_TAG))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

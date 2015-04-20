@@ -1,0 +1,57 @@
+CREATE TABLE [dbo].[Employee] (
+    [InternalEmpId]       INT           IDENTITY (1, 1) NOT NULL,
+    [EmployeeId]          AS            ('EM00'+CAST( [InternalEmpId] AS NVARCHAR(10))) PERSISTED NOT NULL,
+    [FirstName]           NVARCHAR (50) NOT NULL,
+    [LastName]            NVARCHAR (50) NOT NULL,
+    [PIN]                 INT           NOT NULL,
+    [AccessLevel]         INT           NOT NULL,
+	[AccessGrantedDate]   DATE          NOT NULL
+    [AuthorizedUntilDate] DATE		    NOT NULL,
+    [Position]            NVARCHAR (50) NOT NULL,
+    [Department]          NVARCHAR (50) NOT NULL,
+	[Company]             NVARCHAR (50) NOT NULL,
+    [Phone]               NVARCHAR (50) NOT NULL,
+    [Email]               NVARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED ([EmployeeId] ASC)
+);
+
+CREATE TABLE [dbo].[Visitor] (
+    [InternalVisitorId]   INT           IDENTITY (1, 1) NOT NULL,
+    [VisitorId]           AS            ('VT00' + CONVERT([nvarchar](10),[InternalVisitorId])) PERSISTED NOT NULL,
+    [FirstName]           NVARCHAR (50) NOT NULL,
+    [LastName]            NVARCHAR (50) NOT NULL,
+    [PIN]                 INT           NOT NULL,
+    [AccessLevel]         INT           NOT NULL,
+	[AccessGrantedDate]   DATE          NOT NULL
+    [AuthorizedUntilDate] DATE		    NOT NULL,
+    [Position]            NVARCHAR (50) NOT NULL,
+    [Department]          NVARCHAR (50) NOT NULL,
+	[Company]             NVARCHAR (50) NOT NULL,
+    [Phone]               NVARCHAR (50) NOT NULL,
+    [Email]               NVARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Visitor] PRIMARY KEY CLUSTERED ([VisitorId] ASC)
+);
+
+CREATE TABLE [DoorTerminal]
+(
+	[InternalDoorId] INT NOT NULL IDENTITY(1,1),
+	[DoorId] AS ('DR00' + CAST( [InternalDoorId] AS NVARCHAR(10))) PERSISTED NOT NULL,
+	[MinimumLevelReq] INT NOT NULL,
+	[DoorName] NVARCHAR(50) NOT NULL,
+	
+	CONSTRAINT PK_Door PRIMARY KEY CLUSTERED(DoorId)
+)
+
+CREATE TABLE [AccessHistory] (
+    [InternalHistoryId]     INT      IDENTITY (1, 1) NOT NULL,
+	[HistoryId] AS ('HS00' + CAST( [InternalHistoryId] AS NVARCHAR(10))) PERSISTED NOT NULL,
+    [DoorId]        NVARCHAR(14)      NOT NULL,
+    [EmployeeId]    NVARCHAR(14)      NULL,
+    [VisitorId]     NVARCHAR(14)      NULL,
+    [DateStamp] DATE NOT NULL,
+	[TimeStamp] TIME NOT NULL,
+    CONSTRAINT PK_AccessHistory PRIMARY KEY CLUSTERED(HistoryId),
+    CONSTRAINT [FK_DoorId] FOREIGN KEY ([DoorId]) REFERENCES [dbo].[DoorTerminal] ([DoorId]),
+    CONSTRAINT [FK_EmployeeId] FOREIGN KEY ([EmployeeId]) REFERENCES [dbo].[Employee] ([EmployeeId]),
+    CONSTRAINT [FK_VisitorId] FOREIGN KEY ([VisitorId]) REFERENCES [dbo].[Visitor] ([VisitorId])
+)

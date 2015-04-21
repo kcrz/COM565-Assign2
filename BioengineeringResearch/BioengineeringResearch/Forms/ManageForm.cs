@@ -298,7 +298,7 @@ namespace BioengineeringResearch.Forms
                 {
                     if (dhl != null)
                     {
-                        string[] dataRow = { dhl.DateStamp.ToShortDateString(), dhl.TimeStamp.ToString(), dhl.DoorName, dhl.EmployeeId, dhl.LastName, dhl.FirstName, Convert.ToString(dhl.AccessLevel) };
+                        string[] dataRow = { dhl.DateStamp.ToShortDateString(), dhl.TimeStamp.ToString(), dhl.DoorName, dhl.EmployeeId, dhl.FirstName, dhl.LastName, Convert.ToString(dhl.AccessLevel) };
                         listViewItem = new ListViewItem(dataRow);
                         listViewHist.Items.Add(listViewItem);
                     }
@@ -311,7 +311,7 @@ namespace BioengineeringResearch.Forms
                 {
                     if (dhl != null)
                     {
-                        string[] dataRow = { dhl.DateStamp.ToShortDateString(), dhl.TimeStamp.ToString(), dhl.DoorName, dhl.VisitorId, dhl.LastName, dhl.FirstName, Convert.ToString(dhl.AccessLevel) };
+                        string[] dataRow = { dhl.DateStamp.ToShortDateString(), dhl.TimeStamp.ToString(), dhl.DoorName, dhl.VisitorId, dhl.FirstName, dhl.LastName, Convert.ToString(dhl.AccessLevel) };
                         listViewItem = new ListViewItem(dataRow);
                         listViewHist.Items.Add(listViewItem);
                     }
@@ -367,7 +367,7 @@ namespace BioengineeringResearch.Forms
                 }
                 else if (rdoHistoryPasserId.Checked)
                 {
-                    searchId = txtPasserId.Text;
+                    searchId = txtPasserId.Text.ToUpper();
                     if (DataUtils.isUserIdValid(searchId))
                     {
                         if (DataUtils.isUserIdEmployee(searchId))

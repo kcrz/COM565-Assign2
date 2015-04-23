@@ -45,12 +45,14 @@ namespace BioengineeringResearch
             }
             else
             {
-                loginYes = DataOps.checkLogin(txtID.Text, txtPIN.Text);
+                if (DataOps.checkLogin(txtID.Text, txtPIN.Text) && DataOps.grantAccess(txtID.Text, doorName))
+                {
+                    // the user is authorized and the accesslevel is accessible
+                    loginYes = true;
 
-                // check if the user is authorized
                 if (loginYes)
                 {
-                    // login successfully                   
+                    // the user is authorized                 
                     _timeoutTimer = new System.Threading.Timer(OnTimerElapsed, null, 
                         5000, System.Threading.Timeout.Infinite); // timeout is 5s
                     MessageBox.Show(doorName + DataStrings.DOOR_OPEN_NOTICE, DataStrings.INFORMATION);

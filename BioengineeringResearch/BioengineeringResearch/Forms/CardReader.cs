@@ -45,10 +45,12 @@ namespace BioengineeringResearch
             }
             else
             {
+                /*
                 if (DataOps.checkLogin(txtID.Text, txtPIN.Text) && DataOps.grantAccess(txtID.Text, doorName))
                 {
                     // the user is authorized and the accesslevel is accessible
                     loginYes = true;
+                }*/
 
                 if (loginYes)
                 {

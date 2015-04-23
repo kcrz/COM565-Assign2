@@ -38,6 +38,8 @@ namespace BioengineeringResearch.Forms
                     break;
                 case 2: // 2 Receptionist
                     txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.RECEPTIONIST_USER;
+                    //disable update feature for receptionist
+                    btnUpdateUser.Enabled = false;
                     break;
                 case 3: // 3 Normal
                     txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.NORMAL_USER;
@@ -45,6 +47,7 @@ namespace BioengineeringResearch.Forms
                     btnAdd.Enabled = false;
                     btnExportHistory.Enabled = false;
                     btnExportPerson.Enabled = false;
+                    btnUpdateUser.Enabled = false;
                     break;
 
             }
@@ -509,6 +512,40 @@ namespace BioengineeringResearch.Forms
             else
             {
                 MessageBox.Show(DataStrings.NO_ITEM_TO_EXPORT, DataStrings.ALERT);
+            }
+        }
+
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+            String userId;
+            if (listviewPerson.SelectedItems.Count != 0)
+            {
+                userId = listviewPerson.SelectedItems[0].SubItems[0].Text;
+                if (DataUtils.isUserIdEmployee(userId))
+                {
+                    //Employee
+                    Employee emp = DataOps.searchEmployeeDbById(userId);
+                    if (emp != null)
+                    {
+                        UpdateForm updateForm = new UpdateForm(emp);
+                        updateForm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    //Visitor
+                    Visitor visitor = DataOps.searchVisitorDbById(userId);
+                    if (visitor != null)
+                    {
+                        UpdateForm updateForm = new UpdateForm(visitor);
+                        updateForm.ShowDialog();
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show(DataStrings.SELECT_UPDATE_ITEM, DataStrings.INFORMATION);
             }
         }
     }

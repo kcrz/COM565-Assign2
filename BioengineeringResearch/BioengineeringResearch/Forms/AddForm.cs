@@ -134,7 +134,7 @@ namespace BioengineeringResearch.Functions
             }
             else
             {
-                MessageBox.Show(DataStrings.ADD_FORM_FIELD_CHECK, DataStrings.ALERT);
+                MessageBox.Show(DataStrings.ADD_UPDATE_FORM_FIELD_CHECK, DataStrings.ALERT);
             }
 
 

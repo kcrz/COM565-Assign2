@@ -42,7 +42,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(81, 20);
+            this.txtID.Location = new System.Drawing.Point(81, 22);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(215, 40);
             this.txtID.TabIndex = 0;
@@ -50,7 +50,7 @@
             // txtPIN
             // 
             this.txtPIN.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPIN.Location = new System.Drawing.Point(81, 75);
+            this.txtPIN.Location = new System.Drawing.Point(81, 81);
             this.txtPIN.Name = "txtPIN";
             this.txtPIN.PasswordChar = '*';
             this.txtPIN.Size = new System.Drawing.Size(215, 40);
@@ -61,7 +61,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(26, 23);
+            this.label1.Location = new System.Drawing.Point(26, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 33);
             this.label1.TabIndex = 3;
@@ -72,7 +72,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(11, 78);
+            this.label2.Location = new System.Drawing.Point(11, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 33);
             this.label2.TabIndex = 4;
@@ -86,16 +86,16 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtID);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(306, 144);
+            this.panel1.Size = new System.Drawing.Size(306, 156);
             this.panel1.TabIndex = 5;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(339, 12);
+            this.btnClear.Location = new System.Drawing.Point(339, 13);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(75, 25);
             this.btnClear.TabIndex = 7;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -103,9 +103,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(339, 133);
+            this.btnExit.Location = new System.Drawing.Point(339, 144);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(75, 25);
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -113,9 +113,9 @@
             // 
             // btnEnter
             // 
-            this.btnEnter.Location = new System.Drawing.Point(339, 50);
+            this.btnEnter.Location = new System.Drawing.Point(339, 54);
             this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(75, 23);
+            this.btnEnter.Size = new System.Drawing.Size(75, 25);
             this.btnEnter.TabIndex = 9;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = true;
@@ -123,15 +123,16 @@
             // 
             // CardReader
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 184);
+            this.ClientSize = new System.Drawing.Size(426, 199);
             this.ControlBox = false;
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel1);
             this.Name = "CardReader";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

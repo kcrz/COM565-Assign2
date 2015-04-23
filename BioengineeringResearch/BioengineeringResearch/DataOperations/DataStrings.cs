@@ -35,6 +35,7 @@ namespace BioengineeringResearch.DataOperations
         public const String INVALID_LOGIN_CREDENTIAL = "Invalid ID and password";
         public const String INSUFFICIENT_ACCESS_CLEARANCE = "Access Denied. Insufficient access clearance.";
         public const String SEARCH_RESULT = "Search Result";
+        public const String SELECT_UPDATE_ITEM = "Select a user to update";
 
         public const String LOGIN_OK = "Login Successful";
 
@@ -46,12 +47,13 @@ namespace BioengineeringResearch.DataOperations
 
         public const String FAILED_TO_ADD_EMPLOYEE = "Failed to add Employee. Check if all fields are valid";
         public const String FAILED_TO_ADD_VISITOR = "Failed to add Visitor. Check if all fields are valid";
+        public const String FAILED_TO_UPDATE_INFO = "Failed to update database. Please contact administrators";
 
         public const String SELECT_ITEM_DELETION = "Select an item to be deleted";
         public const String SELECT_HISTORY_SEARCH_OPTION = "Please Select a Search Option";
         public const String PIN_DOES_NOT_MATCH = "PIN does not match";
         
-        public const String ADD_FORM_FIELD_CHECK = "Please populate all fields and select a date in the future";
+        public const String ADD_UPDATE_FORM_FIELD_CHECK = "Please populate all fields and select a date in the future";
         public const String ADD_FORM_ADMIN_STATUS = ADMIN_USER + " - " + "Add New Person";
         public const String ADD_FORM_RECEPTIONIST_STATUS = RECEPTIONIST_USER + " - " + "Add New Person";
 

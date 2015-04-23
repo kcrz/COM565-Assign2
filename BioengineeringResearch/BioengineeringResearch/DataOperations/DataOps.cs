@@ -304,7 +304,16 @@ namespace BioengineeringResearch.DataOperations
                 Employee[] employee = query.ToArray();
                 if (employee != null || employee.Length != 0)
                 {
-                    employee[0] = emp;
+                    employee[0].FirstName = emp.FirstName;
+                    employee[0].LastName = emp.LastName;
+                    employee[0].PIN = emp.PIN;
+                    employee[0].AccessLevel = emp.AccessLevel;
+                    employee[0].AuthorizedUntilDate = emp.AuthorizedUntilDate;
+                    employee[0].Position = emp.Position;
+                    employee[0].Department = emp.Department;
+                    employee[0].Company = emp.Company;
+                    employee[0].Phone = emp.Phone;
+                    employee[0].Email = emp.Email;
                     try
                     {
                         db.SaveChanges();
@@ -334,7 +343,16 @@ namespace BioengineeringResearch.DataOperations
                 Visitor[] visistorList = query.ToArray();
                 if (visistorList != null || visistorList.Length != 0)
                 {
-                    visistorList[0] = visitor;
+                    visistorList[0].FirstName = visitor.FirstName;
+                    visistorList[0].LastName = visitor.LastName;
+                    visistorList[0].PIN = visitor.PIN;
+                    visistorList[0].AccessLevel = visitor.AccessLevel;
+                    visistorList[0].AuthorizedUntilDate = visitor.AuthorizedUntilDate;
+                    visistorList[0].Position = visitor.Position;
+                    visistorList[0].Department = visitor.Department;
+                    visistorList[0].Company = visitor.Company;
+                    visistorList[0].Phone = visitor.Phone;
+                    visistorList[0].Email = visitor.Email;
                     try
                     {
                         db.SaveChanges();

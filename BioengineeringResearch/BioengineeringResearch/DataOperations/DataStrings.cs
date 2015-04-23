@@ -33,6 +33,7 @@ namespace BioengineeringResearch.DataOperations
         public const String INVALID_ID = "Invalid ID";
         public const String INVALID_ID_PIN = "Invalid ID or PIN";
         public const String INVALID_LOGIN_CREDENTIAL = "Invalid ID and password";
+        public const String INSUFFICIENT_ACCESS_CLEARANCE = "Access Denied. Insufficient access clearance.";
         public const String SEARCH_RESULT = "Search Result";
 
         public const String LOGIN_OK = "Login Successful";
@@ -54,7 +55,7 @@ namespace BioengineeringResearch.DataOperations
         public const String ADD_FORM_ADMIN_STATUS = ADMIN_USER + " - " + "Add New Person";
         public const String ADD_FORM_RECEPTIONIST_STATUS = RECEPTIONIST_USER + " - " + "Add New Person";
 
-        public const String DOOR_OPEN_NOTICE = " Door is now open. Closing in 5 seconds.";
+        public const String DOOR_OPEN_NOTICE = " Door is now open. Closing in 10 seconds.";
         public const String DOOR_MULTIPLE_INVALID_ATTEMPT = "Multiple invalid log in attempt detected. \nDisabling door.";
 
         public const String CONTACTING_POLICE = "Contacting Police";

@@ -45,28 +45,39 @@ namespace BioengineeringResearch
             }
             else
             {
-                /*
-                if (DataOps.checkLogin(txtID.Text, txtPIN.Text) && DataOps.grantAccess(txtID.Text, doorName))
+                //Check if user login/pass matches
+                if (DataOps.checkLogin(txtID.Text, txtPIN.Text))
                 {
-                    // the user is authorized and the accesslevel is accessible
-                    loginYes = true;
-                }*/
-
-                if (loginYes)
-                {
-                    // the user is authorized                 
-                    _timeoutTimer = new System.Threading.Timer(OnTimerElapsed, null, 
-                        5000, System.Threading.Timeout.Infinite); // timeout is 5s
-                    MessageBox.Show(doorName + DataStrings.DOOR_OPEN_NOTICE, DataStrings.INFORMATION);
-
-                    // save the history
-                    /*
-                    if (!DataOps.createNewAccessHistoryEntry(txtID.Text, doorName))
+                    //Check if user have clearance to open door
+                    if (DataOps.grantAccess(txtID.Text, doorName.ToUpper()))
                     {
-                        MessageBox.Show("save failed");
-                    }*/
+                        // the user is authorized                 
+                        _timeoutTimer = new System.Threading.Timer(OnTimerElapsed, null,
+                            10000, System.Threading.Timeout.Infinite); // timeout is 10s
+                        MessageBox.Show(doorName + DataStrings.DOOR_OPEN_NOTICE, DataStrings.INFORMATION,MessageBoxButtons.OK);
 
-                    this.Close();
+                        // save the history
+                        if (!DataOps.createNewAccessHistoryEntry(txtID.Text, doorName))
+                        {
+                            MessageBox.Show("save failed");
+                        }
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(DataStrings.INSUFFICIENT_ACCESS_CLEARANCE, DataStrings.ALERT, MessageBoxButtons.OK);
+
+                        invalidEnter++; // invalid attempt increases
+
+                        // check if the invalid attempts are more than 3 times
+                        if (invalidEnter == 3)
+                        {
+                            MessageBox.Show(DataStrings.DOOR_MULTIPLE_INVALID_ATTEMPT, DataStrings.ALERT, MessageBoxButtons.OK);
+                            this.Close();
+                        }
+                        this.Close();
+                    }
                 }
                 else
                 {

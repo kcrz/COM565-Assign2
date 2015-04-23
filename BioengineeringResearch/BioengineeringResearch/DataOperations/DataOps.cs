@@ -78,7 +78,10 @@ namespace BioengineeringResearch.DataOperations
 
             }
         }
-
+        /// <summary>
+        /// Returns all employee info
+        /// </summary>
+        /// <returns></returns>
         public static List<Employee> getAllEmployees()
         {
             List<Employee> employeeList = new List<Employee>();
@@ -160,7 +163,10 @@ namespace BioengineeringResearch.DataOperations
                 }
             }
         }
-
+        /// <summary>
+        /// Returns all visitor info
+        /// </summary>
+        /// <returns></returns>
         public static List<Visitor> getAllVisitors()
         {
             List<Visitor> visitorList = new List<Visitor>();
@@ -175,9 +181,7 @@ namespace BioengineeringResearch.DataOperations
                 return visitorList;
             }
         }
-
-
-
+                
         /// <summary>
         /// Checks Login credentials. Returns true if credentials are valid, otherwise false
         /// </summary>
@@ -386,8 +390,9 @@ namespace BioengineeringResearch.DataOperations
         {
             using (var db = new BioEngResearchSecurityContext())
             {
-                DateTime accessDate = DateTime.Today;
-                TimeSpan accessTime = DateTime.Now.TimeOfDay;
+                DateTime accessDate = DateTime.Today.Date;
+                TimeSpan accessFullTime = DateTime.Now.TimeOfDay;
+                TimeSpan accessTime = new TimeSpan(accessFullTime.Hours, accessFullTime.Minutes, accessFullTime.Seconds);
                 if (userId.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
                 {
                     //get the door id using door name
@@ -435,6 +440,14 @@ namespace BioengineeringResearch.DataOperations
             }
         }
 
+        /// <summary>
+        /// Returns a list of Access History
+        /// Uses date parameter to search database
+        /// boolean to determine which table to search (Employee or Visitor)
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="isEmployee"></param>
+        /// <returns></returns>
         public static List<DisplayedHistory> searchAccessHistoryByDate(DateTime date, bool isEmployee)
         {
             using (var db = new BioEngResearchSecurityContext())
@@ -486,7 +499,14 @@ namespace BioengineeringResearch.DataOperations
                 }
             }
         }
-
+        /// <summary>
+        /// Returns a list of Access History
+        /// Uses Door parameter to search database
+        /// boolean to determine which table to search (Employee or Visitor)
+        /// </summary>
+        /// <param name="doorName"></param>
+        /// <param name="isEmployee"></param>
+        /// <returns></returns>
         public static List<DisplayedHistory> searchAccessHistoryByDoor(String doorName, bool isEmployee)
         {
             using (var db = new BioEngResearchSecurityContext())
@@ -556,7 +576,13 @@ namespace BioengineeringResearch.DataOperations
 
             }
         }
-
+        /// <summary>
+        /// Returns a list of Access History
+        /// Uses UserId parameter to search database
+        /// boolean to determine which table to search (mployee or Visitor)
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public static List<DisplayedHistory> searchAccessHistoryByUserId(String userId)
         {
             using (var db = new BioEngResearchSecurityContext())
@@ -614,7 +640,14 @@ namespace BioengineeringResearch.DataOperations
 
             }
         }
-
+        /// <summary>
+        /// Returns a list of Access History
+        /// Uses Time parameter to search database
+        /// boolean to determine which table to search (mployee or Visitor)
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="isEmployee"></param>
+        /// <returns></returns>
         public static List<DisplayedHistory> searchAccessHistoryByTime(TimeSpan time, bool isEmployee)
         {
             using (var db = new BioEngResearchSecurityContext())
@@ -667,7 +700,10 @@ namespace BioengineeringResearch.DataOperations
 
             }
         }
-        
+        /// <summary>
+        /// Returns all employee access history data
+        /// </summary>
+        /// <returns></returns>
         public static List<DisplayedHistory> getAllEmployeeAccessHistory()
         {
             using (var db = new BioEngResearchSecurityContext())
@@ -696,7 +732,10 @@ namespace BioengineeringResearch.DataOperations
                 return hisList;
             }
         }
-
+        /// <summary>
+        /// Returns all visitor access history
+        /// </summary>
+        /// <returns></returns>
         public static List<DisplayedHistory> getAllVisitorAccessHistory()
         {
             using (var db = new BioEngResearchSecurityContext())
@@ -710,6 +749,8 @@ namespace BioengineeringResearch.DataOperations
                             && ht.VisitorId != null
                             && ht.VisitorId == vt.VisitorId
                             join tbl in db.AccessHistories on ht.VisitorId equals tbl.VisitorId
+                            where ht.VisitorId == tbl.VisitorId
+                            && ht.DoorId == tbl.DoorId
                             select new DisplayedHistory { DateStamp = tbl.DateStamp, TimeStamp = tbl.TimeStamp, DoorName = dr.DoorName, VisitorId = tbl.VisitorId, FirstName = vt.FirstName, LastName = vt.LastName, AccessLevel = vt.AccessLevel };
 
                 foreach (DisplayedHistory data in query)
@@ -722,6 +763,89 @@ namespace BioengineeringResearch.DataOperations
 
                 return hisList;
             }
+        }
+
+        /// <summary>
+        /// Returns true if user have enough clearance to open door otherwise it will return false
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="doorName"></param>
+        /// <returns></returns>
+        public static bool grantAccess(String userId, String doorName)
+        {
+            int userAccessLevel = 0;
+            int doorAccessReqLevel = 0;
+
+            using (var db = new BioEngResearchSecurityContext())
+            {
+                //Get door access level requirement
+                var doorQuery = from dr in db.DoorTerminals
+                                where dr.DoorName == doorName.ToUpper()
+                                select dr.MinimumLevelReq;
+
+                int[] doorAccessLevelArray = doorQuery.ToArray();
+                if (doorAccessLevelArray != null && doorAccessLevelArray.Length != 0)
+                {
+                    doorAccessReqLevel = doorAccessLevelArray[0];
+                }
+                else
+                {
+                    //return false if door cant be found
+                    return false;
+                }
+
+
+                //Get user access level
+                if (DataUtils.isUserIdEmployee(userId))
+                {
+                    //Employee
+                    var query = from em in db.Employees
+                                where em.EmployeeId == userId.ToUpper()
+                                select em.AccessLevel;
+                    int[] accessLevelList = query.ToArray();
+                    if (accessLevelList != null && accessLevelList.Length != 0)
+                    {
+                        //User access level successfuly retrieved
+                        userAccessLevel = accessLevelList[0];
+                    }
+                    else
+                    {
+                        //return false if user cant be found
+                        return false;
+                    }
+                }
+                else
+                { 
+                    //Visitor
+                    var query = from vt in db.Visitors
+                                where vt.VisitorId == userId.ToUpper()
+                                select vt.AccessLevel;
+                    int[] accessLevelList = query.ToArray();
+                    if (accessLevelList != null && accessLevelList.Length != 0)
+                    {
+                        //User access level successfuly retrieved
+                        userAccessLevel = accessLevelList[0];
+                    }
+                    else
+                    {
+                        //return false if user cant be found
+                        return false;
+                    }
+                }
+
+                //evaluate user access level and door min access requirement
+                if (userAccessLevel >= doorAccessReqLevel)
+                {
+                    //requirements met
+                    return true;
+                }
+                else
+                {
+                    //failed
+                    return false;
+                }
+            }
+
         }
     }
 

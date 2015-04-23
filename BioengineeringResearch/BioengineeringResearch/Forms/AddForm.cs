@@ -67,7 +67,7 @@ namespace BioengineeringResearch.Functions
             if (add_FirstName.Text != DataStrings.EMPTY_STRING && add_LastName.Text != DataStrings.EMPTY_STRING && add_PIN.Text != DataStrings.EMPTY_STRING && add_AccessLevel.SelectedIndex >= 0
                         && add_ExpiredDate.Value > DateTime.Now && add_Position.Text != DataStrings.EMPTY_STRING && add_Phone.Text != DataStrings.EMPTY_STRING && add_Email.Text != DataStrings.EMPTY_STRING)
             {
-                DateTime currentDate = DateTime.Today;
+                DateTime currentDate = DateTime.Today.Date;
                 if (add_PIN.Text.Equals(add_ConPIN.Text)) // check if the two PINs are the same
                 {
                     if (radiobtn_emp.Checked == true) // add Employee
@@ -78,7 +78,7 @@ namespace BioengineeringResearch.Functions
                         employee.PIN = Convert.ToInt32(add_PIN.Text);
                         employee.AccessLevel = Convert.ToInt32(add_AccessLevel.SelectedItem);
                         employee.AccessGrantedDate = currentDate;
-                        employee.AuthorizedUntilDate = add_ExpiredDate.Value;
+                        employee.AuthorizedUntilDate = add_ExpiredDate.Value.Date;
                         employee.Position = add_Position.Text;
                         employee.Department = add_Department.Text;
                         employee.Company = add_Company.Text;
@@ -104,7 +104,7 @@ namespace BioengineeringResearch.Functions
                         visitor.PIN = Convert.ToInt32(add_PIN.Text);
                         visitor.AccessLevel = Convert.ToInt32(add_AccessLevel.SelectedItem);
                         visitor.AccessGrantedDate = currentDate;
-                        visitor.AuthorizedUntilDate = add_ExpiredDate.Value;
+                        visitor.AuthorizedUntilDate = add_ExpiredDate.Value.Date;
                         visitor.Position = add_Position.Text;
                         visitor.Department = add_Department.Text;
                         visitor.Company = add_Company.Text;

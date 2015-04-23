@@ -75,7 +75,7 @@ namespace BioengineeringResearch.Forms
                             if (em != null)
                             {
                                 //Create string array containing column data
-                                string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company,em.Phone, em.Email };
+                                string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToShortDateString(), em.AuthorizedUntilDate.ToShortDateString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
                                 //create list view item using striny array
                                 listViewItem = new ListViewItem(dataRow);
                                 //add tpo list view
@@ -99,7 +99,7 @@ namespace BioengineeringResearch.Forms
                             if (vt != null)
                             {
                                 //Create string array containing column data
-                                string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
+                                string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToShortDateString(), vt.AuthorizedUntilDate.ToShortDateString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                                 //create list view item using striny array
                                 listViewItem = new ListViewItem(dataRow);
                                 //add tpo list view
@@ -118,7 +118,7 @@ namespace BioengineeringResearch.Forms
                     foreach (Employee em in employeeList)
                     {
                         //Create string array containing column data
-                        string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
+                        string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToShortDateString(), em.AuthorizedUntilDate.ToShortDateString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
                         //create list view item using striny array
                         listViewItem = new ListViewItem(dataRow);
                         //add tpo list view
@@ -128,7 +128,7 @@ namespace BioengineeringResearch.Forms
                     foreach (Visitor vt in visitorList)
                     {
                         //Create string array containing column data
-                        string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
+                        string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToShortDateString(), vt.AuthorizedUntilDate.ToShortDateString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                         //create list view item using striny array
                         listViewItem = new ListViewItem(dataRow);
                         //add tpo list view
@@ -149,7 +149,7 @@ namespace BioengineeringResearch.Forms
                     foreach (Employee em in employeeList)
                     {
                         //Create string array containing column data
-                        string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
+                        string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToShortDateString(), em.AuthorizedUntilDate.ToShortDateString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
                         //create list view item using striny array
                         listViewItem = new ListViewItem(dataRow);
                         //add tpo list view
@@ -159,7 +159,7 @@ namespace BioengineeringResearch.Forms
                     foreach (Visitor vt in visitorList)
                     {
                         //Create string array containing column data
-                        string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
+                        string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToShortDateString(), vt.AuthorizedUntilDate.ToShortDateString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                         //create list view item using striny array
                         listViewItem = new ListViewItem(dataRow);
                         //add tpo list view
@@ -192,7 +192,7 @@ namespace BioengineeringResearch.Forms
                 foreach (Visitor vt in visitorList)
                 {
                     //Create string array containing column data
-                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
+                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToShortDateString(), vt.AuthorizedUntilDate.ToShortDateString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                     //create list view item using striny array
                     listViewItem = new ListViewItem(dataRow);
                     //add tpo list view
@@ -216,7 +216,7 @@ namespace BioengineeringResearch.Forms
                 foreach (Employee em in employeeList)
                 {
                     //Create string array containing column data
-                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
+                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToShortDateString(), em.AuthorizedUntilDate.ToShortDateString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
                     //create list view item using striny array
                     listViewItem = new ListViewItem(dataRow);
                     //add tpo list view
@@ -243,7 +243,7 @@ namespace BioengineeringResearch.Forms
                 foreach (Employee em in employeeList)
                 {
                     //Create string array containing column data
-                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToString(), em.AuthorizedUntilDate.ToString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
+                    string[] dataRow = { em.EmployeeId, em.FirstName, em.LastName, Convert.ToString(em.AccessLevel), em.AccessGrantedDate.ToShortDateString(), em.AuthorizedUntilDate.ToShortDateString(), em.Position, em.Department, em.Company, em.Phone, em.Email };
                     //create list view item using striny array
                     listViewItem = new ListViewItem(dataRow);
                     //add tpo list view
@@ -256,7 +256,7 @@ namespace BioengineeringResearch.Forms
                 foreach (Visitor vt in visitorList)
                 {
                     //Create string array containing column data
-                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToString(), vt.AuthorizedUntilDate.ToString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
+                    string[] dataRow = { vt.VisitorId, vt.FirstName, vt.LastName, Convert.ToString(vt.AccessLevel), vt.AccessGrantedDate.ToShortDateString(), vt.AuthorizedUntilDate.ToShortDateString(), vt.Position, vt.Department, vt.Company, vt.Phone, vt.Email };
                     //create list view item using striny array
                     listViewItem = new ListViewItem(dataRow);
                     //add tpo list view

@@ -41,6 +41,7 @@ namespace BioengineeringResearch.DataOperations
         public const String NO_VISITORS_FOUND = "No visistors found";
         public const String NO_EMPLOYEES_FOUND = "No employees found";
         public const String NO_ITEM_FOUND = "No item found";
+        public const String NO_ITEM_TO_EXPORT = "No item to export";
 
         public const String FAILED_TO_ADD_EMPLOYEE = "Failed to add Employee. Check if all fields are valid";
         public const String FAILED_TO_ADD_VISITOR = "Failed to add Visitor. Check if all fields are valid";
@@ -80,5 +81,11 @@ namespace BioengineeringResearch.DataOperations
 
         public const String INTRUDER_SELECT_LOCATION = "Please select a location for simulation";
         public const String INTRUDER_DETECTED = " has detected an Intruder.";
+
+        public const String EXPORT_TITLE = "Choose location to save to";
+        public const String EXPORT_HISTORY_FILENAME = "AccessHistory.csv";
+        public const String EXPORT_PEOPLE_FILENAME = "PeopleData.csv";
+        public const String EXPORT__FILTER = "CSV (*.csv)|*.csv";
+
     }
 }

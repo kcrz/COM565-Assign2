@@ -58,20 +58,22 @@
             this.colLName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colClearanceLvl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdoHistoryDoor = new System.Windows.Forms.RadioButton();
+            this.rdoHistoryPasserId = new System.Windows.Forms.RadioButton();
+            this.rdoHistoryTime = new System.Windows.Forms.RadioButton();
+            this.rdoHistoryDate = new System.Windows.Forms.RadioButton();
             this.timePicker = new System.Windows.Forms.DateTimePicker();
-            this.txtPasserId = new System.Windows.Forms.TextBox();
             this.btnSrchHistBy = new System.Windows.Forms.Button();
-            this.dropDownDoor = new System.Windows.Forms.ComboBox();
+            this.txtPasserId = new System.Windows.Forms.TextBox();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.dropDownDoor = new System.Windows.Forms.ComboBox();
             this.btnShowAllHist = new System.Windows.Forms.Button();
             this.btnShowAllVist = new System.Windows.Forms.Button();
             this.btnShowAllEmp = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.txtLogStatus = new System.Windows.Forms.TextBox();
-            this.rdoHistoryDate = new System.Windows.Forms.RadioButton();
-            this.rdoHistoryTime = new System.Windows.Forms.RadioButton();
-            this.rdoHistoryPasserId = new System.Windows.Forms.RadioButton();
-            this.rdoHistoryDoor = new System.Windows.Forms.RadioButton();
+            this.btnExportHistory = new System.Windows.Forms.Button();
+            this.btnExportPerson = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -315,6 +317,54 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search History";
             // 
+            // rdoHistoryDoor
+            // 
+            this.rdoHistoryDoor.AutoSize = true;
+            this.rdoHistoryDoor.Location = new System.Drawing.Point(455, 57);
+            this.rdoHistoryDoor.Name = "rdoHistoryDoor";
+            this.rdoHistoryDoor.Size = new System.Drawing.Size(51, 17);
+            this.rdoHistoryDoor.TabIndex = 18;
+            this.rdoHistoryDoor.TabStop = true;
+            this.rdoHistoryDoor.Text = "Door:";
+            this.rdoHistoryDoor.UseVisualStyleBackColor = true;
+            this.rdoHistoryDoor.CheckedChanged += new System.EventHandler(this.rdoHistoryDoor_CheckedChanged);
+            // 
+            // rdoHistoryPasserId
+            // 
+            this.rdoHistoryPasserId.AutoSize = true;
+            this.rdoHistoryPasserId.Location = new System.Drawing.Point(455, 22);
+            this.rdoHistoryPasserId.Name = "rdoHistoryPasserId";
+            this.rdoHistoryPasserId.Size = new System.Drawing.Size(64, 17);
+            this.rdoHistoryPasserId.TabIndex = 14;
+            this.rdoHistoryPasserId.TabStop = true;
+            this.rdoHistoryPasserId.Text = "User ID:";
+            this.rdoHistoryPasserId.UseVisualStyleBackColor = true;
+            this.rdoHistoryPasserId.CheckedChanged += new System.EventHandler(this.rdoHistoryPasserId_CheckedChanged);
+            // 
+            // rdoHistoryTime
+            // 
+            this.rdoHistoryTime.AutoSize = true;
+            this.rdoHistoryTime.Location = new System.Drawing.Point(149, 58);
+            this.rdoHistoryTime.Name = "rdoHistoryTime";
+            this.rdoHistoryTime.Size = new System.Drawing.Size(51, 17);
+            this.rdoHistoryTime.TabIndex = 16;
+            this.rdoHistoryTime.TabStop = true;
+            this.rdoHistoryTime.Text = "Time:";
+            this.rdoHistoryTime.UseVisualStyleBackColor = true;
+            this.rdoHistoryTime.CheckedChanged += new System.EventHandler(this.rdoHistoryTime_CheckedChanged);
+            // 
+            // rdoHistoryDate
+            // 
+            this.rdoHistoryDate.AutoSize = true;
+            this.rdoHistoryDate.Location = new System.Drawing.Point(149, 18);
+            this.rdoHistoryDate.Name = "rdoHistoryDate";
+            this.rdoHistoryDate.Size = new System.Drawing.Size(51, 17);
+            this.rdoHistoryDate.TabIndex = 12;
+            this.rdoHistoryDate.TabStop = true;
+            this.rdoHistoryDate.Text = "Date:";
+            this.rdoHistoryDate.UseVisualStyleBackColor = true;
+            this.rdoHistoryDate.CheckedChanged += new System.EventHandler(this.rdoHistoryDate_CheckedChanged);
+            // 
             // timePicker
             // 
             this.timePicker.Enabled = false;
@@ -326,14 +376,6 @@
             this.timePicker.TabIndex = 17;
             this.timePicker.Value = new System.DateTime(2015, 4, 17, 22, 20, 20, 0);
             // 
-            // txtPasserId
-            // 
-            this.txtPasserId.Enabled = false;
-            this.txtPasserId.Location = new System.Drawing.Point(523, 22);
-            this.txtPasserId.Name = "txtPasserId";
-            this.txtPasserId.Size = new System.Drawing.Size(148, 20);
-            this.txtPasserId.TabIndex = 15;
-            // 
             // btnSrchHistBy
             // 
             this.btnSrchHistBy.Location = new System.Drawing.Point(21, 22);
@@ -343,6 +385,22 @@
             this.btnSrchHistBy.Text = "Search By";
             this.btnSrchHistBy.UseVisualStyleBackColor = true;
             this.btnSrchHistBy.Click += new System.EventHandler(this.btnSrchHistBy_Click);
+            // 
+            // txtPasserId
+            // 
+            this.txtPasserId.Enabled = false;
+            this.txtPasserId.Location = new System.Drawing.Point(523, 22);
+            this.txtPasserId.Name = "txtPasserId";
+            this.txtPasserId.Size = new System.Drawing.Size(148, 20);
+            this.txtPasserId.TabIndex = 15;
+            // 
+            // datePicker
+            // 
+            this.datePicker.Enabled = false;
+            this.datePicker.Location = new System.Drawing.Point(206, 19);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(200, 20);
+            this.datePicker.TabIndex = 13;
             // 
             // dropDownDoor
             // 
@@ -373,14 +431,6 @@
             this.dropDownDoor.Name = "dropDownDoor";
             this.dropDownDoor.Size = new System.Drawing.Size(82, 21);
             this.dropDownDoor.TabIndex = 19;
-            // 
-            // datePicker
-            // 
-            this.datePicker.Enabled = false;
-            this.datePicker.Location = new System.Drawing.Point(206, 19);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(200, 20);
-            this.datePicker.TabIndex = 13;
             // 
             // btnShowAllHist
             // 
@@ -431,53 +481,25 @@
             this.txtLogStatus.TabIndex = 0;
             this.txtLogStatus.Text = "Your Status:";
             // 
-            // rdoHistoryDate
+            // btnExportHistory
             // 
-            this.rdoHistoryDate.AutoSize = true;
-            this.rdoHistoryDate.Location = new System.Drawing.Point(149, 18);
-            this.rdoHistoryDate.Name = "rdoHistoryDate";
-            this.rdoHistoryDate.Size = new System.Drawing.Size(51, 17);
-            this.rdoHistoryDate.TabIndex = 12;
-            this.rdoHistoryDate.TabStop = true;
-            this.rdoHistoryDate.Text = "Date:";
-            this.rdoHistoryDate.UseVisualStyleBackColor = true;
-            this.rdoHistoryDate.CheckedChanged += new System.EventHandler(this.rdoHistoryDate_CheckedChanged);
+            this.btnExportHistory.Location = new System.Drawing.Point(161, 634);
+            this.btnExportHistory.Name = "btnExportHistory";
+            this.btnExportHistory.Size = new System.Drawing.Size(103, 25);
+            this.btnExportHistory.TabIndex = 22;
+            this.btnExportHistory.Text = "Export History";
+            this.btnExportHistory.UseVisualStyleBackColor = true;
+            this.btnExportHistory.Click += new System.EventHandler(this.btnExportHistory_Click);
             // 
-            // rdoHistoryTime
+            // btnExportPerson
             // 
-            this.rdoHistoryTime.AutoSize = true;
-            this.rdoHistoryTime.Location = new System.Drawing.Point(149, 58);
-            this.rdoHistoryTime.Name = "rdoHistoryTime";
-            this.rdoHistoryTime.Size = new System.Drawing.Size(51, 17);
-            this.rdoHistoryTime.TabIndex = 16;
-            this.rdoHistoryTime.TabStop = true;
-            this.rdoHistoryTime.Text = "Time:";
-            this.rdoHistoryTime.UseVisualStyleBackColor = true;
-            this.rdoHistoryTime.CheckedChanged += new System.EventHandler(this.rdoHistoryTime_CheckedChanged);
-            // 
-            // rdoHistoryPasserId
-            // 
-            this.rdoHistoryPasserId.AutoSize = true;
-            this.rdoHistoryPasserId.Location = new System.Drawing.Point(455, 22);
-            this.rdoHistoryPasserId.Name = "rdoHistoryPasserId";
-            this.rdoHistoryPasserId.Size = new System.Drawing.Size(64, 17);
-            this.rdoHistoryPasserId.TabIndex = 14;
-            this.rdoHistoryPasserId.TabStop = true;
-            this.rdoHistoryPasserId.Text = "User ID:";
-            this.rdoHistoryPasserId.UseVisualStyleBackColor = true;
-            this.rdoHistoryPasserId.CheckedChanged += new System.EventHandler(this.rdoHistoryPasserId_CheckedChanged);
-            // 
-            // rdoHistoryDoor
-            // 
-            this.rdoHistoryDoor.AutoSize = true;
-            this.rdoHistoryDoor.Location = new System.Drawing.Point(455, 57);
-            this.rdoHistoryDoor.Name = "rdoHistoryDoor";
-            this.rdoHistoryDoor.Size = new System.Drawing.Size(51, 17);
-            this.rdoHistoryDoor.TabIndex = 18;
-            this.rdoHistoryDoor.TabStop = true;
-            this.rdoHistoryDoor.Text = "Door:";
-            this.rdoHistoryDoor.UseVisualStyleBackColor = true;
-            this.rdoHistoryDoor.CheckedChanged += new System.EventHandler(this.rdoHistoryDoor_CheckedChanged);
+            this.btnExportPerson.Location = new System.Drawing.Point(475, 275);
+            this.btnExportPerson.Name = "btnExportPerson";
+            this.btnExportPerson.Size = new System.Drawing.Size(112, 25);
+            this.btnExportPerson.TabIndex = 23;
+            this.btnExportPerson.Text = "Export Person Data";
+            this.btnExportPerson.UseVisualStyleBackColor = true;
+            this.btnExportPerson.Click += new System.EventHandler(this.btnExportPerson_Click);
             // 
             // ManageForm
             // 
@@ -485,6 +507,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 673);
             this.ControlBox = false;
+            this.Controls.Add(this.btnExportPerson);
+            this.Controls.Add(this.btnExportHistory);
             this.Controls.Add(this.txtLogStatus);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnShowAllEmp);
@@ -556,5 +580,7 @@
         private System.Windows.Forms.RadioButton rdoHistoryPasserId;
         private System.Windows.Forms.RadioButton rdoHistoryTime;
         private System.Windows.Forms.RadioButton rdoHistoryDate;
+        private System.Windows.Forms.Button btnExportHistory;
+        private System.Windows.Forms.Button btnExportPerson;
     }
 }

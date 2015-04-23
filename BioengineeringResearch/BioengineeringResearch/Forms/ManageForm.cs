@@ -25,7 +25,6 @@ namespace BioengineeringResearch.Forms
 
         private List<Employee> employeeList;
         private List<Visitor> visitorList;
-        private List<DisplayedHistory> displayedHistoryList;
         private ListViewItem listViewItem;
 
         public ManageForm(int Status)
@@ -44,6 +43,8 @@ namespace BioengineeringResearch.Forms
                     txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.NORMAL_USER;
                     //disable add and delete for normal users
                     btnAdd.Enabled = false;
+                    btnExportHistory.Enabled = false;
+                    btnExportPerson.Enabled = false;
                     break;
 
             }
@@ -271,18 +272,6 @@ namespace BioengineeringResearch.Forms
             }
         }
 
-        private void btnDeltPerson_Click(object sender, EventArgs e)
-        {
-            if (listviewPerson.SelectedItems.Count != 0)
-            {
-                // delete the selected item by database operation
-            }
-            else
-            {
-                MessageBox.Show(DataStrings.SELECT_ITEM_DELETION, DataStrings.ALERT);
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddForm addForm = new AddForm(loginStatus);
@@ -339,7 +328,7 @@ namespace BioengineeringResearch.Forms
             }
         }
 
-        
+
 
         private void btnSrchHistBy_Click(object sender, EventArgs e)
         {
@@ -399,8 +388,8 @@ namespace BioengineeringResearch.Forms
                 MessageBox.Show(DataStrings.SELECT_HISTORY_SEARCH_OPTION, DataStrings.ALERT);
             }
 
-            
-            
+
+
         }
 
         private void rdoHistoryDate_CheckedChanged(object sender, EventArgs e)
@@ -436,5 +425,91 @@ namespace BioengineeringResearch.Forms
             dropDownDoor.Enabled = true;
 
         }
-}
+
+        private void btnExportHistory_Click(object sender, EventArgs e)
+        {
+            if (listViewHist.Items.Count != 0)
+            {
+                SaveFileDialog sfd = new SaveFileDialog
+            {
+                Title = DataStrings.EXPORT_TITLE,
+                FileName = DataStrings.EXPORT_HISTORY_FILENAME,
+                Filter = DataStrings.EXPORT__FILTER,
+                FilterIndex = 0,
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            };
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    string[] headers = listViewHist.Columns
+                           .OfType<ColumnHeader>()
+                           .Select(header => header.Text.Trim())
+                           .ToArray();
+
+                    string[][] items = listViewHist.Items
+                                .OfType<ListViewItem>()
+                                .Select(lvi => lvi.SubItems
+                                    .OfType<ListViewItem.ListViewSubItem>()
+                                    .Select(si => si.Text).ToArray()).ToArray();
+
+                    string table = string.Join(",", headers) + Environment.NewLine;
+                    foreach (string[] a in items)
+                    {
+                        //a = a_loopVariable;
+                        table += string.Join(",", a) + Environment.NewLine;
+                    }
+                    table = table.TrimEnd('\r', '\n');
+                    System.IO.File.WriteAllText(sfd.FileName, table);
+                }
+            }
+            else
+            {
+                MessageBox.Show(DataStrings.NO_ITEM_TO_EXPORT, DataStrings.ALERT);
+            }
+        }
+
+        private void btnExportPerson_Click(object sender, EventArgs e)
+        {
+            if (listviewPerson.Items.Count != 0)
+            {
+                SaveFileDialog sfd = new SaveFileDialog
+                {
+                    Title = DataStrings.EXPORT_TITLE,
+                    FileName = DataStrings.EXPORT_PEOPLE_FILENAME,
+                    Filter = DataStrings.EXPORT__FILTER,
+                    FilterIndex = 0,
+                    InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                };
+
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    string[] headers = listviewPerson.Columns
+                               .OfType<ColumnHeader>()
+                               .Select(header => header.Text.Trim())
+                               .ToArray();
+
+                    string[][] items = listviewPerson.Items
+                                .OfType<ListViewItem>()
+                                .Select(lvi => lvi.SubItems
+                                    .OfType<ListViewItem.ListViewSubItem>()
+                                    .Select(si => si.Text).ToArray()).ToArray();
+
+                    string table = string.Join(",", headers) + Environment.NewLine;
+                    foreach (string[] a in items)
+                    {
+                        //a = a_loopVariable;
+                        table += string.Join(",", a) + Environment.NewLine;
+                    }
+                    table = table.TrimEnd('\r', '\n');
+                    System.IO.File.WriteAllText(sfd.FileName, table);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(DataStrings.NO_ITEM_TO_EXPORT, DataStrings.ALERT);
+            }
+        }
+    }
 }

@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(31, 23);
+            this.label1.Location = new System.Drawing.Point(31, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 27);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // textID
             // 
             this.textID.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textID.Location = new System.Drawing.Point(94, 20);
+            this.textID.Location = new System.Drawing.Point(94, 18);
             this.textID.Name = "textID";
             this.textID.Size = new System.Drawing.Size(169, 38);
             this.textID.TabIndex = 1;
@@ -57,7 +57,7 @@
             // textPIN
             // 
             this.textPIN.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textPIN.Location = new System.Drawing.Point(94, 67);
+            this.textPIN.Location = new System.Drawing.Point(94, 62);
             this.textPIN.Name = "textPIN";
             this.textPIN.PasswordChar = '*';
             this.textPIN.Size = new System.Drawing.Size(169, 38);
@@ -67,7 +67,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(16, 70);
+            this.label2.Location = new System.Drawing.Point(16, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 27);
             this.label2.TabIndex = 2;
@@ -75,9 +75,9 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(53, 132);
+            this.btn_login.Location = new System.Drawing.Point(53, 122);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(78, 43);
+            this.btn_login.Size = new System.Drawing.Size(78, 40);
             this.btn_login.TabIndex = 4;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -86,9 +86,9 @@
             // btn_cancel
             // 
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancel.Location = new System.Drawing.Point(162, 132);
+            this.btn_cancel.Location = new System.Drawing.Point(162, 122);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(78, 43);
+            this.btn_cancel.Size = new System.Drawing.Size(78, 40);
             this.btn_cancel.TabIndex = 5;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
@@ -97,10 +97,10 @@
             // LogForm
             // 
             this.AcceptButton = this.btn_login;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_cancel;
-            this.ClientSize = new System.Drawing.Size(290, 199);
+            this.ClientSize = new System.Drawing.Size(290, 184);
             this.ControlBox = false;
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_login);
@@ -110,7 +110,6 @@
             this.Controls.Add(this.label1);
             this.Name = "LogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

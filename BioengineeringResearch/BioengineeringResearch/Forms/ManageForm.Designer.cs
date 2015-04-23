@@ -81,9 +81,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(637, 635);
+            this.btnExit.Location = new System.Drawing.Point(637, 586);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 25);
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 21;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -103,9 +103,9 @@
             this.columnCompany,
             this.columnEmail,
             this.columnPhone});
-            this.listviewPerson.Location = new System.Drawing.Point(12, 85);
+            this.listviewPerson.Location = new System.Drawing.Point(12, 78);
             this.listviewPerson.Name = "listviewPerson";
-            this.listviewPerson.Size = new System.Drawing.Size(700, 184);
+            this.listviewPerson.Size = new System.Drawing.Size(700, 170);
             this.listviewPerson.TabIndex = 5;
             this.listviewPerson.UseCompatibleStateImageBehavior = false;
             this.listviewPerson.View = System.Windows.Forms.View.Details;
@@ -169,9 +169,9 @@
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Controls.Add(this.btnSrchPerson);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 66);
+            this.groupBox1.Size = new System.Drawing.Size(585, 61);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Person By";
@@ -182,9 +182,9 @@
             this.panel1.Controls.Add(this.rdoLastName);
             this.panel1.Controls.Add(this.rdoId);
             this.panel1.Controls.Add(this.rdoFirstName);
-            this.panel1.Location = new System.Drawing.Point(6, 22);
+            this.panel1.Location = new System.Drawing.Point(6, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 28);
+            this.panel1.Size = new System.Drawing.Size(248, 26);
             this.panel1.TabIndex = 9;
             // 
             // rdoLastName
@@ -192,7 +192,7 @@
             this.rdoLastName.AutoSize = true;
             this.rdoLastName.Location = new System.Drawing.Point(165, 3);
             this.rdoLastName.Name = "rdoLastName";
-            this.rdoLastName.Size = new System.Drawing.Size(74, 17);
+            this.rdoLastName.Size = new System.Drawing.Size(77, 16);
             this.rdoLastName.TabIndex = 3;
             this.rdoLastName.TabStop = true;
             this.rdoLastName.Text = "Last name";
@@ -204,7 +204,7 @@
             this.rdoId.Checked = true;
             this.rdoId.Location = new System.Drawing.Point(3, 3);
             this.rdoId.Name = "rdoId";
-            this.rdoId.Size = new System.Drawing.Size(36, 17);
+            this.rdoId.Size = new System.Drawing.Size(35, 16);
             this.rdoId.TabIndex = 1;
             this.rdoId.TabStop = true;
             this.rdoId.Text = "ID";
@@ -215,7 +215,7 @@
             this.rdoFirstName.AutoSize = true;
             this.rdoFirstName.Location = new System.Drawing.Point(59, 3);
             this.rdoFirstName.Name = "rdoFirstName";
-            this.rdoFirstName.Size = new System.Drawing.Size(73, 17);
+            this.rdoFirstName.Size = new System.Drawing.Size(83, 16);
             this.rdoFirstName.TabIndex = 2;
             this.rdoFirstName.TabStop = true;
             this.rdoFirstName.Text = "First name";
@@ -223,16 +223,16 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(260, 25);
+            this.txtSearch.Location = new System.Drawing.Point(260, 23);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(234, 20);
+            this.txtSearch.Size = new System.Drawing.Size(234, 21);
             this.txtSearch.TabIndex = 4;
             // 
             // btnSrchPerson
             // 
-            this.btnSrchPerson.Location = new System.Drawing.Point(500, 23);
+            this.btnSrchPerson.Location = new System.Drawing.Point(500, 21);
             this.btnSrchPerson.Name = "btnSrchPerson";
-            this.btnSrchPerson.Size = new System.Drawing.Size(75, 25);
+            this.btnSrchPerson.Size = new System.Drawing.Size(75, 23);
             this.btnSrchPerson.TabIndex = 5;
             this.btnSrchPerson.Text = "Search";
             this.btnSrchPerson.UseVisualStyleBackColor = true;
@@ -240,9 +240,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(637, 275);
+            this.btnAdd.Location = new System.Drawing.Point(637, 254);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 25);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add Person";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -258,9 +258,9 @@
             this.colFName,
             this.colLName,
             this.colClearanceLvl});
-            this.listViewHist.Location = new System.Drawing.Point(12, 411);
+            this.listViewHist.Location = new System.Drawing.Point(12, 379);
             this.listViewHist.Name = "listViewHist";
-            this.listViewHist.Size = new System.Drawing.Size(700, 216);
+            this.listViewHist.Size = new System.Drawing.Size(700, 200);
             this.listViewHist.TabIndex = 11;
             this.listViewHist.UseCompatibleStateImageBehavior = false;
             this.listViewHist.View = System.Windows.Forms.View.Details;
@@ -310,9 +310,9 @@
             this.groupBox2.Controls.Add(this.txtPasserId);
             this.groupBox2.Controls.Add(this.datePicker);
             this.groupBox2.Controls.Add(this.dropDownDoor);
-            this.groupBox2.Location = new System.Drawing.Point(12, 307);
+            this.groupBox2.Location = new System.Drawing.Point(12, 283);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(700, 98);
+            this.groupBox2.Size = new System.Drawing.Size(700, 90);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search History";
@@ -320,9 +320,9 @@
             // rdoHistoryDoor
             // 
             this.rdoHistoryDoor.AutoSize = true;
-            this.rdoHistoryDoor.Location = new System.Drawing.Point(455, 57);
+            this.rdoHistoryDoor.Location = new System.Drawing.Point(455, 53);
             this.rdoHistoryDoor.Name = "rdoHistoryDoor";
-            this.rdoHistoryDoor.Size = new System.Drawing.Size(51, 17);
+            this.rdoHistoryDoor.Size = new System.Drawing.Size(53, 16);
             this.rdoHistoryDoor.TabIndex = 18;
             this.rdoHistoryDoor.TabStop = true;
             this.rdoHistoryDoor.Text = "Door:";
@@ -332,9 +332,9 @@
             // rdoHistoryPasserId
             // 
             this.rdoHistoryPasserId.AutoSize = true;
-            this.rdoHistoryPasserId.Location = new System.Drawing.Point(455, 22);
+            this.rdoHistoryPasserId.Location = new System.Drawing.Point(455, 20);
             this.rdoHistoryPasserId.Name = "rdoHistoryPasserId";
-            this.rdoHistoryPasserId.Size = new System.Drawing.Size(64, 17);
+            this.rdoHistoryPasserId.Size = new System.Drawing.Size(71, 16);
             this.rdoHistoryPasserId.TabIndex = 14;
             this.rdoHistoryPasserId.TabStop = true;
             this.rdoHistoryPasserId.Text = "User ID:";
@@ -344,9 +344,9 @@
             // rdoHistoryTime
             // 
             this.rdoHistoryTime.AutoSize = true;
-            this.rdoHistoryTime.Location = new System.Drawing.Point(149, 58);
+            this.rdoHistoryTime.Location = new System.Drawing.Point(149, 54);
             this.rdoHistoryTime.Name = "rdoHistoryTime";
-            this.rdoHistoryTime.Size = new System.Drawing.Size(51, 17);
+            this.rdoHistoryTime.Size = new System.Drawing.Size(53, 16);
             this.rdoHistoryTime.TabIndex = 16;
             this.rdoHistoryTime.TabStop = true;
             this.rdoHistoryTime.Text = "Time:";
@@ -356,9 +356,9 @@
             // rdoHistoryDate
             // 
             this.rdoHistoryDate.AutoSize = true;
-            this.rdoHistoryDate.Location = new System.Drawing.Point(149, 18);
+            this.rdoHistoryDate.Location = new System.Drawing.Point(149, 17);
             this.rdoHistoryDate.Name = "rdoHistoryDate";
-            this.rdoHistoryDate.Size = new System.Drawing.Size(51, 17);
+            this.rdoHistoryDate.Size = new System.Drawing.Size(53, 16);
             this.rdoHistoryDate.TabIndex = 12;
             this.rdoHistoryDate.TabStop = true;
             this.rdoHistoryDate.Text = "Date:";
@@ -369,18 +369,18 @@
             // 
             this.timePicker.Enabled = false;
             this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePicker.Location = new System.Drawing.Point(206, 54);
+            this.timePicker.Location = new System.Drawing.Point(206, 50);
             this.timePicker.Name = "timePicker";
             this.timePicker.ShowUpDown = true;
-            this.timePicker.Size = new System.Drawing.Size(87, 20);
+            this.timePicker.Size = new System.Drawing.Size(87, 21);
             this.timePicker.TabIndex = 17;
             this.timePicker.Value = new System.DateTime(2015, 4, 17, 22, 20, 20, 0);
             // 
             // btnSrchHistBy
             // 
-            this.btnSrchHistBy.Location = new System.Drawing.Point(21, 22);
+            this.btnSrchHistBy.Location = new System.Drawing.Point(21, 20);
             this.btnSrchHistBy.Name = "btnSrchHistBy";
-            this.btnSrchHistBy.Size = new System.Drawing.Size(75, 25);
+            this.btnSrchHistBy.Size = new System.Drawing.Size(75, 23);
             this.btnSrchHistBy.TabIndex = 11;
             this.btnSrchHistBy.Text = "Search By";
             this.btnSrchHistBy.UseVisualStyleBackColor = true;
@@ -389,17 +389,17 @@
             // txtPasserId
             // 
             this.txtPasserId.Enabled = false;
-            this.txtPasserId.Location = new System.Drawing.Point(523, 22);
+            this.txtPasserId.Location = new System.Drawing.Point(523, 20);
             this.txtPasserId.Name = "txtPasserId";
-            this.txtPasserId.Size = new System.Drawing.Size(148, 20);
+            this.txtPasserId.Size = new System.Drawing.Size(148, 21);
             this.txtPasserId.TabIndex = 15;
             // 
             // datePicker
             // 
             this.datePicker.Enabled = false;
-            this.datePicker.Location = new System.Drawing.Point(206, 19);
+            this.datePicker.Location = new System.Drawing.Point(206, 18);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(200, 20);
+            this.datePicker.Size = new System.Drawing.Size(200, 21);
             this.datePicker.TabIndex = 13;
             // 
             // dropDownDoor
@@ -427,16 +427,16 @@
             "C6",
             "C7",
             "C8"});
-            this.dropDownDoor.Location = new System.Drawing.Point(589, 54);
+            this.dropDownDoor.Location = new System.Drawing.Point(589, 50);
             this.dropDownDoor.Name = "dropDownDoor";
-            this.dropDownDoor.Size = new System.Drawing.Size(82, 21);
+            this.dropDownDoor.Size = new System.Drawing.Size(82, 20);
             this.dropDownDoor.TabIndex = 19;
             // 
             // btnShowAllHist
             // 
-            this.btnShowAllHist.Location = new System.Drawing.Point(12, 634);
+            this.btnShowAllHist.Location = new System.Drawing.Point(12, 585);
             this.btnShowAllHist.Name = "btnShowAllHist";
-            this.btnShowAllHist.Size = new System.Drawing.Size(145, 25);
+            this.btnShowAllHist.Size = new System.Drawing.Size(145, 23);
             this.btnShowAllHist.TabIndex = 20;
             this.btnShowAllHist.Text = "Show All History";
             this.btnShowAllHist.UseVisualStyleBackColor = true;
@@ -444,9 +444,9 @@
             // 
             // btnShowAllVist
             // 
-            this.btnShowAllVist.Location = new System.Drawing.Point(13, 275);
+            this.btnShowAllVist.Location = new System.Drawing.Point(13, 254);
             this.btnShowAllVist.Name = "btnShowAllVist";
-            this.btnShowAllVist.Size = new System.Drawing.Size(148, 25);
+            this.btnShowAllVist.Size = new System.Drawing.Size(148, 23);
             this.btnShowAllVist.TabIndex = 6;
             this.btnShowAllVist.Text = "Show All Visitors";
             this.btnShowAllVist.UseVisualStyleBackColor = true;
@@ -454,9 +454,9 @@
             // 
             // btnShowAllEmp
             // 
-            this.btnShowAllEmp.Location = new System.Drawing.Point(167, 275);
+            this.btnShowAllEmp.Location = new System.Drawing.Point(167, 254);
             this.btnShowAllEmp.Name = "btnShowAllEmp";
-            this.btnShowAllEmp.Size = new System.Drawing.Size(148, 25);
+            this.btnShowAllEmp.Size = new System.Drawing.Size(148, 23);
             this.btnShowAllEmp.TabIndex = 7;
             this.btnShowAllEmp.Text = "Show All Employees";
             this.btnShowAllEmp.UseVisualStyleBackColor = true;
@@ -464,9 +464,9 @@
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(321, 275);
+            this.btnShowAll.Location = new System.Drawing.Point(321, 254);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(148, 25);
+            this.btnShowAll.Size = new System.Drawing.Size(148, 23);
             this.btnShowAll.TabIndex = 8;
             this.btnShowAll.Text = "Show All";
             this.btnShowAll.UseVisualStyleBackColor = true;
@@ -475,17 +475,17 @@
             // txtLogStatus
             // 
             this.txtLogStatus.Enabled = false;
-            this.txtLogStatus.Location = new System.Drawing.Point(458, 636);
+            this.txtLogStatus.Location = new System.Drawing.Point(458, 587);
             this.txtLogStatus.Name = "txtLogStatus";
-            this.txtLogStatus.Size = new System.Drawing.Size(173, 20);
+            this.txtLogStatus.Size = new System.Drawing.Size(173, 21);
             this.txtLogStatus.TabIndex = 0;
             this.txtLogStatus.Text = "Your Status:";
             // 
             // btnExportHistory
             // 
-            this.btnExportHistory.Location = new System.Drawing.Point(161, 634);
+            this.btnExportHistory.Location = new System.Drawing.Point(161, 585);
             this.btnExportHistory.Name = "btnExportHistory";
-            this.btnExportHistory.Size = new System.Drawing.Size(103, 25);
+            this.btnExportHistory.Size = new System.Drawing.Size(103, 23);
             this.btnExportHistory.TabIndex = 22;
             this.btnExportHistory.Text = "Export History";
             this.btnExportHistory.UseVisualStyleBackColor = true;
@@ -493,9 +493,9 @@
             // 
             // btnExportPerson
             // 
-            this.btnExportPerson.Location = new System.Drawing.Point(475, 275);
+            this.btnExportPerson.Location = new System.Drawing.Point(475, 254);
             this.btnExportPerson.Name = "btnExportPerson";
-            this.btnExportPerson.Size = new System.Drawing.Size(112, 25);
+            this.btnExportPerson.Size = new System.Drawing.Size(112, 23);
             this.btnExportPerson.TabIndex = 23;
             this.btnExportPerson.Text = "Export Person Data";
             this.btnExportPerson.UseVisualStyleBackColor = true;
@@ -503,9 +503,9 @@
             // 
             // ManageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 673);
+            this.ClientSize = new System.Drawing.Size(719, 621);
             this.ControlBox = false;
             this.Controls.Add(this.btnExportPerson);
             this.Controls.Add(this.btnExportHistory);
@@ -522,7 +522,6 @@
             this.Controls.Add(this.btnExit);
             this.Name = "ManageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);

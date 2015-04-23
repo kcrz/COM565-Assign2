@@ -36,37 +36,65 @@ namespace BioengineeringResearch
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            bool loginYes = false;
-
-            if (txtID.Text.Equals(DataStrings.EMPTY_STRING) || txtPIN.Text.Equals(DataStrings.EMPTY_STRING))
+            //another form of simulating a card reader failure
+            if (txtID.Text.Equals(DataStrings.CARD_READER_SIM_ID))
             {
-                // either the textbox is blank
-                MessageBox.Show(DataStrings.INVALID_ID, DataStrings.ALERT, MessageBoxButtons.OK);
+                MessageBox.Show(DataStrings.DOOR + doorName.ToUpper() + DataStrings.CARD_READER_FAILURE, DataStrings.ALERT);
             }
+            //another form of simulating intruder in a door
+            else if (txtID.Text.Equals(DataStrings.DOOR_INTRUDER_SIM))
+            {
+                MessageBox.Show(DataStrings.DOOR + doorName.ToUpper() + DataStrings.INTRUDER_DETECTED, DataStrings.ALERT);
+            }
+            //normal flow of process
             else
             {
-                //Check if user login/pass matches
-                if (DataOps.checkLogin(txtID.Text, txtPIN.Text))
+                if (txtID.Text.Equals(DataStrings.EMPTY_STRING) || txtPIN.Text.Equals(DataStrings.EMPTY_STRING))
                 {
-                    //Check if user have clearance to open door
-                    if (DataOps.grantAccess(txtID.Text, doorName.ToUpper()))
+                    // either the textbox is blank
+                    MessageBox.Show(DataStrings.INVALID_ID, DataStrings.ALERT, MessageBoxButtons.OK);
+                }
+                else
+                {
+                    //Check if user login/pass matches
+                    if (DataOps.checkLogin(txtID.Text, txtPIN.Text))
                     {
-                        // the user is authorized                 
-                        _timeoutTimer = new System.Threading.Timer(OnTimerElapsed, null,
-                            10000, System.Threading.Timeout.Infinite); // timeout is 10s
-                        MessageBox.Show(doorName + DataStrings.DOOR_OPEN_NOTICE, DataStrings.INFORMATION,MessageBoxButtons.OK);
-
-                        // save the history
-                        if (!DataOps.createNewAccessHistoryEntry(txtID.Text, doorName))
+                        //Check if user have clearance to open door
+                        if (DataOps.grantAccess(txtID.Text, doorName.ToUpper()))
                         {
-                            MessageBox.Show("save failed");
-                        }
+                            // the user is authorized                 
+                            _timeoutTimer = new System.Threading.Timer(OnTimerElapsed, null,
+                                10000, System.Threading.Timeout.Infinite); // timeout is 10s
+                            MessageBox.Show(doorName + DataStrings.DOOR_OPEN_NOTICE, DataStrings.INFORMATION, MessageBoxButtons.OK);
 
-                        this.Close();
+                            // save the history
+                            if (!DataOps.createNewAccessHistoryEntry(txtID.Text, doorName))
+                            {
+                                MessageBox.Show("save failed");
+                            }
+
+                            this.Close();
+                        }
+                        else
+                        {
+                            string message = DataStrings.DOOR + doorName + DataStrings.HYPHEN + DataStrings.UNAUTHORISED_ACCESS + DataStrings.NEWLINE + DataStrings.ACCESS_DENIED;
+
+                            MessageBox.Show(message, DataStrings.ALERT, MessageBoxButtons.OK);
+
+                            invalidEnter++; // invalid attempt increases
+
+                            // check if the invalid attempts are more than 3 times
+                            if (invalidEnter == 3)
+                            {
+                                MessageBox.Show(DataStrings.DOOR_MULTIPLE_INVALID_ATTEMPT, DataStrings.ALERT, MessageBoxButtons.OK);
+                                this.Close();
+                            }
+                            //this.Close();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show(DataStrings.INSUFFICIENT_ACCESS_CLEARANCE, DataStrings.ALERT, MessageBoxButtons.OK);
+                        MessageBox.Show(DataStrings.INVALID_LOGIN_CREDENTIAL, DataStrings.ALERT, MessageBoxButtons.OK);
 
                         invalidEnter++; // invalid attempt increases
 
@@ -76,23 +104,11 @@ namespace BioengineeringResearch
                             MessageBox.Show(DataStrings.DOOR_MULTIPLE_INVALID_ATTEMPT, DataStrings.ALERT, MessageBoxButtons.OK);
                             this.Close();
                         }
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(DataStrings.INVALID_LOGIN_CREDENTIAL, DataStrings.ALERT, MessageBoxButtons.OK);
-
-                    invalidEnter++; // invalid attempt increases
-
-                    // check if the invalid attempts are more than 3 times
-                    if (invalidEnter == 3)
-                    {
-                        MessageBox.Show(DataStrings.DOOR_MULTIPLE_INVALID_ATTEMPT, DataStrings.ALERT, MessageBoxButtons.OK);
-                        this.Close();
                     }
                 }
             }
+
+
         }
 
         private void OnTimerElapsed(object state)

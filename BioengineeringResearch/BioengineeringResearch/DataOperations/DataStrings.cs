@@ -15,6 +15,7 @@ namespace BioengineeringResearch.DataOperations
 
         public const String EMPTY_STRING = "";
         public const String NEWLINE = "\n";
+        public const String HYPHEN = "-";
 
         public const String USER_STATUS = "User Status: ";
 
@@ -26,14 +27,15 @@ namespace BioengineeringResearch.DataOperations
         public const String WELCOME_MSG = "Welcome to Bioengineering Research Ltd.";
         public const String LOGOUT_MSG = "Confirm log out request";
 
-        public const String WELCOME = "Welcoe";
+        public const String WELCOME = "Welcome";
         public const String ALERT = "Alert";
         public const String INFORMATION = "Information";
         public const String YOUR_NEW_ID = "Your new ID is: ";
         public const String INVALID_ID = "Invalid ID";
         public const String INVALID_ID_PIN = "Invalid ID or PIN";
         public const String INVALID_LOGIN_CREDENTIAL = "Invalid ID and password";
-        public const String INSUFFICIENT_ACCESS_CLEARANCE = "Access Denied. Insufficient access clearance.";
+        public const String UNAUTHORISED_ACCESS = "Unauthorised access attempted.";
+        public const String ACCESS_DENIED = "Access Denied.";
         public const String SEARCH_RESULT = "Search Result";
         public const String SELECT_UPDATE_ITEM = "Select a user to update";
 
@@ -58,7 +60,7 @@ namespace BioengineeringResearch.DataOperations
         public const String ADD_FORM_RECEPTIONIST_STATUS = RECEPTIONIST_USER + " - " + "Add New Person";
 
         public const String DOOR_OPEN_NOTICE = " Door is now open. Closing in 10 seconds.";
-        public const String DOOR_MULTIPLE_INVALID_ATTEMPT = "Multiple invalid log in attempt detected. \nDisabling door.";
+        public const String DOOR_MULTIPLE_INVALID_ATTEMPT = "Multiple failed attempts detected. \nContacting security personnel.";
 
         public const String CONTACTING_POLICE = "Contacting Police";
 
@@ -81,9 +83,11 @@ namespace BioengineeringResearch.DataOperations
         public const String DOOR = "Door ";
         public const String SELECT_CARD_READER_SIMUL = "Please select a cardreader location for simulation";
         public const String CARD_READER_FAILURE = " Card Reader failure. Notifying Reception and Maintenance";
+        public const String CARD_READER_SIM_ID = "reader_failure_sim";
+        public const String DOOR_INTRUDER_SIM = "door_intruder_sim";
 
         public const String INTRUDER_SELECT_LOCATION = "Please select a location for simulation";
-        public const String INTRUDER_DETECTED = " has detected an Intruder.";
+        public const String INTRUDER_DETECTED = " has detected an Intruder. Notifying security personnel.";
 
         public const String EXPORT_TITLE = "Choose location to save to";
         public const String EXPORT_HISTORY_FILENAME = "AccessHistory.csv";

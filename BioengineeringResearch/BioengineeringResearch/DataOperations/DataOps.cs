@@ -793,6 +793,7 @@ namespace BioengineeringResearch.DataOperations
         {
             int userAccessLevel = 0;
             int doorAccessReqLevel = 0;
+            DateTime accessValidUntil = DateTime.Today.Date;
 
             using (var db = new BioEngResearchSecurityContext())
             {
@@ -819,12 +820,13 @@ namespace BioengineeringResearch.DataOperations
                     //Employee
                     var query = from em in db.Employees
                                 where em.EmployeeId == userId.ToUpper()
-                                select em.AccessLevel;
-                    int[] accessLevelList = query.ToArray();
+                                select em;
+                    Employee[] accessLevelList = query.ToArray();
                     if (accessLevelList != null && accessLevelList.Length != 0)
                     {
                         //User access level successfuly retrieved
-                        userAccessLevel = accessLevelList[0];
+                        userAccessLevel = accessLevelList[0].AccessLevel;
+                        accessValidUntil = accessLevelList[0].AuthorizedUntilDate;
                     }
                     else
                     {
@@ -852,7 +854,7 @@ namespace BioengineeringResearch.DataOperations
                 }
 
                 //evaluate user access level and door min access requirement
-                if (userAccessLevel >= doorAccessReqLevel)
+                if (userAccessLevel >= doorAccessReqLevel && accessValidUntil > DateTime.Today.Date)
                 {
                     //requirements met
                     return true;

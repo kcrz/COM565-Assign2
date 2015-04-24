@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFireMainEntrance = new System.Windows.Forms.Label();
             this.lblFireCorrB_2 = new System.Windows.Forms.Label();
             this.lblFireCorrB_1 = new System.Windows.Forms.Label();
             this.lblFireSRA3 = new System.Windows.Forms.Label();
@@ -97,7 +98,6 @@
             this.cmbFireLoc = new System.Windows.Forms.ComboBox();
             this.btnCloseSim = new System.Windows.Forms.Button();
             this.lblUserStatus = new System.Windows.Forms.Label();
-            this.lblFireMainEntrance = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grpBxSimulation.SuspendLayout();
             this.grpBxIntruder.SuspendLayout();
@@ -161,6 +161,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(766, 449);
             this.panel1.TabIndex = 0;
+            // 
+            // lblFireMainEntrance
+            // 
+            this.lblFireMainEntrance.AutoSize = true;
+            this.lblFireMainEntrance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireMainEntrance.ForeColor = System.Drawing.Color.Red;
+            this.lblFireMainEntrance.Location = new System.Drawing.Point(33, 338);
+            this.lblFireMainEntrance.Name = "lblFireMainEntrance";
+            this.lblFireMainEntrance.Size = new System.Drawing.Size(42, 17);
+            this.lblFireMainEntrance.TabIndex = 49;
+            this.lblFireMainEntrance.Text = "FIRE";
+            this.lblFireMainEntrance.Visible = false;
             // 
             // lblFireCorrB_2
             // 
@@ -691,6 +703,7 @@
             // 
             // btn_logout
             // 
+            this.btn_logout.Enabled = false;
             this.btn_logout.Location = new System.Drawing.Point(784, 437);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(88, 25);
@@ -701,6 +714,7 @@
             // 
             // btnManage
             // 
+            this.btnManage.Enabled = false;
             this.btnManage.Location = new System.Drawing.Point(784, 12);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(88, 25);
@@ -711,6 +725,7 @@
             // 
             // btnSimulator
             // 
+            this.btnSimulator.Enabled = false;
             this.btnSimulator.Location = new System.Drawing.Point(784, 43);
             this.btnSimulator.Name = "btnSimulator";
             this.btnSimulator.Size = new System.Drawing.Size(88, 25);
@@ -721,6 +736,7 @@
             // 
             // btnCCTV
             // 
+            this.btnCCTV.Enabled = false;
             this.btnCCTV.Location = new System.Drawing.Point(784, 74);
             this.btnCCTV.Name = "btnCCTV";
             this.btnCCTV.Size = new System.Drawing.Size(88, 25);
@@ -934,18 +950,6 @@
             this.lblUserStatus.Size = new System.Drawing.Size(65, 13);
             this.lblUserStatus.TabIndex = 7;
             this.lblUserStatus.Text = "User Status:";
-            // 
-            // lblFireMainEntrance
-            // 
-            this.lblFireMainEntrance.AutoSize = true;
-            this.lblFireMainEntrance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFireMainEntrance.ForeColor = System.Drawing.Color.Red;
-            this.lblFireMainEntrance.Location = new System.Drawing.Point(33, 338);
-            this.lblFireMainEntrance.Name = "lblFireMainEntrance";
-            this.lblFireMainEntrance.Size = new System.Drawing.Size(42, 17);
-            this.lblFireMainEntrance.TabIndex = 49;
-            this.lblFireMainEntrance.Text = "FIRE";
-            this.lblFireMainEntrance.Visible = false;
             // 
             // MainForm
             // 

@@ -21,11 +21,11 @@ namespace BioengineeringResearch.DataOperations
 
         public const String ADMIN_USER = "Admin";
         public const String RECEPTIONIST_USER = "Receptionist";
-        public const String NORMAL_USER = "Normal";
+        public const String NORMAL_USER = "Employee";
         public const String NOT_LOGGED_IN = "Not logged in";
 
         public const String WELCOME_MSG = "Welcome to Bioengineering Research Ltd.";
-        public const String LOGOUT_MSG = "Confirm log out request";
+        public const String LOGOUT_MSG = "Do you want to log out?";
 
         public const String WELCOME = "Welcome";
         public const String ALERT = "Alert";

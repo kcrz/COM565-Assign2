@@ -32,13 +32,6 @@ namespace BioengineeringResearch
 
             //Set data directory for the database
             AppDomain.CurrentDomain.SetData(DataStrings.DATA_DIRECTORY, Application.StartupPath);
-
-            this.Activated += new EventHandler(this.MainForm_Activated);
-        }
-
-        private void MainForm_Activated(object sender, EventArgs e)
-        {
-            updateForm();
         }
 
         private void updateForm()
@@ -51,7 +44,7 @@ namespace BioengineeringResearch
             switch (loginStatus)
             {
                 case 0:
-                    // Menue items
+                    // Menu items
                     btnManage.Enabled = false;
                     btnSimulator.Enabled = false;
                     btnCCTV.Enabled = false;
@@ -85,7 +78,7 @@ namespace BioengineeringResearch
 
                     txtLogStatus.Text = DataStrings.RECEPTIONIST_USER;
                     break;
-                default:
+                case 3:
                     // Menue items
                     btnManage.Enabled = true;
                     btnSimulator.Enabled = false;
@@ -97,6 +90,12 @@ namespace BioengineeringResearch
 
                     txtLogStatus.Text = DataStrings.NORMAL_USER;
                     break;
+                default:
+                    btnManage.Enabled = false;
+                    btnSimulator.Enabled = false;
+                    btnCCTV.Enabled = false;
+                    break;
+
             }
         }
 
@@ -332,6 +331,7 @@ namespace BioengineeringResearch
             if (result == DialogResult.Yes)
             {
                 loginStatus = 0;
+                disableSimPanel();
                 updateForm();
             }
         }
@@ -344,11 +344,7 @@ namespace BioengineeringResearch
 
         private void btnSimulator_Click(object sender, EventArgs e)
         {
-            grpBxSimulation.Enabled = true;
-            grpBxSimulation.Visible = true;
-            btnSimulator.Enabled = false;
-            this.Size = sizeSimulator;
-            this.CenterToScreen();
+            enableSimPanel();
         }
 
         private void btnCCTV_Click(object sender, EventArgs e)
@@ -359,11 +355,7 @@ namespace BioengineeringResearch
 
         private void btnCloseSim_Click(object sender, EventArgs e)
         {
-            grpBxSimulation.Enabled = false;
-            grpBxSimulation.Visible = false;
-            btnSimulator.Enabled = true;
-            this.Size = defaultSize;
-            this.CenterToScreen();
+            disableSimPanel();
         }
 
         private void btnStartFire_Click(object sender, EventArgs e)
@@ -528,6 +520,24 @@ namespace BioengineeringResearch
             lblFireSRA4.Visible = false;
             lblFireSRA5.Visible = false;
             lblFireSRA6.Visible = false;
+        }
+
+        private void enableSimPanel()
+        {
+            grpBxSimulation.Enabled = true;
+            grpBxSimulation.Visible = true;
+            btnSimulator.Enabled = false;
+            this.Size = sizeSimulator;
+            this.CenterToScreen();
+        }
+
+        private void disableSimPanel()
+        {
+            grpBxSimulation.Enabled = false;
+            grpBxSimulation.Visible = false;
+            btnSimulator.Enabled = true;
+            this.Size = defaultSize;
+            this.CenterToScreen();
         }
     }
 }

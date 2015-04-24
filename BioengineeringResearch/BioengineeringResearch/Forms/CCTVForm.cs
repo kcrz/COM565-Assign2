@@ -36,7 +36,7 @@ namespace BioengineeringResearch.Forms
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            currtime.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
+            currtime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

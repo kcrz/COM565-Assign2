@@ -46,8 +46,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.currtime = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnCallPolice = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -248,22 +246,6 @@
             this.currtime.Size = new System.Drawing.Size(144, 21);
             this.currtime.TabIndex = 24;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 413);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(126, 21);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(144, 413);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 21);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
             // btnCallPolice
             // 
             this.btnCallPolice.Location = new System.Drawing.Point(562, 8);
@@ -413,9 +395,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnCallPolice);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.currtime);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox4);
@@ -470,8 +450,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox currtime;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnCallPolice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

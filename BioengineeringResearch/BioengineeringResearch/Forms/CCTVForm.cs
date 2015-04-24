@@ -16,6 +16,12 @@ namespace BioengineeringResearch.Forms
         public CCTVForm()
         {
             InitializeComponent();
+            timer.Start();
+        }
+
+        private void messageTimer_Tick(object sender, EventArgs e)
+        {
+            currtime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -26,6 +32,11 @@ namespace BioengineeringResearch.Forms
         private void btnCallPolice_Click(object sender, EventArgs e)
         {
             MessageBox.Show(DataStrings.CONTACTING_POLICE);
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            currtime.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
         }
     }
 }

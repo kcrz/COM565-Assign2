@@ -30,6 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFireCorrB_2 = new System.Windows.Forms.Label();
+            this.lblFireCorrB_1 = new System.Windows.Forms.Label();
+            this.lblFireSRA3 = new System.Windows.Forms.Label();
+            this.lblFireSRA4 = new System.Windows.Forms.Label();
+            this.lblFireSRA5 = new System.Windows.Forms.Label();
+            this.lblFireSRA6 = new System.Windows.Forms.Label();
+            this.lblFireSRA1 = new System.Windows.Forms.Label();
+            this.lblFireSRA2 = new System.Windows.Forms.Label();
+            this.lblFireCorrC_2 = new System.Windows.Forms.Label();
+            this.lblFireCorrC_1 = new System.Windows.Forms.Label();
+            this.lblFireGenAdmin = new System.Windows.Forms.Label();
+            this.lblFireCorrA_2 = new System.Windows.Forms.Label();
+            this.lblFireCorrA_1 = new System.Windows.Forms.Label();
+            this.lblFireResearchSupport = new System.Windows.Forms.Label();
             this.lblSRA6 = new System.Windows.Forms.Label();
             this.lblSRA5 = new System.Windows.Forms.Label();
             this.lblSRA4 = new System.Windows.Forms.Label();
@@ -68,7 +82,27 @@
             this.btnManage = new System.Windows.Forms.Button();
             this.btnSimulator = new System.Windows.Forms.Button();
             this.btnCCTV = new System.Windows.Forms.Button();
+            this.grpBxSimulation = new System.Windows.Forms.GroupBox();
+            this.grpBxIntruder = new System.Windows.Forms.GroupBox();
+            this.btnStartIntr = new System.Windows.Forms.Button();
+            this.cmbIntruderDoor = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.grpBxCardReader = new System.Windows.Forms.GroupBox();
+            this.btnStartCF = new System.Windows.Forms.Button();
+            this.cmbReaderFailure = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.grpBxFire = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnStartFire = new System.Windows.Forms.Button();
+            this.cmbFireLoc = new System.Windows.Forms.ComboBox();
+            this.btnCloseSim = new System.Windows.Forms.Button();
+            this.lblUserStatus = new System.Windows.Forms.Label();
+            this.lblFireMainEntrance = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.grpBxSimulation.SuspendLayout();
+            this.grpBxIntruder.SuspendLayout();
+            this.grpBxCardReader.SuspendLayout();
+            this.grpBxFire.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +110,21 @@
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblFireMainEntrance);
+            this.panel1.Controls.Add(this.lblFireCorrB_2);
+            this.panel1.Controls.Add(this.lblFireCorrB_1);
+            this.panel1.Controls.Add(this.lblFireSRA3);
+            this.panel1.Controls.Add(this.lblFireSRA4);
+            this.panel1.Controls.Add(this.lblFireSRA5);
+            this.panel1.Controls.Add(this.lblFireSRA6);
+            this.panel1.Controls.Add(this.lblFireSRA1);
+            this.panel1.Controls.Add(this.lblFireSRA2);
+            this.panel1.Controls.Add(this.lblFireCorrC_2);
+            this.panel1.Controls.Add(this.lblFireCorrC_1);
+            this.panel1.Controls.Add(this.lblFireGenAdmin);
+            this.panel1.Controls.Add(this.lblFireCorrA_2);
+            this.panel1.Controls.Add(this.lblFireCorrA_1);
+            this.panel1.Controls.Add(this.lblFireResearchSupport);
             this.panel1.Controls.Add(this.lblSRA6);
             this.panel1.Controls.Add(this.lblSRA5);
             this.panel1.Controls.Add(this.lblSRA4);
@@ -113,11 +162,179 @@
             this.panel1.Size = new System.Drawing.Size(766, 449);
             this.panel1.TabIndex = 0;
             // 
+            // lblFireCorrB_2
+            // 
+            this.lblFireCorrB_2.AutoSize = true;
+            this.lblFireCorrB_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireCorrB_2.ForeColor = System.Drawing.Color.Red;
+            this.lblFireCorrB_2.Location = new System.Drawing.Point(410, 82);
+            this.lblFireCorrB_2.Name = "lblFireCorrB_2";
+            this.lblFireCorrB_2.Size = new System.Drawing.Size(42, 17);
+            this.lblFireCorrB_2.TabIndex = 48;
+            this.lblFireCorrB_2.Text = "FIRE";
+            this.lblFireCorrB_2.Visible = false;
+            // 
+            // lblFireCorrB_1
+            // 
+            this.lblFireCorrB_1.AutoSize = true;
+            this.lblFireCorrB_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireCorrB_1.ForeColor = System.Drawing.Color.Red;
+            this.lblFireCorrB_1.Location = new System.Drawing.Point(410, 257);
+            this.lblFireCorrB_1.Name = "lblFireCorrB_1";
+            this.lblFireCorrB_1.Size = new System.Drawing.Size(42, 17);
+            this.lblFireCorrB_1.TabIndex = 47;
+            this.lblFireCorrB_1.Text = "FIRE";
+            this.lblFireCorrB_1.Visible = false;
+            // 
+            // lblFireSRA3
+            // 
+            this.lblFireSRA3.AutoSize = true;
+            this.lblFireSRA3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireSRA3.ForeColor = System.Drawing.Color.Red;
+            this.lblFireSRA3.Location = new System.Drawing.Point(616, 361);
+            this.lblFireSRA3.Name = "lblFireSRA3";
+            this.lblFireSRA3.Size = new System.Drawing.Size(42, 17);
+            this.lblFireSRA3.TabIndex = 46;
+            this.lblFireSRA3.Text = "FIRE";
+            this.lblFireSRA3.Visible = false;
+            // 
+            // lblFireSRA4
+            // 
+            this.lblFireSRA4.AutoSize = true;
+            this.lblFireSRA4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireSRA4.ForeColor = System.Drawing.Color.Red;
+            this.lblFireSRA4.Location = new System.Drawing.Point(616, 264);
+            this.lblFireSRA4.Name = "lblFireSRA4";
+            this.lblFireSRA4.Size = new System.Drawing.Size(42, 17);
+            this.lblFireSRA4.TabIndex = 45;
+            this.lblFireSRA4.Text = "FIRE";
+            this.lblFireSRA4.Visible = false;
+            // 
+            // lblFireSRA5
+            // 
+            this.lblFireSRA5.AutoSize = true;
+            this.lblFireSRA5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireSRA5.ForeColor = System.Drawing.Color.Red;
+            this.lblFireSRA5.Location = new System.Drawing.Point(616, 188);
+            this.lblFireSRA5.Name = "lblFireSRA5";
+            this.lblFireSRA5.Size = new System.Drawing.Size(42, 17);
+            this.lblFireSRA5.TabIndex = 44;
+            this.lblFireSRA5.Text = "FIRE";
+            this.lblFireSRA5.Visible = false;
+            // 
+            // lblFireSRA6
+            // 
+            this.lblFireSRA6.AutoSize = true;
+            this.lblFireSRA6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireSRA6.ForeColor = System.Drawing.Color.Red;
+            this.lblFireSRA6.Location = new System.Drawing.Point(616, 89);
+            this.lblFireSRA6.Name = "lblFireSRA6";
+            this.lblFireSRA6.Size = new System.Drawing.Size(42, 17);
+            this.lblFireSRA6.TabIndex = 43;
+            this.lblFireSRA6.Text = "FIRE";
+            this.lblFireSRA6.Visible = false;
+            // 
+            // lblFireSRA1
+            // 
+            this.lblFireSRA1.AutoSize = true;
+            this.lblFireSRA1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireSRA1.ForeColor = System.Drawing.Color.Red;
+            this.lblFireSRA1.Location = new System.Drawing.Point(492, 320);
+            this.lblFireSRA1.Name = "lblFireSRA1";
+            this.lblFireSRA1.Size = new System.Drawing.Size(42, 17);
+            this.lblFireSRA1.TabIndex = 42;
+            this.lblFireSRA1.Text = "FIRE";
+            this.lblFireSRA1.Visible = false;
+            // 
+            // lblFireSRA2
+            // 
+            this.lblFireSRA2.AutoSize = true;
+            this.lblFireSRA2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireSRA2.ForeColor = System.Drawing.Color.Red;
+            this.lblFireSRA2.Location = new System.Drawing.Point(492, 163);
+            this.lblFireSRA2.Name = "lblFireSRA2";
+            this.lblFireSRA2.Size = new System.Drawing.Size(42, 17);
+            this.lblFireSRA2.TabIndex = 41;
+            this.lblFireSRA2.Text = "FIRE";
+            this.lblFireSRA2.Visible = false;
+            // 
+            // lblFireCorrC_2
+            // 
+            this.lblFireCorrC_2.AutoSize = true;
+            this.lblFireCorrC_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireCorrC_2.ForeColor = System.Drawing.Color.Red;
+            this.lblFireCorrC_2.Location = new System.Drawing.Point(616, 410);
+            this.lblFireCorrC_2.Name = "lblFireCorrC_2";
+            this.lblFireCorrC_2.Size = new System.Drawing.Size(42, 17);
+            this.lblFireCorrC_2.TabIndex = 40;
+            this.lblFireCorrC_2.Text = "FIRE";
+            this.lblFireCorrC_2.Visible = false;
+            // 
+            // lblFireCorrC_1
+            // 
+            this.lblFireCorrC_1.AutoSize = true;
+            this.lblFireCorrC_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireCorrC_1.ForeColor = System.Drawing.Color.Red;
+            this.lblFireCorrC_1.Location = new System.Drawing.Point(616, 20);
+            this.lblFireCorrC_1.Name = "lblFireCorrC_1";
+            this.lblFireCorrC_1.Size = new System.Drawing.Size(42, 17);
+            this.lblFireCorrC_1.TabIndex = 39;
+            this.lblFireCorrC_1.Text = "FIRE";
+            this.lblFireCorrC_1.Visible = false;
+            // 
+            // lblFireGenAdmin
+            // 
+            this.lblFireGenAdmin.AutoSize = true;
+            this.lblFireGenAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireGenAdmin.ForeColor = System.Drawing.Color.Red;
+            this.lblFireGenAdmin.Location = new System.Drawing.Point(267, 241);
+            this.lblFireGenAdmin.Name = "lblFireGenAdmin";
+            this.lblFireGenAdmin.Size = new System.Drawing.Size(42, 17);
+            this.lblFireGenAdmin.TabIndex = 38;
+            this.lblFireGenAdmin.Text = "FIRE";
+            this.lblFireGenAdmin.Visible = false;
+            // 
+            // lblFireCorrA_2
+            // 
+            this.lblFireCorrA_2.AutoSize = true;
+            this.lblFireCorrA_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireCorrA_2.ForeColor = System.Drawing.Color.Red;
+            this.lblFireCorrA_2.Location = new System.Drawing.Point(344, 361);
+            this.lblFireCorrA_2.Name = "lblFireCorrA_2";
+            this.lblFireCorrA_2.Size = new System.Drawing.Size(42, 17);
+            this.lblFireCorrA_2.TabIndex = 37;
+            this.lblFireCorrA_2.Text = "FIRE";
+            this.lblFireCorrA_2.Visible = false;
+            // 
+            // lblFireCorrA_1
+            // 
+            this.lblFireCorrA_1.AutoSize = true;
+            this.lblFireCorrA_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireCorrA_1.ForeColor = System.Drawing.Color.Red;
+            this.lblFireCorrA_1.Location = new System.Drawing.Point(193, 360);
+            this.lblFireCorrA_1.Name = "lblFireCorrA_1";
+            this.lblFireCorrA_1.Size = new System.Drawing.Size(42, 17);
+            this.lblFireCorrA_1.TabIndex = 36;
+            this.lblFireCorrA_1.Text = "FIRE";
+            this.lblFireCorrA_1.Visible = false;
+            // 
+            // lblFireResearchSupport
+            // 
+            this.lblFireResearchSupport.AutoSize = true;
+            this.lblFireResearchSupport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireResearchSupport.ForeColor = System.Drawing.Color.Red;
+            this.lblFireResearchSupport.Location = new System.Drawing.Point(267, 82);
+            this.lblFireResearchSupport.Name = "lblFireResearchSupport";
+            this.lblFireResearchSupport.Size = new System.Drawing.Size(42, 17);
+            this.lblFireResearchSupport.TabIndex = 35;
+            this.lblFireResearchSupport.Text = "FIRE";
+            this.lblFireResearchSupport.Visible = false;
+            // 
             // lblSRA6
             // 
             this.lblSRA6.AutoSize = true;
             this.lblSRA6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA6.Location = new System.Drawing.Point(628, 91);
+            this.lblSRA6.Location = new System.Drawing.Point(619, 70);
             this.lblSRA6.Name = "lblSRA6";
             this.lblSRA6.Size = new System.Drawing.Size(40, 15);
             this.lblSRA6.TabIndex = 34;
@@ -127,7 +344,7 @@
             // 
             this.lblSRA5.AutoSize = true;
             this.lblSRA5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA5.Location = new System.Drawing.Point(628, 183);
+            this.lblSRA5.Location = new System.Drawing.Point(619, 163);
             this.lblSRA5.Name = "lblSRA5";
             this.lblSRA5.Size = new System.Drawing.Size(40, 15);
             this.lblSRA5.TabIndex = 33;
@@ -137,7 +354,7 @@
             // 
             this.lblSRA4.AutoSize = true;
             this.lblSRA4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA4.Location = new System.Drawing.Point(628, 289);
+            this.lblSRA4.Location = new System.Drawing.Point(619, 243);
             this.lblSRA4.Name = "lblSRA4";
             this.lblSRA4.Size = new System.Drawing.Size(40, 15);
             this.lblSRA4.TabIndex = 32;
@@ -147,7 +364,7 @@
             // 
             this.lblSRA3.AutoSize = true;
             this.lblSRA3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSRA3.Location = new System.Drawing.Point(628, 359);
+            this.lblSRA3.Location = new System.Drawing.Point(619, 334);
             this.lblSRA3.Name = "lblSRA3";
             this.lblSRA3.Size = new System.Drawing.Size(40, 15);
             this.lblSRA3.TabIndex = 31;
@@ -455,9 +672,9 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(784, 396);
+            this.btn_login.Location = new System.Drawing.Point(784, 406);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(75, 25);
+            this.btn_login.Size = new System.Drawing.Size(88, 25);
             this.btn_login.TabIndex = 0;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -466,17 +683,17 @@
             // txtLogStatus
             // 
             this.txtLogStatus.Enabled = false;
-            this.txtLogStatus.Location = new System.Drawing.Point(12, 468);
+            this.txtLogStatus.Location = new System.Drawing.Point(784, 380);
             this.txtLogStatus.Name = "txtLogStatus";
-            this.txtLogStatus.Size = new System.Drawing.Size(167, 20);
+            this.txtLogStatus.Size = new System.Drawing.Size(88, 20);
             this.txtLogStatus.TabIndex = 1;
-            this.txtLogStatus.Text = "User Status: Not logged in";
+            this.txtLogStatus.Text = "Not logged in";
             // 
             // btn_logout
             // 
             this.btn_logout.Location = new System.Drawing.Point(784, 437);
             this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(75, 25);
+            this.btn_logout.Size = new System.Drawing.Size(88, 25);
             this.btn_logout.TabIndex = 2;
             this.btn_logout.Text = "Logout";
             this.btn_logout.UseVisualStyleBackColor = true;
@@ -484,9 +701,9 @@
             // 
             // btnManage
             // 
-            this.btnManage.Location = new System.Drawing.Point(784, 14);
+            this.btnManage.Location = new System.Drawing.Point(784, 12);
             this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(75, 25);
+            this.btnManage.Size = new System.Drawing.Size(88, 25);
             this.btnManage.TabIndex = 3;
             this.btnManage.Text = "Manage";
             this.btnManage.UseVisualStyleBackColor = true;
@@ -494,9 +711,9 @@
             // 
             // btnSimulator
             // 
-            this.btnSimulator.Location = new System.Drawing.Point(784, 46);
+            this.btnSimulator.Location = new System.Drawing.Point(784, 43);
             this.btnSimulator.Name = "btnSimulator";
-            this.btnSimulator.Size = new System.Drawing.Size(75, 25);
+            this.btnSimulator.Size = new System.Drawing.Size(88, 25);
             this.btnSimulator.TabIndex = 4;
             this.btnSimulator.Text = "Simulator";
             this.btnSimulator.UseVisualStyleBackColor = true;
@@ -504,20 +721,240 @@
             // 
             // btnCCTV
             // 
-            this.btnCCTV.Location = new System.Drawing.Point(784, 77);
+            this.btnCCTV.Location = new System.Drawing.Point(784, 74);
             this.btnCCTV.Name = "btnCCTV";
-            this.btnCCTV.Size = new System.Drawing.Size(75, 25);
+            this.btnCCTV.Size = new System.Drawing.Size(88, 25);
             this.btnCCTV.TabIndex = 5;
             this.btnCCTV.Text = "CCTV";
             this.btnCCTV.UseVisualStyleBackColor = true;
             this.btnCCTV.Click += new System.EventHandler(this.btnCCTV_Click);
+            // 
+            // grpBxSimulation
+            // 
+            this.grpBxSimulation.Controls.Add(this.grpBxIntruder);
+            this.grpBxSimulation.Controls.Add(this.grpBxCardReader);
+            this.grpBxSimulation.Controls.Add(this.grpBxFire);
+            this.grpBxSimulation.Controls.Add(this.btnCloseSim);
+            this.grpBxSimulation.Enabled = false;
+            this.grpBxSimulation.Location = new System.Drawing.Point(13, 468);
+            this.grpBxSimulation.Name = "grpBxSimulation";
+            this.grpBxSimulation.Size = new System.Drawing.Size(859, 145);
+            this.grpBxSimulation.TabIndex = 6;
+            this.grpBxSimulation.TabStop = false;
+            this.grpBxSimulation.Text = "Simulation";
+            this.grpBxSimulation.Visible = false;
+            // 
+            // grpBxIntruder
+            // 
+            this.grpBxIntruder.Controls.Add(this.btnStartIntr);
+            this.grpBxIntruder.Controls.Add(this.cmbIntruderDoor);
+            this.grpBxIntruder.Controls.Add(this.label3);
+            this.grpBxIntruder.Location = new System.Drawing.Point(568, 19);
+            this.grpBxIntruder.Name = "grpBxIntruder";
+            this.grpBxIntruder.Size = new System.Drawing.Size(275, 84);
+            this.grpBxIntruder.TabIndex = 8;
+            this.grpBxIntruder.TabStop = false;
+            this.grpBxIntruder.Text = "Intruder";
+            // 
+            // btnStartIntr
+            // 
+            this.btnStartIntr.Location = new System.Drawing.Point(145, 49);
+            this.btnStartIntr.Name = "btnStartIntr";
+            this.btnStartIntr.Size = new System.Drawing.Size(75, 25);
+            this.btnStartIntr.TabIndex = 5;
+            this.btnStartIntr.Text = "Start";
+            this.btnStartIntr.UseVisualStyleBackColor = true;
+            this.btnStartIntr.Click += new System.EventHandler(this.btnStartIntr_Click);
+            // 
+            // cmbIntruderDoor
+            // 
+            this.cmbIntruderDoor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIntruderDoor.FormattingEnabled = true;
+            this.cmbIntruderDoor.Items.AddRange(new object[] {
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "B1",
+            "B2",
+            "B3",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8"});
+            this.cmbIntruderDoor.Location = new System.Drawing.Point(99, 22);
+            this.cmbIntruderDoor.Name = "cmbIntruderDoor";
+            this.cmbIntruderDoor.Size = new System.Drawing.Size(121, 21);
+            this.cmbIntruderDoor.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(58, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Door:";
+            // 
+            // grpBxCardReader
+            // 
+            this.grpBxCardReader.Controls.Add(this.btnStartCF);
+            this.grpBxCardReader.Controls.Add(this.cmbReaderFailure);
+            this.grpBxCardReader.Controls.Add(this.label2);
+            this.grpBxCardReader.Location = new System.Drawing.Point(287, 21);
+            this.grpBxCardReader.Name = "grpBxCardReader";
+            this.grpBxCardReader.Size = new System.Drawing.Size(275, 84);
+            this.grpBxCardReader.TabIndex = 7;
+            this.grpBxCardReader.TabStop = false;
+            this.grpBxCardReader.Text = "Cardreader Failure";
+            // 
+            // btnStartCF
+            // 
+            this.btnStartCF.Location = new System.Drawing.Point(145, 49);
+            this.btnStartCF.Name = "btnStartCF";
+            this.btnStartCF.Size = new System.Drawing.Size(75, 25);
+            this.btnStartCF.TabIndex = 5;
+            this.btnStartCF.Text = "Start";
+            this.btnStartCF.UseVisualStyleBackColor = true;
+            this.btnStartCF.Click += new System.EventHandler(this.btnStartCF_Click);
+            // 
+            // cmbReaderFailure
+            // 
+            this.cmbReaderFailure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReaderFailure.FormattingEnabled = true;
+            this.cmbReaderFailure.Items.AddRange(new object[] {
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "B1",
+            "B2",
+            "B3",
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8"});
+            this.cmbReaderFailure.Location = new System.Drawing.Point(99, 22);
+            this.cmbReaderFailure.Name = "cmbReaderFailure";
+            this.cmbReaderFailure.Size = new System.Drawing.Size(121, 21);
+            this.cmbReaderFailure.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(58, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Door:";
+            // 
+            // grpBxFire
+            // 
+            this.grpBxFire.Controls.Add(this.label1);
+            this.grpBxFire.Controls.Add(this.btnStartFire);
+            this.grpBxFire.Controls.Add(this.cmbFireLoc);
+            this.grpBxFire.Location = new System.Drawing.Point(6, 19);
+            this.grpBxFire.Name = "grpBxFire";
+            this.grpBxFire.Size = new System.Drawing.Size(275, 84);
+            this.grpBxFire.TabIndex = 5;
+            this.grpBxFire.TabStop = false;
+            this.grpBxFire.Text = "Fire";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Location:";
+            // 
+            // btnStartFire
+            // 
+            this.btnStartFire.Location = new System.Drawing.Point(155, 49);
+            this.btnStartFire.Name = "btnStartFire";
+            this.btnStartFire.Size = new System.Drawing.Size(75, 25);
+            this.btnStartFire.TabIndex = 3;
+            this.btnStartFire.Text = "Start";
+            this.btnStartFire.UseVisualStyleBackColor = true;
+            this.btnStartFire.Click += new System.EventHandler(this.btnStartFire_Click);
+            // 
+            // cmbFireLoc
+            // 
+            this.cmbFireLoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFireLoc.FormattingEnabled = true;
+            this.cmbFireLoc.Items.AddRange(new object[] {
+            "General Administration",
+            "Research Support",
+            "Corridor A",
+            "Corridor B",
+            "Corridor C",
+            "SRA 1",
+            "SRA 2",
+            "SRA 3",
+            "SRA 4",
+            "SRA 5",
+            "SRA 6"});
+            this.cmbFireLoc.Location = new System.Drawing.Point(59, 22);
+            this.cmbFireLoc.Name = "cmbFireLoc";
+            this.cmbFireLoc.Size = new System.Drawing.Size(171, 21);
+            this.cmbFireLoc.TabIndex = 1;
+            // 
+            // btnCloseSim
+            // 
+            this.btnCloseSim.Location = new System.Drawing.Point(745, 109);
+            this.btnCloseSim.Name = "btnCloseSim";
+            this.btnCloseSim.Size = new System.Drawing.Size(98, 28);
+            this.btnCloseSim.TabIndex = 3;
+            this.btnCloseSim.Text = "Close Simulation";
+            this.btnCloseSim.UseVisualStyleBackColor = true;
+            this.btnCloseSim.Click += new System.EventHandler(this.btnCloseSim_Click);
+            // 
+            // lblUserStatus
+            // 
+            this.lblUserStatus.AutoSize = true;
+            this.lblUserStatus.Location = new System.Drawing.Point(784, 359);
+            this.lblUserStatus.Name = "lblUserStatus";
+            this.lblUserStatus.Size = new System.Drawing.Size(65, 13);
+            this.lblUserStatus.TabIndex = 7;
+            this.lblUserStatus.Text = "User Status:";
+            // 
+            // lblFireMainEntrance
+            // 
+            this.lblFireMainEntrance.AutoSize = true;
+            this.lblFireMainEntrance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFireMainEntrance.ForeColor = System.Drawing.Color.Red;
+            this.lblFireMainEntrance.Location = new System.Drawing.Point(33, 338);
+            this.lblFireMainEntrance.Name = "lblFireMainEntrance";
+            this.lblFireMainEntrance.Size = new System.Drawing.Size(42, 17);
+            this.lblFireMainEntrance.TabIndex = 49;
+            this.lblFireMainEntrance.Text = "FIRE";
+            this.lblFireMainEntrance.Visible = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(864, 492);
+            this.ClientSize = new System.Drawing.Size(884, 650);
+            this.Controls.Add(this.lblUserStatus);
+            this.Controls.Add(this.grpBxSimulation);
             this.Controls.Add(this.btnCCTV);
             this.Controls.Add(this.btnSimulator);
             this.Controls.Add(this.btnManage);
@@ -530,6 +967,13 @@
             this.Text = "Bioengineering Research Ltd. ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.grpBxSimulation.ResumeLayout(false);
+            this.grpBxIntruder.ResumeLayout(false);
+            this.grpBxIntruder.PerformLayout();
+            this.grpBxCardReader.ResumeLayout(false);
+            this.grpBxCardReader.PerformLayout();
+            this.grpBxFire.ResumeLayout(false);
+            this.grpBxFire.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,6 +1020,36 @@
         private System.Windows.Forms.Button btnManage;
         private System.Windows.Forms.Button btnSimulator;
         private System.Windows.Forms.Button btnCCTV;
+        private System.Windows.Forms.GroupBox grpBxSimulation;
+        private System.Windows.Forms.Button btnCloseSim;
+        private System.Windows.Forms.GroupBox grpBxFire;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnStartFire;
+        private System.Windows.Forms.ComboBox cmbFireLoc;
+        private System.Windows.Forms.GroupBox grpBxCardReader;
+        private System.Windows.Forms.Button btnStartCF;
+        private System.Windows.Forms.ComboBox cmbReaderFailure;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox grpBxIntruder;
+        private System.Windows.Forms.Button btnStartIntr;
+        private System.Windows.Forms.ComboBox cmbIntruderDoor;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblUserStatus;
+        private System.Windows.Forms.Label lblFireResearchSupport;
+        private System.Windows.Forms.Label lblFireCorrB_1;
+        private System.Windows.Forms.Label lblFireSRA3;
+        private System.Windows.Forms.Label lblFireSRA4;
+        private System.Windows.Forms.Label lblFireSRA5;
+        private System.Windows.Forms.Label lblFireSRA6;
+        private System.Windows.Forms.Label lblFireSRA1;
+        private System.Windows.Forms.Label lblFireSRA2;
+        private System.Windows.Forms.Label lblFireCorrC_2;
+        private System.Windows.Forms.Label lblFireCorrC_1;
+        private System.Windows.Forms.Label lblFireGenAdmin;
+        private System.Windows.Forms.Label lblFireCorrA_2;
+        private System.Windows.Forms.Label lblFireCorrA_1;
+        private System.Windows.Forms.Label lblFireCorrB_2;
+        private System.Windows.Forms.Label lblFireMainEntrance;
 
     }
 }

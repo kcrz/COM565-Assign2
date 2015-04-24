@@ -34,6 +34,7 @@ namespace BioengineeringResearch.DataOperations
         public const String INVALID_ID = "Invalid ID";
         public const String INVALID_ID_PIN = "Invalid ID or PIN";
         public const String INVALID_LOGIN_CREDENTIAL = "Invalid ID and password";
+        public const String VISITORS_NO_LOGIN = "Sorry. Visitors are not allowed to log in";
         public const String UNAUTHORISED_ACCESS = "Unauthorised access attempted.";
         public const String ACCESS_DENIED = "Access Denied.";
         public const String SEARCH_RESULT = "Search Result";

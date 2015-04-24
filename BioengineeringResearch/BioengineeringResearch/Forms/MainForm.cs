@@ -22,10 +22,13 @@ namespace BioengineeringResearch
          * 3 Normal
          */
         private int loginStatus = 0;
+        private Size defaultSize = new Size(900, 510);
+        private Size sizeSimulator = new Size(900, 655);
 
         public MainForm()
         {
             InitializeComponent();
+            this.Size = defaultSize;
 
             //Set data directory for the database
             AppDomain.CurrentDomain.SetData(DataStrings.DATA_DIRECTORY, Application.StartupPath);
@@ -57,7 +60,7 @@ namespace BioengineeringResearch
                     btn_login.Enabled = true;
                     btn_logout.Enabled = false;
 
-                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.NOT_LOGGED_IN;
+                    txtLogStatus.Text = DataStrings.NOT_LOGGED_IN;
                     break;
                 case 1:
                     // Menue items
@@ -69,21 +72,20 @@ namespace BioengineeringResearch
                     btn_login.Enabled = false;
                     btn_logout.Enabled = true;
 
-                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.ADMIN_USER;
+                    txtLogStatus.Text = DataStrings.ADMIN_USER;
                     break;
                 case 2:
                     // Menue items
                     btnManage.Enabled = true;
-                    btnSimulator.Enabled = true;
                     btnCCTV.Enabled = true;
 
                     // log buttons
                     btn_login.Enabled = false;
                     btn_logout.Enabled = true;
 
-                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.RECEPTIONIST_USER;
+                    txtLogStatus.Text = DataStrings.RECEPTIONIST_USER;
                     break;
-                case 3:
+                default:
                     // Menue items
                     btnManage.Enabled = true;
                     btnSimulator.Enabled = false;
@@ -93,7 +95,7 @@ namespace BioengineeringResearch
                     btn_login.Enabled = false;
                     btn_logout.Enabled = true;
 
-                    txtLogStatus.Text = DataStrings.USER_STATUS + DataStrings.NORMAL_USER;
+                    txtLogStatus.Text = DataStrings.NORMAL_USER;
                     break;
             }
         }
@@ -342,8 +344,11 @@ namespace BioengineeringResearch
 
         private void btnSimulator_Click(object sender, EventArgs e)
         {
-            SimulationForm simulator = new SimulationForm();
-            simulator.ShowDialog();
+            grpBxSimulation.Enabled = true;
+            grpBxSimulation.Visible = true;
+            btnSimulator.Enabled = false;
+            this.Size = sizeSimulator;
+            this.CenterToScreen();
         }
 
         private void btnCCTV_Click(object sender, EventArgs e)
@@ -352,5 +357,177 @@ namespace BioengineeringResearch
             cctvForm.ShowDialog();
         }
 
+        private void btnCloseSim_Click(object sender, EventArgs e)
+        {
+            grpBxSimulation.Enabled = false;
+            grpBxSimulation.Visible = false;
+            btnSimulator.Enabled = true;
+            this.Size = defaultSize;
+            this.CenterToScreen();
+        }
+
+        private void btnStartFire_Click(object sender, EventArgs e)
+        {
+            fireEventSimulation();
+        }
+
+        private void btnStartCF_Click(object sender, EventArgs e)
+        {
+            cardReaderFailureSimution();
+        }
+
+        private void btnStartIntr_Click(object sender, EventArgs e)
+        {
+            intruderSimulation();
+        }
+
+        private void fireEventSimulation()
+        {
+            int index = cmbFireLoc.SelectedIndex;
+            string message = null;
+            string caption = DataStrings.FIRE_SIMULATOR;
+
+            /*Combobox item index
+             *0 General Administration
+             *1 Research Support
+             *2 Corridor A
+             *3 Corridor B
+             *4 Corridor C
+             *5 SRA 1
+             *6 SRA 2
+             *7 SRA 3
+             *8 SRA 4
+             *9 SRA 5
+             *10 SRA 6
+             */
+            switch (index)
+            {
+                case 0: // General Administration
+                    lblFireGenAdmin.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_GEN_ADMIN;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();                    
+                    break;
+
+                case 1: // Research Support
+                    lblFireResearchSupport.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_RESEARCH_SUPP;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+
+                case 2: // Corridor A
+                    lblFireCorrA_1.Visible = true;
+                    lblFireCorrA_2.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_CORRIDOR_A;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+
+                case 3: // Corridor B
+                    lblFireCorrB_1.Visible = true;
+                    lblFireCorrB_2.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_CORRIDOR_B;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+
+                case 4: // Corridor C
+                    lblFireCorrC_1.Visible = true;
+                    lblFireCorrC_2.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_CORRIDOR_C;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+
+                case 5: // SRA 1
+                    lblFireSRA1.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_1;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+
+                case 6: // SRA 2
+                    lblFireSRA2.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_2;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+
+                case 7: // SRA 3
+                    lblFireSRA3.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_3;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+
+                case 8: // SRA 4
+                    lblFireSRA4.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_4;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+
+                case 9: // SRA 5
+                    lblFireSRA5.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_5;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+
+                case 10: // SRA 6
+                    lblFireSRA6.Visible = true;
+                    message = DataStrings.WARNING + cmbFireLoc.Text + DataStrings.IS_ON_FIRE + DataStrings.NEWLINE + DataStrings.FIRE_SRA_6;
+                    MessageBox.Show(message, caption);
+                    disableFireLabels();
+                    break;
+                default:
+                    MessageBox.Show(DataStrings.FIRE_SELECT_LOCATION, DataStrings.INFORMATION);
+                    break;
+            }
+        }
+
+        private void cardReaderFailureSimution()
+        {
+            if (cmbReaderFailure.Text.Equals(DataStrings.EMPTY_STRING))
+            {
+                MessageBox.Show(DataStrings.SELECT_CARD_READER_SIMUL, DataStrings.ALERT);
+            }
+            else
+            {
+                MessageBox.Show(DataStrings.DOOR + cmbReaderFailure.Text + DataStrings.CARD_READER_FAILURE, DataStrings.ALERT);
+            }
+        }
+
+        private void intruderSimulation()
+        {
+            if (cmbIntruderDoor.Text.Equals(DataStrings.EMPTY_STRING))
+            {
+                MessageBox.Show(DataStrings.INTRUDER_SELECT_LOCATION, DataStrings.ALERT);
+            }
+            else
+            {
+                MessageBox.Show(DataStrings.DOOR + cmbIntruderDoor.Text + DataStrings.INTRUDER_DETECTED, DataStrings.ALERT);
+            }
+        }
+
+        private void disableFireLabels()
+        {
+            lblFireCorrA_1.Visible = false;
+            lblFireCorrA_2.Visible = false;
+            lblFireCorrB_1.Visible = false;
+            lblFireCorrB_2.Visible = false;
+            lblFireCorrC_1.Visible = false;
+            lblFireCorrC_2.Visible = false;
+            lblFireGenAdmin.Visible = false;
+            lblFireMainEntrance.Visible = false;
+            lblFireResearchSupport.Visible = false;
+            lblFireSRA1.Visible = false;
+            lblFireSRA2.Visible = false;
+            lblFireSRA3.Visible = false;
+            lblFireSRA4.Visible = false;
+            lblFireSRA5.Visible = false;
+            lblFireSRA6.Visible = false;
+        }
     }
 }

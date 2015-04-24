@@ -33,8 +33,6 @@ namespace BioengineeringResearch
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            bool loginYes = false;
-
             if (textID.Text.Equals(DataStrings.EMPTY_STRING) || textPIN.Text.Equals(DataStrings.EMPTY_STRING))
             {
                 // either the textbox is blank
@@ -42,39 +40,46 @@ namespace BioengineeringResearch
             }
             else
             {
-                loginYes = DataOps.checkLogin(textID.Text.ToUpper(), textPIN.Text);
-                //loginYes = true; // for debugging
-
-                if (loginYes)
+                if (DataUtils.isUserIdVisitor(textID.Text.ToUpper()))
                 {
-                    // login successfully
-                    MessageBox.Show(DataStrings.LOGIN_OK, DataStrings.INFORMATION, MessageBoxButtons.OK);
-                    string position = DataOps.getEmployeePosition(textID.Text);
-                    //string position = "Admin"; //for debug
-                    /* login status
-                     * 1 Admin
-                     * 2 Receptionist
-                     * 3 Normal
-                     */
-                    switch (position)
-                    {
-                        case DataStrings.ADMIN_USER:
-                            loginStatus = 1;
-                            break;
-                        case DataStrings.RECEPTIONIST_USER:
-                            loginStatus = 2;
-                            break;
-                        case DataStrings.NORMAL_USER:
-                            loginStatus = 3;
-                            break;
-                    }
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    //Visitors cannot log in
+                    MessageBox.Show(DataStrings.VISITORS_NO_LOGIN, DataStrings.ALERT, MessageBoxButtons.OK);
                 }
-                else
+                else 
                 {
-                    // login failed
-                    MessageBox.Show(DataStrings.INVALID_LOGIN_CREDENTIAL, DataStrings.ALERT, MessageBoxButtons.OK);
+                    if (DataOps.checkLogin(textID.Text.ToUpper(), textPIN.Text))
+                    {
+                        // login successfully
+                        MessageBox.Show(DataStrings.LOGIN_OK, DataStrings.INFORMATION, MessageBoxButtons.OK);
+                        string position = DataOps.getEmployeePosition(textID.Text);
+                        //string position = "Admin"; //for debug
+                        /* login status
+                         * 1 Admin
+                         * 2 Receptionist
+                         * 3 Normal
+                         */
+                        switch (position)
+                        {
+                            case DataStrings.ADMIN_USER:
+                                loginStatus = 1;
+                                break;
+                            case DataStrings.RECEPTIONIST_USER:
+                                loginStatus = 2;
+                                break;
+                            case DataStrings.NORMAL_USER:
+                                loginStatus = 3;
+                                break;
+                            default:
+                                loginStatus = 3;
+                                break;
+                        }
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    { // login failed
+                        MessageBox.Show(DataStrings.INVALID_LOGIN_CREDENTIAL, DataStrings.ALERT, MessageBoxButtons.OK);
+                    }
                 }
             }
         }

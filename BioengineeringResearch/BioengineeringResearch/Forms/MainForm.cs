@@ -13,6 +13,11 @@ using BioengineeringResearch.DataOperations;
 
 namespace BioengineeringResearch
 {
+    /// <summary>
+    /// Main form of the application
+    /// Author: Kenneth Cruz, Kaiyang Zhou
+    /// 30 Apr 2015
+    /// </summary>
     public partial class MainForm : Form
     {
         /* login status

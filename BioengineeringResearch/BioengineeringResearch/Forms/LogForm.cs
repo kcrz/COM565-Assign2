@@ -12,6 +12,11 @@ using BioengineeringResearch.Forms;
 
 namespace BioengineeringResearch
 {
+    /// <summary>
+    /// Log in form for management
+    /// Author: Kenneth Cruz, Kaiyang Zhou
+    /// 30 Apr 2015
+    /// </summary>
     public partial class LogForm : Form
     {
         /* login status

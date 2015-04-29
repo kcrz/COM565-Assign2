@@ -14,6 +14,12 @@ using BioengineeringResearch.Models;
 
 namespace BioengineeringResearch.Forms
 {
+    /// <summary>
+    /// Form for managing users. 
+    /// Able to Add, Update, Search and Export reports
+    /// Author: Kenneth Cruz, Kaiyang Zhou
+    /// 30 Apr 2015
+    /// </summary>
     public partial class ManageForm : Form
     {
         /* login status

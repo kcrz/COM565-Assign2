@@ -7,9 +7,19 @@ using System.Threading.Tasks;
 
 namespace BioengineeringResearch.DataOperations
 {
+    /// <summary>
+    /// Dedicated class for utility methods
+    /// Author: Kenneth Cruz
+    /// 30 Apr 2015
+    /// </summary>
     class DataUtils
     {
 
+        /// <summary>
+        /// Check if param is a valid id using regular expression
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public static bool isUserIdValid(String userId)
         {
             //VT OR EM followed by 2 to 12 digits
@@ -25,6 +35,11 @@ namespace BioengineeringResearch.DataOperations
             }
         }
 
+        /// <summary>
+        /// Check if id is an employee
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public static bool isUserIdEmployee(String userId)
         {
             if (userId.ToUpper().StartsWith(DataStrings.EMPLOYEE_TAG))
@@ -37,6 +52,11 @@ namespace BioengineeringResearch.DataOperations
             }
         }
 
+        /// <summary>
+        /// check if id is a visitor
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public static bool isUserIdVisitor(String userId)
         {
             if (userId.ToUpper().StartsWith(DataStrings.VISITOR_TAG))

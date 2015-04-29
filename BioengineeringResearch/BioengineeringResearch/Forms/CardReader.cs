@@ -11,6 +11,11 @@ using BioengineeringResearch.DataOperations;
 
 namespace BioengineeringResearch
 {
+    /// <summary>
+    /// Card readere form to simulate card access terminal
+    /// Author: Kenneth Cruz, Kaiyang Zhou
+    /// 30 Apr 2015
+    /// </summary>
     public partial class CardReader : Form
     {
         private static int invalidEnter = 0;

@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace BioengineeringResearch.DataOperations
 {
+    /// <summary>
+    /// Dedicated class for handling strings
+    /// Author: Kenneth Cruz
+    /// 30 Apr 2015
+    /// </summary>
     class DataStrings
     {
         public const String EMPLOYEE_TAG = "EM";
@@ -39,6 +44,7 @@ namespace BioengineeringResearch.DataOperations
         public const String ACCESS_DENIED = "Access Denied.";
         public const String SEARCH_RESULT = "Search Result";
         public const String SELECT_UPDATE_ITEM = "Select a user to update";
+        public const String UPDATE_SUCCESSFUL = "Update successful";
 
         public const String LOGIN_OK = "Login Successful";
 

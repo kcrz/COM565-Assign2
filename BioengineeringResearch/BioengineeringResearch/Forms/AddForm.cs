@@ -12,6 +12,11 @@ using BioengineeringResearch.DataOperations;
 
 namespace BioengineeringResearch.Functions
 {
+    /// <summary>
+    /// Add Form for adding new users
+    /// Author: Kenneth Cruz, Kaiyang Zhou
+    /// 30 Apr 2015
+    /// </summary>
     public partial class AddForm : Form
     {
         Employee employee = new Employee();

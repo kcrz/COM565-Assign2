@@ -12,12 +12,21 @@ using System.Windows.Forms;
 
 namespace BioengineeringResearch.Forms
 {
+    /// <summary>
+    /// Form for updating user info
+    /// Author: Kenneth Cruz, Kaiyang Zhou
+    /// 30 Apr 2015
+    /// </summary>
     public partial class UpdateForm : Form
     {
         private Employee employee;
         private Visitor visitor;
         private bool isEmployee = false;
         private bool isUpdateSuccess = false;
+        /// <summary>
+        /// Constructor using Employee
+        /// </summary>
+        /// <param name="employee"></param>
         public UpdateForm(Employee employee)
         {
             InitializeComponent();
@@ -38,6 +47,10 @@ namespace BioengineeringResearch.Forms
 
         }
 
+        /// <summary>
+        /// Construct using Visitor
+        /// </summary>
+        /// <param name="visitor"></param>
         public UpdateForm(Visitor visitor)
         {
             InitializeComponent();
@@ -57,8 +70,13 @@ namespace BioengineeringResearch.Forms
             isEmployee = false;
         }
 
+        /// <summary>
+        /// dedicated method for updating employee
+        /// </summary>
+        /// <returns></returns>
         private bool updateEmployee()
         {
+            //get all new data
             employee.FirstName = txtFirstName.Text;
             employee.LastName = txtLastName.Text;
             employee.PIN = Convert.ToInt32(txtPIN.Text);
@@ -73,8 +91,13 @@ namespace BioengineeringResearch.Forms
             return DataOps.update(employee.EmployeeId.ToUpper(), employee);
         }
 
+        /// <summary>
+        /// dedicated method for updating vistors
+        /// </summary>
+        /// <returns></returns>
         private bool updateVisitor()
         {
+            //get all new data
             visitor.FirstName = txtFirstName.Text;
             visitor.LastName = txtLastName.Text;
             visitor.PIN = Convert.ToInt32(txtPIN.Text);
@@ -115,9 +138,13 @@ namespace BioengineeringResearch.Forms
                     }
 
                     if (!isUpdateSuccess)
-                    { 
+                    {
                         //an error has occured during updating
                         MessageBox.Show(DataStrings.FAILED_TO_UPDATE_INFO, DataStrings.INFORMATION);
+                    }
+                    else
+                    {
+                        MessageBox.Show(DataStrings.UPDATE_SUCCESSFUL, DataStrings.INFORMATION);
                     }
                 }
                 else

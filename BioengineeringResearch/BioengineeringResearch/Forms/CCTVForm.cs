@@ -11,6 +11,11 @@ using BioengineeringResearch.DataOperations;
 
 namespace BioengineeringResearch.Forms
 {
+    /// <summary>
+    /// CCTV form for simulating video surveillance
+    /// Author: Kaiyang Zhou
+    /// 30 Apr 2015
+    /// </summary>
     public partial class CCTVForm : Form
     {
         public CCTVForm()

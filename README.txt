@@ -1,15 +1,9 @@
 ------------------------------------------------------------------
 REQUIREMENTS
 ------------------------------------------------------------------
-Visual Studio 2013 / 2012
+Visual Studio 2013
 NuGet Package Manager for Visual Studio 2013
 Entity Framework Power Tools Beta 4
-------------------------------------------------------------------
-HOW TO VIEW SOURCE CODE
-------------------------------------------------------------------
-Extract BioengineeringResearch_Source_code.zip
-Open BioengineeringResearch.sln using Visual Studio
-If there are build errors make sure Entity Framework Power Tools Beta 4 is installed.
 ------------------------------------------------------------------
 TESTING NOTES
 ------------------------------------------------------------------
